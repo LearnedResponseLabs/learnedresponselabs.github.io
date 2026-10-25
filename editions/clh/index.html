@@ -310,7 +310,8 @@ details.def > pre { padding: 8px 12px 12px; border-top: 1px solid var(--rule); }
   for (const x of D.unformalized) items.set(x.id, { id: x.id, type: "unformalized", label: shortTitle(x.item), data: x });
   for (const x of D.closing || []) items.set(x.id, { id: x.id, type: "closing", label: x.title, data: x });
   const sittingOf = new Map();
-  for (const s of D.sittings) for (const id of s.items) { sittingOf.set(id, s.n); order.push(id); }
+  // An item a later sitting lists again (for context) keeps its first sitting as its home and counts once.
+  for (const s of D.sittings) for (const id of s.items) { if (!sittingOf.has(id)) { sittingOf.set(id, s.n); order.push(id); } }
 
   function stripPrefix(t, p) { return p && t.startsWith(p) ? t.slice(p.length) : t; }
   function displayPath(f) { return stripPrefix(f || "", C.display_strip_prefix); }
