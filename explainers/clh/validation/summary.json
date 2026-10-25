@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "python_tests": 62,
+  "original_ogcanon_selected_tests": 7,
+  "javascript_tests": 11,
+  "browser_checks": 88,
+  "browser_checks_passed": 88,
+  "pages_tested": [
+    "landscape",
+    "cycles",
+    "volume",
+    "shift",
+    "collision",
+    "necklace"
+  ],
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "browser_test_transport": "inlined assets; explicitly native CPython binding, NOT WebAssembly",
+  "source_files_byte_identical": 4,
+  "actual_webassembly_verified": false,
+  "runtime_check_page": "runtime-check.html",
+  "recorded_starter_examples": 19,
+  "triangle_mesh_vertices": 496,
+  "shift_mesh_samples": 121,
+  "finite_atlas_records_present": false
+}

@@ -1,0 +1,3386 @@
+{
+  "schema": 1,
+  "parts": [
+    {
+      "n": 1,
+      "title": "the vocabulary of a cell",
+      "widgets": [
+        "item_S01",
+        "item_S02",
+        "item_S03",
+        "item_S04",
+        "item_S05",
+        "D01_boundary_EX01",
+        "D02_boundary_EX02",
+        "CrossingCount",
+        "item_S06",
+        "item_S07",
+        "item_S08",
+        "item_S09",
+        "item_S10",
+        "item_S11",
+        "item_S12",
+        "D03_necklace_EX02",
+        "item_S13",
+        "item_S14",
+        "item_S15",
+        "item_INT1",
+        "item_INT2"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "the matrices and the row-difference identity",
+      "widgets": [
+        "item_S17",
+        "item_S18",
+        "item_S19",
+        "D05_matrices_EX01",
+        "D06_matrices_EX02",
+        "item_S20",
+        "item_S21",
+        "item_S22",
+        "item_S23",
+        "item_S24",
+        "item_S25",
+        "item_S26",
+        "item_S27",
+        "item_S28",
+        "item_S29",
+        "item_S30",
+        "item_S31",
+        "item_INT3",
+        "item_INT4"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "cycles, the cotangent inequality, the Hessian and the hinge",
+      "widgets": [
+        "item_S16",
+        "item_S32",
+        "item_S33",
+        "item_S34",
+        "item_S35",
+        "item_S36",
+        "item_S37",
+        "item_S38",
+        "item_S39",
+        "Angles",
+        "item_S40",
+        "item_S41",
+        "item_S42",
+        "item_S43",
+        "TwoComponents",
+        "item_S44",
+        "item_S45"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "the potential and its derivatives",
+      "widgets": [
+        "item_S46",
+        "item_S47",
+        "item_S48",
+        "TwoComponents",
+        "item_S49",
+        "item_S50",
+        "item_S51",
+        "item_S52",
+        "ComponentShift"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "convexity, injectivity, embedding and the variational inverse on the slice",
+      "widgets": [
+        "item_S53",
+        "item_S54",
+        "item_S55",
+        "item_S56",
+        "item_S57",
+        "item_S58",
+        "item_S59",
+        "item_S60",
+        "item_S61"
+      ]
+    },
+    {
+      "n": 6,
+      "title": "the necklace logarithms and the conditional theorem",
+      "widgets": [
+        "item_S62",
+        "item_S63",
+        "item_S64",
+        "item_S65",
+        "item_S66",
+        "item_S67",
+        "item_S68",
+        "item_S69",
+        "SevenCellWitness",
+        "item_S70"
+      ]
+    },
+    {
+      "n": 7,
+      "title": "the four hypotheses against the published results",
+      "widgets": [
+        "item_H1",
+        "item_H2",
+        "item_H3",
+        "item_H4"
+      ]
+    },
+    {
+      "n": 8,
+      "title": "what is not formalized",
+      "widgets": [
+        "item_UF-CONSTRUCT",
+        "item_UF-WP-STRAND",
+        "D02_boundary_EX02",
+        "item_UF-WP-COUNT",
+        "item_UF-WP-DECORATED",
+        "item_UF-LOOPS",
+        "item_UF-UNTWISTED",
+        "item_UF-REDUCTION",
+        "item_UF-SHARP",
+        "item_UF-SHIFT",
+        "item_UF-VOLUME"
+      ]
+    },
+    {
+      "n": 9,
+      "title": "the theorem, assembled",
+      "widgets": [
+        "RoundTrip",
+        "item_S60",
+        "TwoComponents"
+      ]
+    }
+  ],
+  "widgets": {
+    "item_S01": {
+      "title": "S01 · The cell and its affine lift",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S01"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S02": {
+      "title": "S02 · Fixed labels and coloops",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S02"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S03": {
+      "title": "S03 · Clockwise steps between endpoints",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S03"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S04": {
+      "title": "S04 · Four points in clockwise order",
+      "controls": {
+        "m": {
+          "type": "number",
+          "label": "Circle modulus $m$",
+          "default": 25,
+          "min": 4,
+          "max": 100,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "a": {
+          "type": "number",
+          "label": "Position $a$",
+          "default": 14,
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "b": {
+          "type": "number",
+          "label": "Position $b$",
+          "default": 19,
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "c": {
+          "type": "number",
+          "label": "Position $c$",
+          "default": 1,
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "d": {
+          "type": "number",
+          "label": "Position $d$",
+          "default": 6,
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "lean_type": "Nat"
+        }
+      },
+      "items": [
+        "S04"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S05": {
+      "title": "S05 · Where each strand enters",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S05"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S06": {
+      "title": "S06 · Where each strand exits",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S06"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S07": {
+      "title": "S07 · Reflected endpoint positions",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S07"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S08": {
+      "title": "S08 · The up-down pair class",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S08"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S09": {
+      "title": "S09 · The down-up pair class",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S09"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S10": {
+      "title": "S10 · Testing directed crossings",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S10"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S11": {
+      "title": "S11 · The crossing-edge list",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S11"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S12": {
+      "title": "S12 · The first necklace row",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S12"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S13": {
+      "title": "S13 · Starting the necklace recursion",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S13"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S14": {
+      "title": "S14 · One step of the necklace recursion",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S14"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S15": {
+      "title": "S15 · Every necklace row",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S15"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_INT1": {
+      "title": "INT1 · Resolved endpoint orders",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "INT1"
+      ],
+      "ported": true,
+      "checked": 17
+    },
+    "item_INT2": {
+      "title": "INT2 · The necklace recursion and affine encoding",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "INT2"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S17": {
+      "title": "S17 · The set of edge indices",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S17"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S18": {
+      "title": "S18 · Look up an edge",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S18"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S19": {
+      "title": "S19 · Exponents on all pair columns",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S19"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S20": {
+      "title": "S20 · The necklace exponent matrix",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S20"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S21": {
+      "title": "S21 · The incidence matrix",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S21"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S22": {
+      "title": "S22 · Cyclic row differences",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S22"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S23": {
+      "title": "S23 · Relabel by the inverse permutation",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S23"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S24": {
+      "title": "S24 · Compare P D M with B",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S24"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S25": {
+      "title": "S25 · Zero exponents on non-crossings",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S25"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S26": {
+      "title": "S26 · Zero columns before and after row differences",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S26"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S27": {
+      "title": "S27 · Row differences on all unordered pairs",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S27"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S28": {
+      "title": "S28 · Coloops carry no crossing",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S28"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S29": {
+      "title": "S29 · Coloops in every necklace row",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S29"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S30": {
+      "title": "S30 · A coloop row of B",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S30"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_S31": {
+      "title": "S31 · A coloop row of P D M",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S31"
+      ],
+      "ported": true,
+      "checked": 21
+    },
+    "item_INT3": {
+      "title": "INT3 · Compare pair-exponent columns",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "INT3"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_INT4": {
+      "title": "INT4 · The cyclic half-open arcs",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "INT4"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "item_S16": {
+      "title": "S16 · The cotangent quadratic inequality",
+      "controls": {
+        "alpha": {
+          "type": "numbers",
+          "label": "Angles $\\alpha/\\pi$ (three entries)",
+          "count": 3,
+          "default": [
+            0.2,
+            0.3,
+            0.5
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "diffs": {
+          "type": "numbers",
+          "label": "Differences $d$ (three entries)",
+          "count": 3,
+          "default": [
+            1,
+            -1,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S16"
+      ],
+      "ported": true,
+      "checked": 29
+    },
+    "item_S32": {
+      "title": "S32 · Forward advances",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "labels",
+          "label": "Cycle in paper labels",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S32"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S33": {
+      "title": "S33 · Edges of the chosen cycle",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "labels",
+          "label": "Cycle in paper labels",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S33"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S34": {
+      "title": "S34 · Total advance and winding",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "labels",
+          "label": "Cycle in paper labels",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S34"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S35": {
+      "title": "S35 · The second cycle-edge definition",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "labels",
+          "label": "Cycle in paper labels",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S35"
+      ],
+      "ported": true,
+      "checked": 18
+    },
+    "item_S36": {
+      "title": "S36 · A label set and its consecutive edges",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "subset",
+          "label": "Label set",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S36"
+      ],
+      "ported": true,
+      "checked": 15
+    },
+    "item_S37": {
+      "title": "S37 · Two winding-one partitions",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        },
+        "cover": {
+          "type": "choice",
+          "label": "Partition method",
+          "default": "search",
+          "options": [
+            {
+              "id": "search",
+              "label": "Search chosen cell",
+              "literal": "\"search\""
+            },
+            {
+              "id": "A",
+              "label": "Partition A",
+              "literal": "\"A\""
+            },
+            {
+              "id": "B",
+              "label": "Partition B",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "S37"
+      ],
+      "ported": true,
+      "checked": 23
+    },
+    "item_S38": {
+      "title": "S38 · A set of labels and a complete cover",
+      "controls": {
+        "cycle": {
+          "type": "subset",
+          "label": "Label set",
+          "count": 5,
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        "cover": {
+          "type": "choice",
+          "label": "Paper partition",
+          "default": "A",
+          "options": [
+            {
+              "id": "A",
+              "label": "Partition A",
+              "literal": "\"A\""
+            },
+            {
+              "id": "B",
+              "label": "Partition B",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "S38"
+      ],
+      "ported": true,
+      "checked": 15
+    },
+    "item_S39": {
+      "title": "S39 · Cycle wrap sum",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "cycle": {
+          "type": "labels",
+          "label": "Cycle in paper labels",
+          "count": "n",
+          "min_size": 2,
+          "default": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      "items": [
+        "S39"
+      ],
+      "ported": true,
+      "checked": 17
+    },
+    "item_S40": {
+      "title": "S40 · The lifted angles sum around a cycle",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S40"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S41": {
+      "title": "S41 · An exact rational Hessian identity",
+      "controls": {
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            3,
+            -1,
+            0,
+            2,
+            5
+          ],
+          "min": -5,
+          "max": 5,
+          "step": 1,
+          "lean_type": "ℚ"
+        },
+        "weights": {
+          "type": "numbers",
+          "label": "Edge weights",
+          "count": 7,
+          "default": [
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "min": -5,
+          "max": 5,
+          "step": 1,
+          "lean_type": "ℚ"
+        }
+      },
+      "items": [
+        "S41"
+      ],
+      "ported": true,
+      "checked": 40
+    },
+    "item_S42": {
+      "title": "S42 · A quadratic form with signed cotangents",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S42"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S43": {
+      "title": "S43 · Constant directions and the quadratic kernel",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S43"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S44": {
+      "title": "S44 · Constant directions and the matrix kernel",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S44"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S45": {
+      "title": "S45 · The complex hinge, numerically",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S45"
+      ],
+      "ported": true,
+      "checked": 26
+    },
+    "item_S46": {
+      "title": "S46 · Differentiate the log-sine primitive",
+      "controls": {
+        "u": {
+          "type": "number",
+          "label": "Primitive input $u/\\pi$",
+          "default": 0.1,
+          "min": 0.01,
+          "max": 0.99,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S46"
+      ],
+      "ported": true,
+      "checked": 16
+    },
+    "item_S47": {
+      "title": "S47 · Distance from the chamber boundary",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S47"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S48": {
+      "title": "S48 · Potential and directional derivative",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S48"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S49": {
+      "title": "S49 · Differentiate the gradient",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S49"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S50": {
+      "title": "S50 · Balance incoming and outgoing edges",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S50"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_S51": {
+      "title": "S51 · An edgewise constant disappears",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S51"
+      ],
+      "ported": true,
+      "checked": 26
+    },
+    "item_S52": {
+      "title": "S52 · Shift angles along components",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S52"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S53": {
+      "title": "S53 · Positive curvature on a gauge direction",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S53"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S54": {
+      "title": "S54 · Convexity along a segment",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S54"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S55": {
+      "title": "S55 · Strict monotonicity on two points",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S55"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S56": {
+      "title": "S56 · Distinct points and distinct gradients",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S56"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_S57": {
+      "title": "S57 · A reduced Jacobian and numerical inverse",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S57"
+      ],
+      "ported": true,
+      "checked": 30
+    },
+    "item_S58": {
+      "title": "S58 · Local inversion into the incidence range",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S58"
+      ],
+      "ported": true,
+      "checked": 30
+    },
+    "item_S59": {
+      "title": "S59 · The variational objective and a numerical inverse",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S59"
+      ],
+      "ported": true,
+      "checked": 40
+    },
+    "item_S60": {
+      "title": "S60 · A gradient target and its minimizer",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S60",
+        "S71",
+        "THM"
+      ],
+      "ported": true,
+      "checked": 29
+    },
+    "item_S61": {
+      "title": "S61 · The conditional composition in a model",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S61"
+      ],
+      "ported": true,
+      "checked": 30
+    },
+    "item_S62": {
+      "title": "S62 · All pair logs versus crossing logs",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S62"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S63": {
+      "title": "S63 · A common logarithmic scale disappears",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S63"
+      ],
+      "ported": true,
+      "checked": 26
+    },
+    "item_S64": {
+      "title": "S64 · The logarithmic hinge",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S64"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S65": {
+      "title": "S65 · Recover the gradient from necklace logs",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S65"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S66": {
+      "title": "S66 · The conditional inverse in a model",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S66"
+      ],
+      "ported": true,
+      "checked": 30
+    },
+    "item_S67": {
+      "title": "S67 · The derived identity in a model",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S67"
+      ],
+      "ported": true,
+      "checked": 26
+    },
+    "item_S68": {
+      "title": "S68 · An explicit incidence-range representative",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S68"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_S69": {
+      "title": "S69 · Construct an admissible gauge witness",
+      "controls": {
+        "anchor": {
+          "type": "number",
+          "label": "Anchor $\\theta_1/\\pi$",
+          "default": 0,
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S69"
+      ],
+      "ported": true,
+      "checked": 19
+    },
+    "item_S70": {
+      "title": "S70 · A nonempty model of the hypotheses",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S70"
+      ],
+      "ported": true,
+      "checked": 25
+    },
+    "item_H1": {
+      "title": "H1 · Nearby inputs in the model",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "H1"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_H2": {
+      "title": "H2 · A finite image and its preimages",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "H2"
+      ],
+      "ported": true,
+      "checked": 30
+    },
+    "item_H3": {
+      "title": "H3 · The coordinate inclusion on model points",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 5,
+          "default": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "H3"
+      ],
+      "ported": true,
+      "checked": 37
+    },
+    "item_H4": {
+      "title": "H4 · The logarithmic identity in the model",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "H4"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_UF-CONSTRUCT": {
+      "title": "UF-CONSTRUCT · A concrete model of the conditional hypotheses",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "UF-CONSTRUCT"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_UF-WP-STRAND": {
+      "title": "UF-WP-STRAND · Strands and a winding-one partition",
+      "controls": {
+        "cover": {
+          "type": "choice",
+          "label": "Paper partition",
+          "default": "A",
+          "options": [
+            {
+              "id": "A",
+              "label": "Partition A",
+              "literal": "\"A\""
+            },
+            {
+              "id": "B",
+              "label": "Partition B",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "UF-WP-STRAND"
+      ],
+      "ported": true,
+      "checked": 2
+    },
+    "item_UF-WP-COUNT": {
+      "title": "UF-WP-COUNT · Count cycles by wraps and total advance",
+      "controls": {
+        "cover": {
+          "type": "choice",
+          "label": "Paper partition",
+          "default": "A",
+          "options": [
+            {
+              "id": "A",
+              "label": "Partition A",
+              "literal": "\"A\""
+            },
+            {
+              "id": "B",
+              "label": "Partition B",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "UF-WP-COUNT"
+      ],
+      "ported": true,
+      "checked": 2
+    },
+    "item_UF-WP-DECORATED": {
+      "title": "UF-WP-DECORATED · Change the fixed-point decorations",
+      "controls": {
+        "loops": {
+          "type": "subset",
+          "label": "Fixed points decorated as loops",
+          "count": 5,
+          "min_size": 0,
+          "max_size": 2,
+          "default": [
+            4
+          ]
+        }
+      },
+      "items": [
+        "UF-WP-DECORATED"
+      ],
+      "ported": true,
+      "checked": 16
+    },
+    "item_UF-LOOPS": {
+      "title": "UF-LOOPS · Delete a loop in a decorated identity",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "default": 5,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        },
+        "loop": {
+          "type": "subset",
+          "label": "The single loop (all others are coloops)",
+          "count": "n",
+          "min_size": 1,
+          "max_size": 1,
+          "default": [
+            3
+          ]
+        }
+      },
+      "items": [
+        "UF-LOOPS"
+      ],
+      "ported": true,
+      "checked": 13
+    },
+    "item_UF-UNTWISTED": {
+      "title": "UF-UNTWISTED · Recover from positive coordinate ratios",
+      "controls": {
+        "logs": {
+          "type": "numbers",
+          "label": "Log of a positive necklace coordinate",
+          "count": 5,
+          "default": [
+            0,
+            0.2,
+            -0.3,
+            0.4,
+            0.1
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "UF-UNTWISTED"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "item_UF-REDUCTION": {
+      "title": "UF-REDUCTION · Crossing components and their anchors",
+      "controls": {
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": 6,
+          "default": [
+            3,
+            1,
+            2,
+            6,
+            4,
+            5
+          ]
+        }
+      },
+      "items": [
+        "UF-REDUCTION"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "item_UF-SHARP": {
+      "title": "UF-SHARP · The sharp constant and extremal pair",
+      "controls": {
+        "eta": {
+          "type": "number",
+          "label": "Margin $\\\\eta/\\\\pi$",
+          "default": 0.05,
+          "min": 0.01,
+          "max": 0.1,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "m": {
+          "type": "number",
+          "label": "Cycle length",
+          "default": 4,
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "lean_type": "Nat"
+        }
+      },
+      "items": [
+        "UF-SHARP"
+      ],
+      "ported": true,
+      "checked": 15
+    },
+    "item_UF-SHIFT": {
+      "title": "UF-SHIFT · Shift a bounded affine permutation",
+      "controls": {
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": 5,
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "UF-SHIFT"
+      ],
+      "ported": true,
+      "checked": 18
+    },
+    "item_UF-VOLUME": {
+      "title": "UF-VOLUME · Potential and Lobachevsky values",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "UF-VOLUME"
+      ],
+      "ported": true,
+      "checked": 26
+    },
+    "D01_boundary_EX01": {
+      "title": "The boundary circle and the crossing graph, starting from EX01",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 3
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      "items": [
+        "S05",
+        "S06",
+        "S10",
+        "S11",
+        "INT1"
+      ],
+      "ported": true,
+      "checked": 20
+    },
+    "D02_boundary_EX02": {
+      "title": "The boundary circle and the crossing graph, starting from EX02",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 5
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S05",
+        "S06",
+        "S10",
+        "S11",
+        "INT1",
+        "UF-WP-STRAND"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "D03_necklace_EX02": {
+      "title": "The necklace, starting from EX02",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 5
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "INT2"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "D05_matrices_EX01": {
+      "title": "M, P·D·M and B, starting from EX01",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 3
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            1,
+            2
+          ]
+        },
+        "matrix": {
+          "type": "choice",
+          "label": "Matrices to show",
+          "default": "all",
+          "options": [
+            {
+              "id": "all",
+              "label": "All three matrices",
+              "literal": "\"all\""
+            },
+            {
+              "id": "M",
+              "label": "Exponent matrix",
+              "literal": "\"M\""
+            },
+            {
+              "id": "PDM",
+              "label": "Row differences",
+              "literal": "\"P*D*M\""
+            },
+            {
+              "id": "B",
+              "label": "Incidence matrix",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "INT3"
+      ],
+      "ported": true,
+      "checked": 23
+    },
+    "D06_matrices_EX02": {
+      "title": "M, P·D·M and B, starting from EX02",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 5
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        },
+        "matrix": {
+          "type": "choice",
+          "label": "Matrices to show",
+          "default": "all",
+          "options": [
+            {
+              "id": "all",
+              "label": "All three matrices",
+              "literal": "\"all\""
+            },
+            {
+              "id": "M",
+              "label": "Exponent matrix",
+              "literal": "\"M\""
+            },
+            {
+              "id": "PDM",
+              "label": "Row differences",
+              "literal": "\"P*D*M\""
+            },
+            {
+              "id": "B",
+              "label": "Incidence matrix",
+              "literal": "\"B\""
+            }
+          ]
+        }
+      },
+      "items": [
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "INT3"
+      ],
+      "ported": true,
+      "checked": 25
+    },
+    "Angles": {
+      "title": "Angles and admissibility",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "lean_type": "Float",
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ]
+        }
+      },
+      "items": [
+        "S39",
+        "S40",
+        "S42",
+        "S45"
+      ],
+      "ported": true,
+      "checked": 27
+    },
+    "CrossingCount": {
+      "title": "Number of crossing edges",
+      "controls": {
+        "n": {
+          "type": "number",
+          "label": "Number of labels",
+          "lean_type": "Nat",
+          "min": 3,
+          "max": 8,
+          "step": 1,
+          "default": 5
+        },
+        "window": {
+          "type": "permutation",
+          "label": "Permutation window",
+          "count": "n",
+          "default": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "items": [
+        "S05",
+        "S06",
+        "S10",
+        "S11",
+        "INT1"
+      ],
+      "ported": true,
+      "checked": 22
+    },
+    "TwoComponents": {
+      "title": "Two crossing components: two flat directions",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 6,
+          "default": [
+            0,
+            0.2,
+            0.8,
+            0.1,
+            0.4,
+            0.7
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "direction": {
+          "type": "numbers",
+          "label": "Direction components",
+          "count": 6,
+          "default": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S43",
+        "S48",
+        "THM"
+      ],
+      "ported": true,
+      "checked": 41
+    },
+    "ComponentShift": {
+      "title": "Two components, shifted by different amounts",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 6,
+          "default": [
+            0,
+            0.2,
+            0.8,
+            0.1,
+            0.4,
+            0.7
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        },
+        "shift": {
+          "type": "numbers",
+          "label": "Shift $s$ in units of $\\pi$",
+          "count": 6,
+          "default": [
+            0.3,
+            0.3,
+            0.3,
+            -0.15,
+            -0.15,
+            -0.15
+          ],
+          "min": -1,
+          "max": 1,
+          "step": 0.05,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S52"
+      ],
+      "ported": true,
+      "checked": 41
+    },
+    "SevenCellWitness": {
+      "title": "A disconnected cell: one anchor per component",
+      "controls": {
+        "anchors": {
+          "type": "numbers",
+          "label": "Anchor values $a_1, a_2, a_3$ in units of $\\pi$",
+          "count": 3,
+          "default": [
+            0,
+            0.5,
+            -0.3
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.05,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "S69"
+      ],
+      "ported": true,
+      "checked": 23
+    },
+    "RoundTrip": {
+      "title": "Theorem 1 end to end: Meas⁻¹ = G⁻¹ ∘ R",
+      "controls": {
+        "angles": {
+          "type": "numbers",
+          "label": "Angles in units of $\\pi$",
+          "count": 5,
+          "default": [
+            0,
+            0.1,
+            0.7,
+            0.3,
+            0.8
+          ],
+          "min": -1,
+          "max": 2,
+          "step": 0.01,
+          "lean_type": "Float"
+        }
+      },
+      "items": [
+        "THM"
+      ],
+      "ported": true,
+      "checked": 30
+    }
+  }
+}

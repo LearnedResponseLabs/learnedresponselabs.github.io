@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 410" width="700" height="410" role="img" font-family="ui-monospace,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="currentColor">
+<title>Columns of M_N as arcs, EX02</title>
+<desc>For each column j of M_N of EX02 (crossing t&gt;h), the rows where Lean's M is -1 (filled, value shown) lie on the arc (s_t,s_h] of the circle of row labels, with the endpoints taken from the printed s_x; this is the instance of Mmat_closed.</desc>
+<metadata>{&quot;example&quot;: &quot;EX02&quot;, &quot;lean_lines&quot;: [&quot;S2EX02 window(1-based)=[3, 5, 1, 2, 4] n=5 columns=7&quot;, &quot;S2EX02 s_x (x=1..n)=[3, 4, 1, 5, 2]&quot;, &quot;S2EX02 edgeOf j (j=1..columns, paper labels)=[(1, 2), (2, 3), (2, 4), (3, 5), (4, 5), (5, 1), (5, 2)]&quot;, &quot;EX02 M=[[0, -1, 0, 0, -1, 0, 0], [0, 0, 0, -1, -1, 0, 0], [0, 0, 0, 0, 0, -1, -1], [-1, 0, 0, 0, 0, 0, -1], [0, -1, -1, 0, 0, 0, 0]]&quot;, &quot;S2EX02 arc rows (s_t,s_h] per column j (rows 1-based)=[[4], [1, 5], [5], [2], [1, 2], [3], [3, 4]]&quot;], &quot;source&quot;: &quot;Lean output lines, verbatim&quot;}</metadata>
+<defs></defs>
+<circle cx="95" cy="85" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M125.56 127.07 A52 52 0 0 1 64.44 127.07" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="95" cy="33" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="95" y="16" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="144.45" cy="68.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="164.43" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="125.56" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="137.91" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="64.44" cy="127.07" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="64.44" y="131.07" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="3,0">-1</text>
+<text x="52.09" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="45.55" cy="68.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="25.57" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="95" y="82" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="1">1&gt;2</text>
+<text x="95" y="98" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="1" data-l2="1">(3,4]</text>
+<text x="95" y="175" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=1</text>
+<circle cx="265" cy="85" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M234.44 127.07 A52 52 0 0 1 265 33" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="265" cy="33" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="265" y="37" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="0,1">-1</text>
+<text x="265" y="16" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="314.45" cy="68.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="334.43" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="295.56" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="307.91" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="234.44" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="222.09" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="215.55" cy="68.93" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="215.55" y="72.93" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="4,1">-1</text>
+<text x="195.57" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="265" y="82" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="2">2&gt;3</text>
+<text x="265" y="98" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="2" data-l2="1">(4,1]</text>
+<text x="265" y="175" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=2</text>
+<circle cx="435" cy="85" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M404.44 127.07 A52 52 0 0 1 385.55 68.93" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="435" cy="33" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="435" y="16" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="484.45" cy="68.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="504.43" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="465.56" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="477.91" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="404.44" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="392.09" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="385.55" cy="68.93" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="385.55" y="72.93" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="4,2">-1</text>
+<text x="365.57" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="435" y="82" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="3">2&gt;4</text>
+<text x="435" y="98" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="3" data-l2="1">(4,5]</text>
+<text x="435" y="175" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=3</text>
+<circle cx="605" cy="85" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M605 33 A52 52 0 0 1 654.45 68.93" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="605" cy="33" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="605" y="16" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="654.45" cy="68.93" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="654.45" y="72.93" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="1,3">-1</text>
+<text x="674.43" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="635.56" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="647.91" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="574.44" cy="127.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="562.09" y="148.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="555.55" cy="68.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="535.57" y="66.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="605" y="82" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="4">3&gt;5</text>
+<text x="605" y="98" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="4" data-l2="1">(1,2]</text>
+<text x="605" y="175" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=4</text>
+<circle cx="95" cy="280" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M45.55 263.93 A52 52 0 0 1 144.45 263.93" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="95" cy="228" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="95" y="232" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="0,4">-1</text>
+<text x="95" y="211" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="144.45" cy="263.93" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="144.45" y="267.93" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="1,4">-1</text>
+<text x="164.43" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="125.56" cy="322.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="137.91" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="64.44" cy="322.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="52.09" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="45.55" cy="263.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="25.57" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="95" y="277" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="5">4&gt;5</text>
+<text x="95" y="293" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="5" data-l2="1">(5,2]</text>
+<text x="95" y="370" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=5</text>
+<circle cx="265" cy="280" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M314.45 263.93 A52 52 0 0 1 295.56 322.07" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="265" cy="228" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="265" y="211" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="314.45" cy="263.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="334.43" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="295.56" cy="322.07" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="295.56" y="326.07" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="2,5">-1</text>
+<text x="307.91" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="234.44" cy="322.07" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="222.09" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="215.55" cy="263.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="195.57" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="265" y="277" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="6">5&gt;1</text>
+<text x="265" y="293" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="6" data-l2="1">(2,3]</text>
+<text x="265" y="370" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=6</text>
+<circle cx="435" cy="280" r="52" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<path d="M484.45 263.93 A52 52 0 0 1 404.44 322.07" fill="none" stroke="#3a84c4" stroke-width="4" stroke-opacity="0.75"/>
+<circle cx="435" cy="228" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="435" y="211" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">1</text>
+<circle cx="484.45" cy="263.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="504.43" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">2</text>
+<circle cx="465.56" cy="322.07" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="465.56" y="326.07" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="2,6">-1</text>
+<text x="477.91" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">3</text>
+<circle cx="404.44" cy="322.07" r="9" fill="#3a84c4" stroke="currentColor" stroke-width="1.2"/>
+<text x="404.44" y="326.07" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="3" data-cell="3,6">-1</text>
+<text x="392.09" y="343.06" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">4</text>
+<circle cx="385.55" cy="263.93" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+<text x="365.57" y="261.44" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="0">5</text>
+<text x="435" y="277" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" data-l="2" data-pair="7">5&gt;2</text>
+<text x="435" y="293" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="2" data-arc="7" data-l2="1">(2,4]</text>
+<text x="435" y="370" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="2" data-ix="j">column j=7</text>
+</svg>

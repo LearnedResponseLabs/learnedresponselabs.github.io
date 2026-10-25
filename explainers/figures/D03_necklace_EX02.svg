@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270" width="270" height="270" role="img" font-family="ui-monospace,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="currentColor">
+<title>Necklace rows, EX02</title>
+<desc>The necklace rows I_1..I_n of EX02 as a grid (filled = label in the row), exactly as Lean prints them.</desc>
+<metadata>{&quot;example&quot;: &quot;EX02&quot;, &quot;lean_lines&quot;: [&quot;EX02 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 rank=3 coloops=[]&quot;, &quot;EX02 necklace rows I_1..I_n=[[1, 2, 4], [2, 3, 4], [3, 4, 5], [1, 4, 5], [1, 2, 5]]&quot;], &quot;source&quot;: &quot;Lean output lines, verbatim&quot;}</metadata>
+<defs></defs>
+<text x="67" y="34" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">1</text>
+<text x="101" y="34" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">2</text>
+<text x="135" y="34" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">3</text>
+<text x="169" y="34" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">4</text>
+<text x="203" y="34" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">5</text>
+<text x="44" y="61" text-anchor="end" font-size="10" fill="currentColor" font-weight="normal" data-l="1">I1</text>
+<text x="44" y="95" text-anchor="end" font-size="10" fill="currentColor" font-weight="normal" data-l="1">I2</text>
+<text x="44" y="129" text-anchor="end" font-size="10" fill="currentColor" font-weight="normal" data-l="1">I3</text>
+<text x="44" y="163" text-anchor="end" font-size="10" fill="currentColor" font-weight="normal" data-l="1">I4</text>
+<text x="44" y="197" text-anchor="end" font-size="10" fill="currentColor" font-weight="normal" data-l="1">I5</text>
+<rect x="50" y="40" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="84" y="40" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="118" y="40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="152" y="40" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="186" y="40" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="50" y="74" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="84" y="74" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="118" y="74" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="152" y="74" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="186" y="74" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="50" y="108" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="84" y="108" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="118" y="108" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="152" y="108" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="186" y="108" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="50" y="142" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="84" y="142" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="118" y="142" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="152" y="142" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="186" y="142" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="50" y="176" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="84" y="176" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<rect x="118" y="176" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="152" y="176" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.45"/>
+<rect x="186" y="176" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.55" stroke-opacity="0.45"/>
+<text x="135" y="20" text-anchor="middle" font-size="11" fill="#8a8f98" font-weight="normal">label j</text>
+</svg>

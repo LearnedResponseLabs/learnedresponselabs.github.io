@@ -1,0 +1,9 @@
+{
+  "actual_webassembly_tested": false,
+  "browser_navigation": "blocked by environment (net::ERR_BLOCKED_BY_ADMINISTRATOR)",
+  "runtime_download": "curl: Could not resolve host: cdn.jsdelivr.net",
+  "attempted_url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pyodide.mjs",
+  "provided_local_check": "runtime-check.html; production worker requires sys.platform == emscripten",
+  "ui_test_transport": "native CPython binding with inlined local assets; not WebAssembly",
+  "graphics": "SVG orthographic renderer; does not require WebGL"
+}

@@ -1,0 +1,118 @@
+% Figure 4 of "Galashin's Conjecture 4.3 via a convex gradient": the four pair classes.
+% Source of the figure, typeset in the paper's own fonts (T1, Latin Modern, 11pt) at the paper's text
+% width (6.5in), so \includegraphics does not rescale it. Illustrates CLH-4; it adds no assertion.
+% Every value drawn is read from these Lean output lines:
+%   PO6 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25
+%   PO6 columns: p q E_p X_p E_q X_q | CrossEdge(p,q) CrossEdge(q,p) MisUD(p,q) MisDU(p,q) Aligned(p,q) Aligned(q,p)
+%   PO6 pair 1 2 14 1 19 6 | 1 0 0 0 0 0
+%   PO6 pair 1 3 14 1 4 11 | 0 0 1 0 0 0
+%   PO6 pair 1 4 14 1 24 16 | 0 0 0 1 0 0
+%   PO6 pair 1 5 14 1 9 21 | 0 1 0 0 0 0
+%   PO6 pair 2 1 19 6 14 1 | 0 1 0 0 0 0
+%   PO6 pair 2 3 19 6 4 11 | 1 0 0 0 0 0
+%   PO6 pair 2 4 19 6 24 16 | 1 0 0 0 0 0
+%   PO6 pair 2 5 19 6 9 21 | 0 1 0 0 0 0
+%   PO6 pair 3 1 4 11 14 1 | 0 0 1 0 0 0
+%   PO6 pair 3 2 4 11 19 6 | 0 1 0 0 0 0
+%   PO6 pair 3 4 4 11 24 16 | 0 0 0 0 1 0
+%   PO6 pair 3 5 4 11 9 21 | 1 0 0 0 0 0
+%   PO6 pair 4 1 24 16 14 1 | 0 0 0 1 0 0
+%   PO6 pair 4 2 24 16 19 6 | 0 1 0 0 0 0
+%   PO6 pair 4 3 24 16 4 11 | 0 0 0 0 0 1
+%   PO6 pair 4 5 24 16 9 21 | 1 0 0 0 0 0
+%   PO6 pair 5 1 9 21 14 1 | 1 0 0 0 0 0
+%   PO6 pair 5 2 9 21 19 6 | 1 0 0 0 0 0
+%   PO6 pair 5 3 9 21 4 11 | 0 1 0 0 0 0
+%   PO6 pair 5 4 9 21 24 16 | 0 1 0 0 0 0
+% Build: pdflatex <this file> && pdftocairo -svg <this file>.pdf <this file>.svg
+\documentclass[11pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% the palette of the paper's other figures: blue solid for the first strand or arc, ochre dashed for the second
+\definecolor{ink}{HTML}{233740}
+\definecolor{muted}{HTML}{65757D}
+\definecolor{pblue}{HTML}{0072B2}
+\definecolor{qochre}{HTML}{B87827}
+
+\tikzset{
+  base/.style={draw=muted, line width=0.5pt},
+  exit/.style={circle, draw=ink, fill=white, line width=0.6pt, inner sep=0pt, minimum size=4.6pt},
+  entry/.style={circle, draw=ink, fill=ink, line width=0.6pt, inner sep=0pt, minimum size=4.6pt},
+  exitP/.style={exit, draw=pblue}, entryP/.style={entry, draw=pblue, fill=pblue},
+  exitQ/.style={exit, draw=qochre}, entryQ/.style={entry, draw=qochre, fill=qochre},
+  strandP/.style={pblue, line width=1.1pt, -{Stealth[length=5pt,width=4.2pt]}, shorten >=2.4pt},
+  strandQ/.style={qochre, line width=1.1pt, dash pattern=on 4pt off 1.6pt, -{Stealth[length=5pt,width=4.2pt]}, shorten >=2.4pt},
+  lab/.style={font=\footnotesize, inner sep=1.2pt, text=ink},
+  labm/.style={font=\small, inner sep=1.2pt, text=ink},
+  labP/.style={font=\small, inner sep=1.2pt, text=pblue},
+  labQ/.style={font=\small, inner sep=1.2pt, text=qochre},
+  muted text/.style={text=muted},
+  ttl/.style={font=\small, text=ink, inner sep=0pt},
+  negE/.style={font=\small, text=pblue, inner sep=0pt},
+  posE/.style={font=\small, text=qochre, inner sep=0pt},
+  zeroE/.style={font=\small, text=ink, inner sep=0pt},
+  idx/.style={font=\footnotesize, text=muted, inner sep=0pt},
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\useasboundingbox (-0.25000,-13.72930) rectangle (16.26000,0.47930);
+\node[ttl] at (4.128,-0.100) {Crossing}; %t title0
+\node[lab] at (4.128,-0.620) {$p=1,\ q=2$}; %t pair0
+\draw[base] (4.128,-3.550) circle (1.750); %o 0 25
+\draw[strandP] (3.483,-5.177) -- (4.563,-1.855); %s 0-p 14 1
+\draw[strandQ] (2.381,-3.440) -- (5.874,-3.440); %s 0-q 19 6
+\node[entryP] at (3.483,-5.177) {}; %p 0-ep 14
+\node[labP, anchor=north] at (3.402,-5.382) {$b^{+}_{s}$}; %t 0-ep
+\node[exitP] at (4.563,-1.855) {}; %p 0-xp 1
+\node[labP, anchor=south] at (4.617,-1.642) {$b^{-}_{p}$}; %t 0-xp
+\node[entryQ] at (2.381,-3.440) {}; %p 0-eq 19
+\node[labQ, anchor=east] at (2.161,-3.426) {$b^{+}_{t}$}; %t 0-eq
+\node[exitQ] at (5.874,-3.440) {}; %p 0-xq 6
+\node[labQ, anchor=west] at (6.094,-3.426) {$b^{-}_{q}$}; %t 0-xq
+\node[ttl] at (12.383,-0.100) {Alignment}; %t title1
+\node[lab] at (12.383,-0.620) {$p=3,\ q=4$}; %t pair1
+\draw[base] (12.383,-3.550) circle (1.750); %o 1 25
+\draw[strandP] (13.860,-2.612) -- (13.027,-5.177); %s 1-p 4 11
+\draw[strandQ] (11.947,-1.855) -- (11.034,-4.665); %s 1-q 24 16
+\node[entryP] at (13.860,-2.612) {}; %p 1-ep 4
+\node[labP, anchor=south west] at (14.046,-2.494) {$b^{+}_{s}$}; %t 1-ep
+\node[exitP] at (13.027,-5.177) {}; %p 1-xp 11
+\node[labP, anchor=north] at (13.108,-5.382) {$b^{-}_{p}$}; %t 1-xp
+\node[entryQ] at (11.947,-1.855) {}; %p 1-eq 24
+\node[labQ, anchor=south] at (11.893,-1.642) {$b^{+}_{t}$}; %t 1-eq
+\node[exitQ] at (11.034,-4.665) {}; %p 1-xq 16
+\node[labQ, anchor=north east] at (10.865,-4.806) {$b^{-}_{q}$}; %t 1-xq
+\node[ttl] at (4.128,-6.650) {$\mathrm{Mis}^{\uparrow\downarrow}$}; %t title2
+\node[lab] at (4.128,-7.170) {$p=1,\ q=3$}; %t pair2
+\draw[base] (4.128,-10.100) circle (1.750); %o 2 25
+\draw[strandP] (3.483,-11.727) -- (4.563,-8.405); %s 2-p 14 1
+\draw[strandQ] (5.605,-9.162) -- (4.772,-11.727); %s 2-q 4 11
+\node[entryP] at (3.483,-11.727) {}; %p 2-ep 14
+\node[labP, anchor=north] at (3.402,-11.932) {$b^{+}_{s}$}; %t 2-ep
+\node[exitP] at (4.563,-8.405) {}; %p 2-xp 1
+\node[labP, anchor=south] at (4.617,-8.192) {$b^{-}_{p}$}; %t 2-xp
+\node[entryQ] at (5.605,-9.162) {}; %p 2-eq 4
+\node[labQ, anchor=south west] at (5.791,-9.044) {$b^{+}_{t}$}; %t 2-eq
+\node[exitQ] at (4.772,-11.727) {}; %p 2-xq 11
+\node[labQ, anchor=north] at (4.853,-11.932) {$b^{-}_{q}$}; %t 2-xq
+\node[ttl] at (12.383,-6.650) {$\mathrm{Mis}^{\downarrow\uparrow}$}; %t title3
+\node[lab] at (12.383,-7.170) {$p=1,\ q=4$}; %t pair3
+\draw[base] (12.383,-10.100) circle (1.750); %o 3 25
+\draw[strandP] (11.738,-11.727) -- (12.818,-8.405); %s 3-p 14 1
+\draw[strandQ] (11.947,-8.405) -- (11.034,-11.215); %s 3-q 24 16
+\node[entryP] at (11.738,-11.727) {}; %p 3-ep 14
+\node[labP, anchor=north] at (11.657,-11.932) {$b^{+}_{s}$}; %t 3-ep
+\node[exitP] at (12.818,-8.405) {}; %p 3-xp 1
+\node[labP, anchor=south] at (12.872,-8.192) {$b^{-}_{p}$}; %t 3-xp
+\node[entryQ] at (11.947,-8.405) {}; %p 3-eq 24
+\node[labQ, anchor=south] at (11.893,-8.192) {$b^{+}_{t}$}; %t 3-eq
+\node[exitQ] at (11.034,-11.215) {}; %p 3-xq 16
+\node[labQ, anchor=north east] at (10.865,-11.356) {$b^{-}_{q}$}; %t 3-xq
+\node[lab] at (8.005,-13.150) {$s=s_{p},\ t=s_{q}$; arrows run from entry to exit}; %t legend
+\end{tikzpicture}
+\end{document}

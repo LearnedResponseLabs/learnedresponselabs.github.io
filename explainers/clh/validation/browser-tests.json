@@ -1,0 +1,447 @@
+{
+  "transport": "native CPython binding; NOT Pyodide/WebAssembly",
+  "checks": [
+    {
+      "name": "landscape renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "landscape no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "landscape native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "landscape preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "landscape preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Plotly axis titles visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape slider recomputes",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "inverse step works",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "actual mesh-point click",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "landscape no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "landscape no page overflow mobile",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "cycles no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "cycles native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "cycles preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "cycles preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "broken cycle reveals indefiniteness",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "dense vertex computed",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "cycles no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "cycles no page overflow mobile",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "volume no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "volume native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "volume preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "volume preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "3D keyboard rotation",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "tetrahedron isolated",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume gap recomputes",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "volume no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "volume no page overflow mobile",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "shift no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "shift native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "shift preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "shift preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "actual SVG sample selection",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "noncrossing collision computed",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "off-isotropy control nonzero",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "shift no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "shift no page overflow mobile",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "collision no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "collision native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "collision preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "collision preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "inner ratio changes limit",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "single edge selected",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "collision no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "collision no page overflow mobile",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace renders",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace no unsupported graphics message",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace no initial errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "necklace no error banner",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "necklace native label visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace preset 0",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "necklace preset 1",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "necklace preset 2",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "incidence stage visible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "corrupted exponent rejected",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace no runtime errors after controls",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "necklace no page overflow desktop",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace JSON export",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "necklace no page overflow mobile",
+      "pass": true,
+      "details": null
+    }
+  ],
+  "errors": [],
+  "all_pass": true
+}

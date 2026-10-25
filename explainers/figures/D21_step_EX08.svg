@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 376" width="690" height="376" role="img" font-family="ui-monospace,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="currentColor">
+<title>The necklace step at the coloop, EX08</title>
+<desc>The necklace recursion at the coloop p=3 of EX08 (labels counted from 1; Lean counts from 0, row 2 to row 3): I_3 minus p and then with sigma(p)=p put back is I_4 again, so I_3 = I_4 (necklaceAux_coloop_step); every set is the value Lean printed.</desc>
+<metadata>{&quot;example&quot;: &quot;EX08&quot;, &quot;lean_lines&quot;: [&quot;S29EX08 window(1-based)=[5, 1, 3, 2, 4] n=5 coloops(1-based)=[3]&quot;, &quot;S29EX08 s_x (x=1..n)=[2, 4, 3, 5, 1]&quot;, &quot;S29EX08 coloop p=3 step: I_p (necklaceAux 2, Lean row 2)=[1, 3, 4, 5]&quot;, &quot;S29EX08 coloop p=3 step: I_p minus p=[1, 4, 5]&quot;, &quot;S29EX08 coloop p=3 step: after inserting sigma(p)=3=[1, 3, 4, 5]&quot;, &quot;S29EX08 coloop p=3 step: I_(p+1) (necklaceAux 3, Lean row 3)=[1, 3, 4, 5]&quot;], &quot;source&quot;: &quot;Lean output lines, verbatim&quot;}</metadata>
+<defs><marker id="ahurrentColor" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="107" y="40" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold" data-l="0" data-coloop="1">I_3</text>
+<text x="257" y="40" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold">I_p minus p</text>
+<text x="407" y="40" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold">after insert</text>
+<text x="557" y="40" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold" data-l="0" data-coloop="+1">I_4</text>
+<text x="107" y="60" text-anchor="middle" font-size="11" fill="#8a8f98" font-weight="normal" data-l="2" data-sub="1">necklaceAux 2</text>
+<text x="557" y="60" text-anchor="middle" font-size="11" fill="#8a8f98" font-weight="normal" data-l="5" data-sub="1">necklaceAux 3</text>
+<rect x="90" y="96" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="2" data-set="1,1"/>
+<text x="107" y="117" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="2" data-set="1">1</text>
+<rect x="90" y="130" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.5" data-l="2" data-set="2,0"/>
+<rect x="90" y="164" width="34" height="34" fill="#d17a22" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="2" data-set="3,1"/>
+<text x="107" y="185" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="2" data-set="3">3</text>
+<rect x="90" y="198" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="2" data-set="4,1"/>
+<text x="107" y="219" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="2" data-set="4">4</text>
+<rect x="90" y="232" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="2" data-set="5,1"/>
+<text x="107" y="253" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="2" data-set="5">5</text>
+<rect x="240" y="96" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="3" data-set="1,1"/>
+<text x="257" y="117" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="3" data-set="1">1</text>
+<rect x="240" y="130" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.5" data-l="3" data-set="2,0"/>
+<rect x="240" y="164" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.5" data-l="3" data-set="3,0"/>
+<rect x="240" y="198" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="3" data-set="4,1"/>
+<text x="257" y="219" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="3" data-set="4">4</text>
+<rect x="240" y="232" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="3" data-set="5,1"/>
+<text x="257" y="253" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="3" data-set="5">5</text>
+<rect x="390" y="96" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="4" data-set="1,1"/>
+<text x="407" y="117" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="4" data-set="1">1</text>
+<rect x="390" y="130" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.5" data-l="4" data-set="2,0"/>
+<rect x="390" y="164" width="34" height="34" fill="#d17a22" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="4" data-set="3,1"/>
+<text x="407" y="185" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="4" data-set="3">3</text>
+<rect x="390" y="198" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="4" data-set="4,1"/>
+<text x="407" y="219" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="4" data-set="4">4</text>
+<rect x="390" y="232" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="4" data-set="5,1"/>
+<text x="407" y="253" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="4" data-set="5">5</text>
+<rect x="540" y="96" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="5" data-set="1,1"/>
+<text x="557" y="117" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="5" data-set="1">1</text>
+<rect x="540" y="130" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1" fill-opacity="1" stroke-opacity="0.5" data-l="5" data-set="2,0"/>
+<rect x="540" y="164" width="34" height="34" fill="#d17a22" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="5" data-set="3,1"/>
+<text x="557" y="185" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="5" data-set="3">3</text>
+<rect x="540" y="198" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="5" data-set="4,1"/>
+<text x="557" y="219" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="5" data-set="4">4</text>
+<rect x="540" y="232" width="34" height="34" fill="#3a84c4" stroke="currentColor" stroke-width="1" fill-opacity="0.3" stroke-opacity="0.5" data-l="5" data-set="5,1"/>
+<text x="557" y="253" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal" data-l="5" data-set="5">5</text>
+<line x1="132" y1="181" x2="232" y2="181" stroke="currentColor" stroke-width="1.6" marker-end="url(#ahurrentColor)"/>
+<text x="182" y="159" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal">remove</text>
+<text x="182" y="173" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="3" data-sub="1">p=3</text>
+<line x1="282" y1="181" x2="382" y2="181" stroke="currentColor" stroke-width="1.6" marker-end="url(#ahurrentColor)"/>
+<text x="332" y="159" text-anchor="middle" font-size="12" fill="currentColor" font-weight="normal">insert</text>
+<text x="332" y="173" text-anchor="middle" font-size="11" fill="currentColor" font-weight="normal" data-l="4" data-sub="1">sigma(p)=3</text>
+<text x="482" y="191" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold" data-l="4" data-equal="5">=</text>
+<path d="M107 280 V296 H557 V280" fill="none" stroke="#8a8f98" stroke-width="1.2"/>
+<text x="332" y="316" text-anchor="middle" font-size="18" fill="currentColor" font-weight="bold" data-l="2" data-equal="5">=</text>
+<text x="332" y="334" text-anchor="middle" font-size="11" fill="#8a8f98" font-weight="normal">the necklace does not move across the coloop</text>
+<text x="78" y="117" text-anchor="end" font-size="10" fill="#8a8f98" font-weight="normal" data-l="1" data-ix="j" data-idx="1">1</text>
+<text x="78" y="151" text-anchor="end" font-size="10" fill="#8a8f98" font-weight="normal" data-l="1" data-ix="j" data-idx="2">2</text>
+<text x="78" y="185" text-anchor="end" font-size="10" fill="#8a8f98" font-weight="normal" data-l="1" data-ix="j" data-idx="3">3</text>
+<text x="78" y="219" text-anchor="end" font-size="10" fill="#8a8f98" font-weight="normal" data-l="1" data-ix="j" data-idx="4">4</text>
+<text x="78" y="253" text-anchor="end" font-size="10" fill="#8a8f98" font-weight="normal" data-l="1" data-ix="j" data-idx="5">5</text>
+</svg>

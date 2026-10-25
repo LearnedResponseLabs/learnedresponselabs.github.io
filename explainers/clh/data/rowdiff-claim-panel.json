@@ -1,0 +1,19 @@
+{
+  "claim": "CLH-4",
+  "paper": "Galashin’s Conjecture 4.3 via a convex gradient (proof-candidate preprint)",
+  "status": "proof candidate",
+  "statement": "Row-difference identity P_f D M_N = B — the cyclic row-difference of Galashin's twisted-necklace exponent matrix, relabeled, equals the directed incidence matrix, for every loopless f, coloops allowed. Proved census-free (pairs in no named class are absent directly from Prop. 5.12; the two Mis supports vanish; crossing columns are half-open intervals; coincidence pool provably closed; a coloop label admits no Mis^{↑↓} partner and no crossing, lies in every necklace row, and therefore has identically zero columns on both sides).",
+  "status_detail": "proof candidate — symbolic, no arrangement enumeration. Lean scope (2026-09-15): the formalized type LooplessBAP (Conj43/Defs.lean) now excludes loops only, coloops admitted; the machine proof of rowdiff covers the crossing-edge columns for every loopless f, and Conj43/Coloop.lean formalizes the coloop step (a coloop carries no crossing, lies in every necklace row, and both sides vanish on its row: Bmat_coloop_row, PDM_coloop_row). The vanishing of the non-crossing pair columns remains symbolic in the paper and is not formalized",
+  "depends_on": "Galashin Prop 5.12 + the §5.4 class definitions; uniform crossing-only arc theorem",
+  "hypotheses": [
+    "Loopless bounded affine permutation f: i < f(i) <= i + n for every i; coloops (f(i) = i + n) allowed, loops excluded.",
+    "M_N is the necklace-row restriction of the exponent matrix of Galashin's Proposition 5.12, indexed by all unordered pairs; B is the directed incidence matrix of the crossing graph.",
+    "Refined endpoint order with the exit of a label placed immediately before the entry carrying the same label (the paper's epsilon convention)."
+  ],
+  "exclusions": [
+    "Exact integer evaluation on four fixed small cells only (windows (3,4,5), (3,5,6,8), (3,7,8,6,10,11), (6,8,7,9,10,12,11,13)); this is not the all-cell symbolic identity and establishes nothing about any other cell.",
+    "Not the finite census reported by the paper, and not the Lean formalization: the formal proof covers the crossing-edge columns and the coloop step; vanishing of non-crossing pair columns is symbolic in the paper and not formalized.",
+    "Proof candidate: no external mathematical review has occurred; the page upgrades no status."
+  ],
+  "attribution": "The necklace exponent formula (Proposition 5.12), the Mis classes of Section 5.4 and the affine lift are Galashin’s (arXiv:2102.13339). The half-open cyclic-arc argument and the coloop step are the CLH paper’s, pending external review."
+}

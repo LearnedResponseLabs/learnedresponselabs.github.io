@@ -1,0 +1,42 @@
+/* Lesson G03: the row-difference identity. Uses the application's tokens from styles.css. */
+#g03-lesson{margin:34px 0 10px;border-top:1px solid var(--line);padding-top:6px;max-width:100%;overflow-wrap:anywhere}
+#g03-lesson[hidden]{display:none}
+.g03-hero h2{font-size:30px;line-height:1.15;margin:4px 0 8px}
+.g03-note{color:var(--muted);font-size:14px}
+.g03-controls{margin:14px 0}
+.g03-controls select{max-width:100%}
+.g03-verdict{border-radius:8px;padding:10px 14px;margin:10px 0;font-weight:600;border:1px solid}
+.g03-verdict.ok{background:#eaf5f2;border-color:#9cc9bf;color:var(--teal)}
+.g03-verdict.fail{background:#fbeef1;border-color:#e0a8b4;color:var(--red)}
+.g03-verdict.na{background:#f3f5f6;border-color:var(--line);color:var(--muted)}
+.g03-verdict.bad{background:#fff4e0;border-color:#e2b36a;color:var(--amber)}
+.g03-chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 6px}
+.g03-chip{display:flex;flex-direction:column;align-items:flex-start;min-width:64px;padding:5px 9px;border-radius:7px;border:2px solid var(--line);background:white;cursor:pointer;line-height:1.2;text-align:left}
+.g03-chip small{font-size:10.5px;color:var(--muted)}
+.g03-chip.on{box-shadow:0 0 0 3px #c68b2c}
+.g03-chip.k-crossing,.g03-legend .k-crossing{border-color:#16766c}
+.g03-chip.k-mis_ud,.g03-legend .k-mis_ud{border-color:#775caa}
+.g03-chip.k-mis_du,.g03-legend .k-mis_du{border-color:#3876ad}
+.g03-chip.k-absent,.g03-legend .k-absent{border-color:#a5b4bc}
+.g03-chip.coloop,.g03-legend .coloop{border-style:dashed;background:#fff8ec}
+.g03-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted);margin-bottom:12px}
+.g03-legend span{border:2px solid var(--line);border-radius:6px;padding:1px 7px}
+.g03-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:18px;margin-bottom:18px}
+.g03-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:18px 0}
+.g03-svg svg{width:100%;max-width:360px;height:auto;display:block;margin:0 auto}
+.g03-order{font-size:13px;margin:6px 0 0;padding-left:22px}
+.g03-order li.p{color:var(--teal)}.g03-order li.q{color:var(--amber)}
+.g03-tables{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px}
+.g03-table caption,.g03-diff caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding-bottom:4px}
+.g03-table td,.g03-table th,.g03-diff td,.g03-diff th{text-align:center;font-variant-numeric:tabular-nums;padding:3px 6px}
+.g03-diff td,.g03-diff th{font-size:12px;padding:2px 4px}
+td.v-1{color:var(--red);font-weight:700}td.v1{color:var(--teal);font-weight:700}
+.bad{color:var(--red)}
+.g03-coloop-col{font-size:13.5px;padding:4px 8px;border-left:3px dashed #c68b2c;margin:4px 0;background:#fffaf0}
+.g03-status{display:inline-block;background:#eef1f8;color:var(--blue);border-radius:5px;padding:0 7px;font-size:13px;font-weight:600;margin-right:4px}
+.g03-boundary h3{font-size:16px;margin:14px 0 4px}
+#g03-lesson .scroll{overflow-x:auto;max-width:100%}
+@media(max-width:950px){.g03-grid,.g03-boxes{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.g03-tables{grid-template-columns:minmax(0,1fr)}.g03-hero h2{font-size:24px}.g03-chip{min-width:56px;padding:4px 7px}}
+.g03-chip.on small{color:#e8f3f1}
+.g03-boxes .metric strong{font-size:16px}

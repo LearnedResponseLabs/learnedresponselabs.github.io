@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reading editions · Learned Response Labs</title>
+<meta name="description" content="Reading editions of the released papers.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/v2/site.css">
+<link rel="icon" href="assets/v2/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/><polygon points="11.3,3.2 22.4,9.6 20.7,19.4 6.6,20.6 3.6,9.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.3" cy="3.2" r="2" fill="var(--dot1)"/><circle cx="22.4" cy="9.6" r="2" fill="var(--dot2)"/><circle cx="20.7" cy="19.4" r="2" fill="var(--dot3)"/><circle cx="6.6" cy="20.6" r="2" fill="var(--dot4)"/><circle cx="3.6" cy="9.6" r="2" fill="var(--dot5)"/></svg> Learned Response Labs</a>
+<nav class="tabs" aria-label="Sections"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="papers.html">Papers</a><a href="software.html">Software</a><a href="editions.html" aria-current="page">Reading editions</a><a href="videos.html">Videos</a><a href="explainers.html">Explainers</a><a href="about.html">About</a></nav>
+</div></header>
+<main class="wrap" id="main">
+<div class="page-head"><h1>Reading editions</h1><p class="lede">A reading edition sets each statement of a paper beside the frozen Lean statement that checks it, or the source it rests on, so you can see exactly what the machine verified and what it did not. Every edition is reviewed internally before its paper is released; external reviews are noted as they arrive.</p></div>
+<div class="edition-card"><p class="label">Edition of the paper</p><h2>Galashin’s Conjecture 4.3 via a convex gradient</h2>
+<p class="muted">91 items, from the paper’s formal statements to the steps the formalization leaves out.</p>
+<p style="font-size:.9375rem"><span class="pip ok" style="margin-right:8px"></span>Reviewed internally before release. External review is pending; reviews received will be noted here.</p>
+<div class="links"><a class="btn primary" href="editions/clh/index.html">Open the edition</a></div></div>
+<div class="block"><h2>One item, as the edition shows it</h2>
+<div class="facing"><div><p class="label">The paper · Corollary 31 · p. 43</p>
+<p class="paper-text"><b style="font-weight:600">Corollary 31</b> (inverting <span class="m">G<sub>f</sub></span> is minimizing). For every <span class="m">y</span> ∈ <span class="m">G<sub>f</sub></span>(<span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup>) there is exactly one <span class="m">θ</span> ∈ <span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup> with <span class="m">G<sub>f</sub></span>(<span class="m">θ</span>) = <span class="m">y</span>, and it is the unique minimizer of <span class="m">F<sub>y</sub></span> = <span class="m">Ψ<sub>f</sub></span> − ⟨<span class="m">y</span>, ·⟩ on <span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup>.</p></div>
+<div><p class="label">Lean · the frozen statement</p><pre class="lean"><span class="kw">theorem</span> variational_gradient_preimage (F : LooplessBAP n) (a : Fin n → ℝ) :
+    <span class="kw">let</span> δ := (<span class="kw">fun</span> (θ : Fin n → ℝ) (e : Fin n × Fin n) =&gt; θ e.2 - θ e.1 + Real.pi * (if e.2 &lt; e.1 then 1 else 0))
+    <span class="kw">let</span> Ψ := (<span class="kw">fun</span> θ : Fin n → ℝ =&gt; ∑ j : EdgeIdx F, ∫ t in (Real.pi / 2)..(δ θ (edgeOf F j)), Real.log (Real.sin t))
+    <span class="kw">let</span> G := (<span class="kw">fun</span> θ : Fin n → ℝ =&gt; (Matrix.of (<span class="kw">fun</span> (r : Fin n) (j : EdgeIdx F) =&gt; (Bmat F r j : ℝ))).mulVec (<span class="kw">fun</span> j =&gt; Real.log (Real.sin (δ θ (edgeOf F j)))))
+    <span class="kw">let</span> S := {θ : Fin n → ℝ | (∀ p q, CrossEdge F p q → 0 &lt; δ θ (p,q) ∧ δ θ (p,q) &lt; Real.pi) ∧ ∀ p, (∀ q, Relation.ReflTransGen (<span class="kw">fun</span> p q =&gt; CrossEdge F p q ∨ CrossEdge F q p) p q → p ≤ q) → θ p = a p}
+    ∀ y ∈ G &#x27;&#x27; S, (∃! x, x ∈ S ∧ G x = y) ∧
+      ∀ x ∈ S, G x = y →
+        (∀ z ∈ S, Ψ x - dotProduct y x ≤ Ψ z - dotProduct y z) ∧
+        ∀ w ∈ S, (∀ z ∈ S, Ψ w - dotProduct y w ≤ Ψ z - dotProduct y z) → w = x := <span class="kw">by</span>
+  <span class="sorry">sorry</span></pre>
+<p class="note">The frozen file states the theorem with the proof left as <code>sorry</code>; the proof lives in the library, and Comparator checks that it proves exactly this statement.</p></div>
+<div class="verdicts"><span class="v"><span class="pip accent"></span>Comparator: proof accepted</span><a href="editions/clh/index.html#S71">This item in the edition</a></div></div></div>
+<div class="block items"><h2>A few items from the list</h2><div class="rows">
+<a class="row" href="editions/clh/index.html#S41"><span class="what">S41</span><span class="desc">The Hessian in matrix form, <span class="code">Conj43.hessian_matrix_form</span></span><span class="go">→</span></a>
+<a class="row" href="editions/clh/index.html#S60"><span class="what">S60</span><span class="desc">The image point minimizes the tilted potential, <span class="code">Conj43.variational_image_minimizer</span></span><span class="go">→</span></a>
+<a class="row" href="editions/clh/index.html#S71"><span class="what">S71</span><span class="desc">Corollary 31, <span class="code">Conj43.variational_gradient_preimage</span></span><span class="go">→</span></a>
+</div></div>
+<footer class="site"><span>Learned Response Labs</span><span>Software Apache-2.0 · papers CC BY 4.0</span><span>Results are proof candidates pending external review unless stated otherwise.</span></footer>
+</main>
+</body>
+</html>

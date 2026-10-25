@@ -1,0 +1,81 @@
+{
+  "claims": [
+    {
+      "anchor": "lab.html?lab=landscape#g01",
+      "covers": "Recover angles from an actual measured point using the twisted necklace and convex inversion.",
+      "status": "proof candidate",
+      "statement": "For every loopless bounded affine permutation `f`, `Meas_f : Θ_f^{>0} → Crit_f^{>0}` is a homeomorphism, with constructive inverse `Meas_f^{-1} = G_f^{-1} ∘ R_f`. (Galashin Conjecture 4.3, loopless case, uniform in (k,n).) Here `Θ_f^{>0}` is Galashin's gauge slice, distinguished in the paper from the ambient admissible chamber `Θ_f^adm`.",
+      "status_detail": "proof candidate — proof written out in the paper; external review required",
+      "dependencies": "CLH-2, CLH-3; **surjectivity onto `Crit_f^{>0}` is an import**, Galashin Prop. 4.2 and the sentence after his eq. (4.3) (component shifts preserve `Meas_f`, so `Meas_f(Θ_f^{>0}) = Meas_f(Θ_f^adm)`); Muller–Speyer twist. The component reduction `lem:reduction` (Galashin §4 relabeling + Prop 4.10, with the commuting square now written out) is **not needed**: `prop:rowdiff` is proved with coloops allowed, so no statement carries a fixed-point-free hypothesis",
+      "hypotheses": [
+        "Loopless bounded affine permutation; the displayed fixed cells.",
+        "Real admissible angles with positive lifted crossing gaps."
+      ],
+      "exclusions": [
+        "Finite numerical or integer illustrations do not establish a uniform theorem or external review.",
+        "No uniform surjectivity or global numerical convergence claim."
+      ]
+    },
+    {
+      "anchor": "lab.html?lab=necklace#observable",
+      "covers": "Compare the gradient with the twisted logarithmic necklace observable.",
+      "status": "proof candidate",
+      "statement": "After the left twist and log-necklace coordinate `R_f`, the measurement map is a gradient: `R_f ∘ Meas_f = G_f = ∇Ψ_f`, `Ψ_f = Σ_e L(δ_e)`, `L'=log sin`; Hessian `H_f = B·diag(cot δ_e)·Bᵀ`. Here `δ_e = θ_{q̃} − θ_p ∈ (0,π)` is taken in Galashin's affine lift `θ_{j+n} = θ_j + π` (`q̃` the forward lift of `q` past `p`), not the raw label difference. The identity holds on the whole admissible locus: it is proved first on the dense pairwise-distinct locus and extends across admissible noncrossing collisions because the absent noncrossing bracket has exponent zero and both sides are regular there.",
+      "status_detail": "proof candidate",
+      "dependencies": "CLH-4; the hinge identity `|[[t_q,t_p]]_+| = 2 sin δ_e` (`lem:hinge`), derived from Galashin Def. 1.12/eq. (1.4) (`[[x,y]] = x/y − y/x`), eq. (5.1) (`t_p = e^{iθ_p}`) and Lem. 5.13 (`Meas_G(wt_t) = Meas_f(θ)`); Galashin Props. 5.1, 5.12 and Thm. 6.9; Muller–Speyer twist; `prop:wp-direct-balance` for `B1 = 0`",
+      "hypotheses": [
+        "Loopless bounded affine permutation; the displayed fixed cells.",
+        "Real admissible angles with positive lifted crossing gaps."
+      ],
+      "exclusions": [
+        "Finite numerical or integer illustrations do not establish a uniform theorem or external review."
+      ]
+    },
+    {
+      "anchor": "lab.html?lab=landscape#gauge",
+      "covers": "Inspect crossing-component shifts and the grounded Hessian.",
+      "status": "proof candidate",
+      "statement": "`Ψ_f` is convex on the ambient admissible chamber `Θ_f^adm`: `H_f ⪰ 0` with `ker H_f` exactly the crossing-component shifts (hence `H_f ≻ 0` on the gauge slice).",
+      "status_detail": "proof candidate — via the winding-one edge-partition (CLH-5) + the cotangent cycle inequality; the cotangent-cycle ingredient `lem:cot` is machine-checked ingredient as reported by the paper (software/lean_conj43, standard axioms only)",
+      "dependencies": "CLH-5; `lem:cot`",
+      "hypotheses": [
+        "Loopless bounded affine permutation; the displayed fixed cells.",
+        "Real admissible angles with positive lifted crossing gaps."
+      ],
+      "exclusions": [
+        "Finite numerical or integer illustrations do not establish a uniform theorem or external review."
+      ]
+    },
+    {
+      "anchor": "lab.html?lab=cycles#cycle-proof",
+      "covers": "Assemble cycle quadratic forms with a negative cotangent and identify the component kernel.",
+      "status": "proof candidate",
+      "statement": "`Ψ_f` is convex on the ambient admissible chamber `Θ_f^adm`: `H_f ⪰ 0` with `ker H_f` exactly the crossing-component shifts (hence `H_f ≻ 0` on the gauge slice).",
+      "status_detail": "proof candidate — via the winding-one edge-partition (CLH-5) + the cotangent cycle inequality; the cotangent-cycle ingredient `lem:cot` is machine-checked ingredient as reported by the paper (software/lean_conj43, standard axioms only)",
+      "dependencies": "CLH-5; `lem:cot`",
+      "hypotheses": [
+        "Loopless bounded affine permutation; the displayed fixed cells.",
+        "Real admissible angles with positive lifted crossing gaps."
+      ],
+      "exclusions": [
+        "Finite numerical or integer illustrations do not establish a uniform theorem or external review."
+      ]
+    },
+    {
+      "anchor": "lab.html?lab=cycles#g02",
+      "covers": "Inspect a finite winding-one edge partition of an actual crossing graph.",
+      "status": "proof candidate",
+      "statement": "Winding-one partition (W-P): the directed crossing-edge set of any loopless `f` partitions into edge-disjoint winding-one cycles, each of length ≥ 3.",
+      "status_detail": "proof candidate — two independent proofs: (i) reduced alternating strand diagram → clockwise black-clique winding-one cycles → signed intersection excess → integral opposite-edge cancellation (imports Postnikov Lem. 14.6/Cor. 14.7 with Cor. 14.2, the boundary-vertex merge following Def. 14.3 with Lem. 14.4, and OPS Rem. 9.6, and states the local sign count `eq:signed-excess` without a ray-by-ray verification — see `rem:wp-imports`); (ii) a self-contained window induction from the refined endpoint order, which is the machine-checked one. **Lean scope (2026-09-15):** machine-checked ingredient as reported by the paper via route (ii) only, over `LooplessBAP` with coloops admitted, so the machine statement is quantified over all loopless `f` exactly as `prop:wp` is stated; coloops are isolated vertices of the crossing graph and the cover induction handles them as fixed-position decorations. Standard axioms only",
+      "dependencies": "Postnikov alternating-strand construction; Oh–Postnikov–Speyer black-clique orientation (route (i) only)",
+      "hypotheses": [
+        "Loopless bounded affine permutation; the displayed fixed cells.",
+        "Real admissible angles with positive lifted crossing gaps."
+      ],
+      "exclusions": [
+        "Finite numerical or integer illustrations do not establish a uniform theorem or external review."
+      ]
+    }
+  ],
+  "attribution": "The measurement map, admissibility chamber and gauge surjectivity are Galashin’s: Proposition 4.2 and the sentence after equation (4.3), arXiv:2102.13339. The left twist is Muller–Speyer’s. The companion manuscript (in preparation) imports the CLH result, not conversely."
+}

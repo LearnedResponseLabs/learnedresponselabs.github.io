@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 760" width="930" height="760" role="img" font-family="ui-monospace,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="currentColor">
+<title>The six orders of two strands' endpoints</title>
+<desc>Drawn from Lean's evaluation of CrossEdge, MisUD, MisDU and Aligned on EX02, not copied.</desc>
+<metadata>{&quot;figure&quot;: &quot;six orders of two strands' endpoints&quot;, &quot;lean_lines&quot;: [&quot;PO6 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25&quot;, &quot;PO6 columns: p q E_p X_p E_q X_q | CrossEdge(p,q) CrossEdge(q,p) MisUD(p,q) MisDU(p,q) Aligned(p,q) Aligned(q,p)&quot;, &quot;PO6 pair 1 2 14 1 19 6 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 1 3 14 1 4 11 | 0 0 1 0 0 0&quot;, &quot;PO6 pair 1 4 14 1 24 16 | 0 0 0 1 0 0&quot;, &quot;PO6 pair 1 5 14 1 9 21 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 2 1 19 6 14 1 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 2 3 19 6 4 11 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 2 4 19 6 24 16 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 2 5 19 6 9 21 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 3 1 4 11 14 1 | 0 0 1 0 0 0&quot;, &quot;PO6 pair 3 2 4 11 19 6 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 3 4 4 11 24 16 | 0 0 0 0 1 0&quot;, &quot;PO6 pair 3 5 4 11 9 21 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 4 1 24 16 14 1 | 0 0 0 1 0 0&quot;, &quot;PO6 pair 4 2 24 16 19 6 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 4 3 24 16 4 11 | 0 0 0 0 0 1&quot;, &quot;PO6 pair 4 5 24 16 9 21 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 5 1 9 21 14 1 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 5 2 9 21 19 6 | 1 0 0 0 0 0&quot;, &quot;PO6 pair 5 3 9 21 4 11 | 0 1 0 0 0 0&quot;, &quot;PO6 pair 5 4 9 21 24 16 | 0 1 0 0 0 0&quot;]}</metadata>
+<text x="160" y="32" text-anchor="middle" font-size="14" font-weight="600">CrossEdge(p,q)</text>
+<text x="160" y="50" text-anchor="middle" fill="#8a8f98">crossing, p → q</text>
+<circle cx="160" cy="178" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="160.0" y1="101.0" x2="160.0" y2="95.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="179.1" y1="103.4" x2="180.6" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="197.1" y1="110.5" x2="200.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="212.7" y1="121.9" x2="216.8" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="225.0" y1="136.7" x2="230.1" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="233.2" y1="154.2" x2="238.9" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="236.8" y1="173.2" x2="242.8" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="235.6" y1="192.4" x2="241.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="229.7" y1="210.8" x2="235.1" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="219.3" y1="227.1" x2="224.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="205.3" y1="240.3" x2="208.8" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="188.3" y1="249.6" x2="190.6" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="169.7" y1="254.4" x2="170.4" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="150.3" y1="254.4" x2="149.6" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="131.7" y1="249.6" x2="129.4" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="114.7" y1="240.3" x2="111.2" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="100.7" y1="227.1" x2="96.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="90.3" y1="210.8" x2="84.9" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="84.4" y1="192.4" x2="78.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="83.2" y1="173.2" x2="77.2" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="86.8" y1="154.2" x2="81.1" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="95.0" y1="136.7" x2="89.9" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="107.3" y1="121.9" x2="103.2" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="122.9" y1="110.5" x2="120.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="140.9" y1="103.4" x2="139.4" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="130.6" y1="252.4" x2="174.6" y2="116.7" stroke="currentColor" stroke-width="2.6"/><polygon points="177.7,107.2 179.4,118.2 169.9,115.1" fill="currentColor"/>
+<line x1="80.2" y1="173.0" x2="222.8" y2="173.0" stroke="#d17a22" stroke-width="2.2"/><polygon points="232.8,173.0 222.8,178.0 222.8,168.0" fill="#d17a22"/>
+<circle cx="130.6" cy="252.4" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="123.2" y="275.0" text-anchor="middle" font-size="12" fill="currentColor">E_p 14</text>
+<circle cx="179.9" cy="100.5" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="184.9" y="85.1" text-anchor="middle" font-size="12" fill="currentColor">X_p 1</text>
+<circle cx="80.2" cy="173.0" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="60.2" y="175.7" text-anchor="middle" font-size="12" fill="#d17a22">E_q 19</text>
+<circle cx="239.8" cy="173.0" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="259.8" y="175.7" text-anchor="middle" font-size="12" fill="#d17a22">X_q 6</text>
+<text x="160" y="300" text-anchor="middle" font-size="12">clockwise: E_p → E_q → X_p → X_q</text>
+<text x="160" y="318" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 1, q = 2</text>
+<text x="465" y="32" text-anchor="middle" font-size="14" font-weight="600">CrossEdge(q,p)</text>
+<text x="465" y="50" text-anchor="middle" fill="#8a8f98">crossing, q → p</text>
+<circle cx="465" cy="178" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="465.0" y1="101.0" x2="465.0" y2="95.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="484.1" y1="103.4" x2="485.6" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="502.1" y1="110.5" x2="505.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="517.7" y1="121.9" x2="521.8" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="530.0" y1="136.7" x2="535.1" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="538.2" y1="154.2" x2="543.9" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="541.8" y1="173.2" x2="547.8" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="540.6" y1="192.4" x2="546.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="534.7" y1="210.8" x2="540.1" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="524.3" y1="227.1" x2="529.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="510.3" y1="240.3" x2="513.8" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="493.3" y1="249.6" x2="495.6" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="474.7" y1="254.4" x2="475.4" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="455.3" y1="254.4" x2="454.6" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="436.7" y1="249.6" x2="434.4" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="419.7" y1="240.3" x2="416.2" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="405.7" y1="227.1" x2="401.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="395.3" y1="210.8" x2="389.9" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="389.4" y1="192.4" x2="383.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="388.2" y1="173.2" x2="382.2" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="391.8" y1="154.2" x2="386.1" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="400.0" y1="136.7" x2="394.9" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="412.3" y1="121.9" x2="408.2" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="427.9" y1="110.5" x2="425.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="445.9" y1="103.4" x2="444.4" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="435.6" y1="252.4" x2="479.6" y2="116.7" stroke="currentColor" stroke-width="2.6"/><polygon points="482.7,107.2 484.4,118.2 474.9,115.1" fill="currentColor"/>
+<line x1="526.6" y1="229.0" x2="411.2" y2="145.1" stroke="#d17a22" stroke-width="2.2"/><polygon points="403.1,139.2 414.1,141.1 408.3,149.2" fill="#d17a22"/>
+<circle cx="435.6" cy="252.4" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="428.2" y="275.0" text-anchor="middle" font-size="12" fill="currentColor">E_p 14</text>
+<circle cx="484.9" cy="100.5" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="489.9" y="85.1" text-anchor="middle" font-size="12" fill="currentColor">X_p 1</text>
+<circle cx="526.6" cy="229.0" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="542.1" y="245.7" text-anchor="middle" font-size="12" fill="#d17a22">E_q 9</text>
+<circle cx="397.5" cy="135.1" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="380.6" y="128.4" text-anchor="middle" font-size="12" fill="#d17a22">X_q 21</text>
+<text x="465" y="300" text-anchor="middle" font-size="12">clockwise: E_p → X_q → X_p → E_q</text>
+<text x="465" y="318" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 1, q = 5</text>
+<text x="770" y="32" text-anchor="middle" font-size="14" font-weight="600">MisUD(p,q)</text>
+<text x="770" y="50" text-anchor="middle" fill="#8a8f98">misalignment</text>
+<circle cx="770" cy="178" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="770.0" y1="101.0" x2="770.0" y2="95.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="789.1" y1="103.4" x2="790.6" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="807.1" y1="110.5" x2="810.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="822.7" y1="121.9" x2="826.8" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="835.0" y1="136.7" x2="840.1" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="843.2" y1="154.2" x2="848.9" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="846.8" y1="173.2" x2="852.8" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="845.6" y1="192.4" x2="851.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="839.7" y1="210.8" x2="845.1" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="829.3" y1="227.1" x2="834.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="815.3" y1="240.3" x2="818.8" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="798.3" y1="249.6" x2="800.6" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="779.7" y1="254.4" x2="780.4" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="760.3" y1="254.4" x2="759.6" y2="260.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="741.7" y1="249.6" x2="739.4" y2="255.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="724.7" y1="240.3" x2="721.2" y2="245.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="710.7" y1="227.1" x2="706.0" y2="230.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="700.3" y1="210.8" x2="694.9" y2="213.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="694.4" y1="192.4" x2="688.5" y2="193.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="693.2" y1="173.2" x2="687.2" y2="172.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="696.8" y1="154.2" x2="691.1" y2="152.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="705.0" y1="136.7" x2="699.9" y2="133.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="717.3" y1="121.9" x2="713.2" y2="117.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="732.9" y1="110.5" x2="730.0" y2="105.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="750.9" y1="103.4" x2="749.4" y2="97.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="740.6" y1="252.4" x2="784.6" y2="116.7" stroke="currentColor" stroke-width="2.6"/><polygon points="787.7,107.2 789.4,118.2 779.9,115.1" fill="currentColor"/>
+<line x1="837.5" y1="135.1" x2="804.7" y2="236.2" stroke="#d17a22" stroke-width="2.2"/><polygon points="801.6,245.7 799.9,234.7 809.5,237.8" fill="#d17a22"/>
+<circle cx="740.6" cy="252.4" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="733.2" y="275.0" text-anchor="middle" font-size="12" fill="currentColor">E_p 14</text>
+<circle cx="789.9" cy="100.5" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="794.9" y="85.1" text-anchor="middle" font-size="12" fill="currentColor">X_p 1</text>
+<circle cx="837.5" cy="135.1" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="854.4" y="128.4" text-anchor="middle" font-size="12" fill="#d17a22">E_q 4</text>
+<circle cx="799.4" cy="252.4" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="806.8" y="275.0" text-anchor="middle" font-size="12" fill="#d17a22">X_q 11</text>
+<text x="770" y="300" text-anchor="middle" font-size="12">clockwise: E_p → X_p → E_q → X_q</text>
+<text x="770" y="318" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 1, q = 3</text>
+<text x="160" y="352" text-anchor="middle" font-size="14" font-weight="600">MisDU(p,q)</text>
+<text x="160" y="370" text-anchor="middle" fill="#8a8f98">misalignment, mirrored</text>
+<circle cx="160" cy="498" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="160.0" y1="421.0" x2="160.0" y2="415.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="179.1" y1="423.4" x2="180.6" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="197.1" y1="430.5" x2="200.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="212.7" y1="441.9" x2="216.8" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="225.0" y1="456.7" x2="230.1" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="233.2" y1="474.2" x2="238.9" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="236.8" y1="493.2" x2="242.8" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="235.6" y1="512.4" x2="241.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="229.7" y1="530.8" x2="235.1" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="219.3" y1="547.1" x2="224.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="205.3" y1="560.3" x2="208.8" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="188.3" y1="569.6" x2="190.6" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="169.7" y1="574.4" x2="170.4" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="150.3" y1="574.4" x2="149.6" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="131.7" y1="569.6" x2="129.4" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="114.7" y1="560.3" x2="111.2" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="100.7" y1="547.1" x2="96.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="90.3" y1="530.8" x2="84.9" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="84.4" y1="512.4" x2="78.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="83.2" y1="493.2" x2="77.2" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="86.8" y1="474.2" x2="81.1" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="95.0" y1="456.7" x2="89.9" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="107.3" y1="441.9" x2="103.2" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="122.9" y1="430.5" x2="120.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="140.9" y1="423.4" x2="139.4" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="130.6" y1="572.4" x2="174.6" y2="436.7" stroke="currentColor" stroke-width="2.6"/><polygon points="177.7,427.2 179.4,438.2 169.9,435.1" fill="currentColor"/>
+<line x1="140.1" y1="420.5" x2="103.6" y2="532.8" stroke="#d17a22" stroke-width="2.2"/><polygon points="100.5,542.3 98.9,531.3 108.4,534.4" fill="#d17a22"/>
+<circle cx="130.6" cy="572.4" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="123.2" y="595.0" text-anchor="middle" font-size="12" fill="currentColor">E_p 14</text>
+<circle cx="179.9" cy="420.5" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="184.9" y="405.1" text-anchor="middle" font-size="12" fill="currentColor">X_p 1</text>
+<circle cx="140.1" cy="420.5" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="135.1" y="405.1" text-anchor="middle" font-size="12" fill="#d17a22">E_q 24</text>
+<circle cx="98.4" cy="549.0" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="82.9" y="565.7" text-anchor="middle" font-size="12" fill="#d17a22">X_q 16</text>
+<text x="160" y="620" text-anchor="middle" font-size="12">clockwise: E_p → X_q → E_q → X_p</text>
+<text x="160" y="638" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 1, q = 4</text>
+<text x="465" y="352" text-anchor="middle" font-size="14" font-weight="600">Aligned(p,q)</text>
+<text x="465" y="370" text-anchor="middle" fill="#8a8f98">alignment</text>
+<circle cx="465" cy="498" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="465.0" y1="421.0" x2="465.0" y2="415.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="484.1" y1="423.4" x2="485.6" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="502.1" y1="430.5" x2="505.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="517.7" y1="441.9" x2="521.8" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="530.0" y1="456.7" x2="535.1" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="538.2" y1="474.2" x2="543.9" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="541.8" y1="493.2" x2="547.8" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="540.6" y1="512.4" x2="546.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="534.7" y1="530.8" x2="540.1" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="524.3" y1="547.1" x2="529.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="510.3" y1="560.3" x2="513.8" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="493.3" y1="569.6" x2="495.6" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="474.7" y1="574.4" x2="475.4" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="455.3" y1="574.4" x2="454.6" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="436.7" y1="569.6" x2="434.4" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="419.7" y1="560.3" x2="416.2" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="405.7" y1="547.1" x2="401.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="395.3" y1="530.8" x2="389.9" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="389.4" y1="512.4" x2="383.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="388.2" y1="493.2" x2="382.2" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="391.8" y1="474.2" x2="386.1" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="400.0" y1="456.7" x2="394.9" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="412.3" y1="441.9" x2="408.2" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="427.9" y1="430.5" x2="425.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="445.9" y1="423.4" x2="444.4" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="532.5" y1="455.1" x2="499.7" y2="556.2" stroke="currentColor" stroke-width="2.6"/><polygon points="496.6,565.7 494.9,554.7 504.5,557.8" fill="currentColor"/>
+<line x1="445.1" y1="420.5" x2="408.6" y2="532.8" stroke="#d17a22" stroke-width="2.2"/><polygon points="405.5,542.3 403.9,531.3 413.4,534.4" fill="#d17a22"/>
+<circle cx="532.5" cy="455.1" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="549.4" y="448.4" text-anchor="middle" font-size="12" fill="currentColor">E_p 4</text>
+<circle cx="494.4" cy="572.4" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="501.8" y="595.0" text-anchor="middle" font-size="12" fill="currentColor">X_p 11</text>
+<circle cx="445.1" cy="420.5" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="440.1" y="405.1" text-anchor="middle" font-size="12" fill="#d17a22">E_q 24</text>
+<circle cx="403.4" cy="549.0" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="387.9" y="565.7" text-anchor="middle" font-size="12" fill="#d17a22">X_q 16</text>
+<text x="465" y="620" text-anchor="middle" font-size="12">clockwise: E_p → X_p → X_q → E_q</text>
+<text x="465" y="638" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 3, q = 4</text>
+<text x="770" y="352" text-anchor="middle" font-size="14" font-weight="600">Aligned(q,p)</text>
+<text x="770" y="370" text-anchor="middle" fill="#8a8f98">alignment, pair swapped</text>
+<circle cx="770" cy="498" r="80" fill="none" stroke="#8a8f98" stroke-width="1"/>
+<line x1="770.0" y1="421.0" x2="770.0" y2="415.0" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="789.1" y1="423.4" x2="790.6" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="807.1" y1="430.5" x2="810.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="822.7" y1="441.9" x2="826.8" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="835.0" y1="456.7" x2="840.1" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="843.2" y1="474.2" x2="848.9" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="846.8" y1="493.2" x2="852.8" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="845.6" y1="512.4" x2="851.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="839.7" y1="530.8" x2="845.1" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="829.3" y1="547.1" x2="834.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="815.3" y1="560.3" x2="818.8" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="798.3" y1="569.6" x2="800.6" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="779.7" y1="574.4" x2="780.4" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="760.3" y1="574.4" x2="759.6" y2="580.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="741.7" y1="569.6" x2="739.4" y2="575.2" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="724.7" y1="560.3" x2="721.2" y2="565.1" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="710.7" y1="547.1" x2="706.0" y2="550.9" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="700.3" y1="530.8" x2="694.9" y2="533.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="694.4" y1="512.4" x2="688.5" y2="513.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="693.2" y1="493.2" x2="687.2" y2="492.8" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="696.8" y1="474.2" x2="691.1" y2="472.4" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="705.0" y1="456.7" x2="699.9" y2="453.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="717.3" y1="441.9" x2="713.2" y2="437.5" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="732.9" y1="430.5" x2="730.0" y2="425.3" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="750.9" y1="423.4" x2="749.4" y2="417.6" stroke="#8a8f98" stroke-width="0.8"/>
+<line x1="750.1" y1="420.5" x2="713.6" y2="532.8" stroke="currentColor" stroke-width="2.6"/><polygon points="710.5,542.3 708.9,531.3 718.4,534.4" fill="currentColor"/>
+<line x1="837.5" y1="455.1" x2="804.7" y2="556.2" stroke="#d17a22" stroke-width="2.2"/><polygon points="801.6,565.7 799.9,554.7 809.5,557.8" fill="#d17a22"/>
+<circle cx="750.1" cy="420.5" r="4.5" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+<text x="745.1" y="405.1" text-anchor="middle" font-size="12" fill="currentColor">E_p 24</text>
+<circle cx="708.4" cy="549.0" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+<text x="692.9" y="565.7" text-anchor="middle" font-size="12" fill="currentColor">X_p 16</text>
+<circle cx="837.5" cy="455.1" r="4.5" fill="#d17a22" stroke="#d17a22" stroke-width="2"/>
+<text x="854.4" y="448.4" text-anchor="middle" font-size="12" fill="#d17a22">E_q 4</text>
+<circle cx="799.4" cy="572.4" r="4.5" fill="none" stroke="#d17a22" stroke-width="2"/>
+<text x="806.8" y="595.0" text-anchor="middle" font-size="12" fill="#d17a22">X_q 11</text>
+<text x="770" y="620" text-anchor="middle" font-size="12">clockwise: E_p → E_q → X_q → X_p</text>
+<text x="770" y="638" text-anchor="middle" font-size="12" fill="#8a8f98">EX02: p = 4, q = 3</text>
+<circle cx="30" cy="668" r="4.5" fill="currentColor"/><text x="42" y="672">E = entryPos: the entry b⁺ of the strand ending at the label (filled)</text>
+<circle cx="30" cy="688" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><text x="42" y="692">X = exitPos: the label's exit b⁻ (open); strand p dark, strand q orange, arrows entry → exit</text>
+<text x="30" y="718">All 20 ordered pairs of EX02, exactly one order each: crossing 7 + 7, MisUD 2, MisDU 2, aligned 1 + 1.</text>
+<text x="30" y="738" fill="#8a8f98">Lean: pair_orders (Conj43/PairOrders.lean) proves exactly one of the six for every p ≠ q; positions on the circle of 5n = 25.</text>
+</svg>

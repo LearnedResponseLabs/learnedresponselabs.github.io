@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Explore the cells, necklaces, matrices and examples of the reading edition of Galashin’s Conjecture 4.3. Computed in your browser and checked against Lean.">
+  <title>The playground · Learned Response Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../assets/v2/site.css">
+  <link rel="stylesheet" href="./playground.css">
+  <style>#sidebar { top: 57px; height: calc(100dvh - 57px); }
+  .viz { display: inline-flex; vertical-align: -1px; margin-right: 6px; color: var(--accent); }
+  .viz-legend { font-size: .78rem; color: var(--muted); margin: 4px 0 10px; }</style>
+  <script type="module" src="./nav-marks.mjs"></script>
+  <link rel="icon" href="../../assets/v2/favicon.svg" type="image/svg+xml">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#example">Skip to the example</a>
+  <header class="site"><div class="wrap bar">
+<a class="brand" href="../../index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/><polygon points="11.3,3.2 22.4,9.6 20.7,19.4 6.6,20.6 3.6,9.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.3" cy="3.2" r="2" fill="var(--dot1)"/><circle cx="22.4" cy="9.6" r="2" fill="var(--dot2)"/><circle cx="20.7" cy="19.4" r="2" fill="var(--dot3)"/><circle cx="6.6" cy="20.6" r="2" fill="var(--dot4)"/><circle cx="3.6" cy="9.6" r="2" fill="var(--dot5)"/></svg> Learned Response Labs</a>
+<nav class="tabs" aria-label="Sections"><a href="../../index.html">Home</a><a href="../../projects.html">Projects</a><a href="../../papers.html">Papers</a><a href="../../software.html">Software</a><a href="../../editions.html">Reading editions</a><a href="../../videos.html">Videos</a><a href="../../explainers.html" aria-current="page">Explainers</a><a href="../../about.html">About</a></nav><button type="button" id="theme" hidden>Theme</button>
+</div></header>
+  <div class="playground-layout">
+    <aside id="sidebar" aria-label="Examples by part"><p class="eyebrow">The playground</p><p class="viz-legend"><span class="viz" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M1 11h10M2 9l3-4 2 2 3-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> draws a picture</p><nav id="parts-nav" aria-label="All examples"></nav></aside>
+    <main id="main">
+      <div class="intro"><p class="eyebrow">Explore the definitions</p><h1>The playground</h1><p>Change an example and watch its objects take shape. Labels start at 1; angles use units of π. Each computation shows one instance, not a proof.</p></div>
+      <div class="mobile-navigation">
+        <label for="part-select">Part</label><select id="part-select"></select>
+        <label for="example-select">Example</label><select id="example-select"></select>
+      </div>
+      <section id="example" aria-labelledby="widget-title" tabindex="-1">
+        <p id="part-caption" class="eyebrow"></p>
+        <h2 id="widget-title">Loading examples…</h2>
+        <p id="notice" class="notice"></p>
+        <div id="controls" class="controls"></div>
+        <p id="input-status" role="status" aria-live="polite"></p>
+        <div id="output" aria-live="polite" aria-atomic="false"></div>
+        <div class="example-actions"><button type="button" id="reset">Reset controls</button><a id="item-link">Read this item</a><a id="explorer-link" hidden>Open this cell in the explorer</a></div>
+      </section>
+      <nav class="previous-next" aria-label="Adjacent examples"><button type="button" id="previous">← Previous</button><span id="position"></span><button type="button" id="next">Next →</button></nav>
+      <p class="closing-note">Parts 1–3 and 8 are available. The other examples are coming soon. Everything here runs locally in your browser.</p>
+      <noscript><p>This playground needs JavaScript to compute the examples. The <a href="../../editions/clh/index.html">reading edition</a> also presents the objects and definitions.</p></noscript>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 856 744" width="856" height="744" role="img" font-family="ui-monospace,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="currentColor">
+<title>Figure 5 redrawn from Lean</title>
+<desc>After Galashin, Critical varieties in the Grassmannian, arXiv:2102.13339v2, Figure 5 (p. 11). Redrawn on instances evaluated by Lean, not copied; compare with the original.</desc>
+<metadata>{&quot;figure&quot;: &quot;Galashin Figure 5 redrawn&quot;, &quot;lean_lines&quot;: [&quot;F5a1 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 p=3 q=5&quot;, &quot;F5a1 s=sigma^-1 p: 1  t=sigma^-1 q: 2&quot;, &quot;F5a1 entryPos(p,q)=(4, 9) exitPos(p,q)=(11, 21)&quot;, &quot;F5a1 coincidences s=q:false t=p:false s=p:false t=q:false&quot;, &quot;F5a1 clockwise labels as in the figure pqst=[3, 5, 1, 2] cyclicOK=true&quot;, &quot;F5a1 CrossEdge F p q = true&quot;, &quot;F5a1 CrossEdge F q p = false&quot;, &quot;F5a1 MisUD F p q = false&quot;, &quot;F5a1 MisDU F p q = false&quot;, &quot;F5a2 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 p=2 q=4&quot;, &quot;F5a2 s=sigma^-1 p: 4  t=sigma^-1 q: 5&quot;, &quot;F5a2 entryPos(p,q)=(19, 24) exitPos(p,q)=(6, 16)&quot;, &quot;F5a2 coincidences s=q:true t=p:false s=p:false t=q:false&quot;, &quot;F5a2 clockwise labels as in the figure pqt=[2, 4, 5] cyclicOK=true&quot;, &quot;F5a2 CrossEdge F p q = true&quot;, &quot;F5a2 CrossEdge F q p = false&quot;, &quot;F5a2 MisUD F p q = false&quot;, &quot;F5a2 MisDU F p q = false&quot;, &quot;F5b1 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 p=3 q=4&quot;, &quot;F5b1 s=sigma^-1 p: 1  t=sigma^-1 q: 5&quot;, &quot;F5b1 entryPos(p,q)=(4, 24) exitPos(p,q)=(11, 16)&quot;, &quot;F5b1 coincidences s=q:false t=p:false s=p:false t=q:false&quot;, &quot;F5b1 clockwise labels as in the figure pqts=[3, 4, 5, 1] cyclicOK=true&quot;, &quot;F5b1 CrossEdge F p q = false&quot;, &quot;F5b1 CrossEdge F q p = false&quot;, &quot;F5b1 MisUD F p q = false&quot;, &quot;F5b1 MisDU F p q = false&quot;, &quot;F5b2 window(1-based)=[2, 1, 3, 4] n=4 modulus=20 p=2 q=3&quot;, &quot;F5b2 s=sigma^-1 p: 1  t=sigma^-1 q: 3&quot;, &quot;F5b2 entryPos(p,q)=(4, 14) exitPos(p,q)=(6, 11)&quot;, &quot;F5b2 coincidences s=q:false t=p:false s=p:false t=q:true&quot;, &quot;F5b2 clockwise labels as in the figure pqs=[2, 3, 1] cyclicOK=true&quot;, &quot;F5b2 CrossEdge F p q = false&quot;, &quot;F5b2 CrossEdge F q p = false&quot;, &quot;F5b2 MisUD F p q = false&quot;, &quot;F5b2 MisDU F p q = false&quot;, &quot;F5c1 window(1-based)=[2, 3, 4, 1] n=4 modulus=20 p=1 q=3&quot;, &quot;F5c1 s=sigma^-1 p: 4  t=sigma^-1 q: 2&quot;, &quot;F5c1 entryPos(p,q)=(19, 9) exitPos(p,q)=(1, 11)&quot;, &quot;F5c1 coincidences s=q:false t=p:false s=p:false t=q:false&quot;, &quot;F5c1 clockwise labels as in the figure ptqs=[1, 2, 3, 4] cyclicOK=true&quot;, &quot;F5c1 CrossEdge F p q = false&quot;, &quot;F5c1 CrossEdge F q p = false&quot;, &quot;F5c1 MisUD F p q = true&quot;, &quot;F5c1 MisDU F p q = false&quot;, &quot;F5c2 window(1-based)=[2, 3, 1, 4] n=4 modulus=20 p=1 q=2&quot;, &quot;F5c2 s=sigma^-1 p: 3  t=sigma^-1 q: 1&quot;, &quot;F5c2 entryPos(p,q)=(14, 4) exitPos(p,q)=(1, 6)&quot;, &quot;F5c2 coincidences s=q:false t=p:true s=p:false t=q:false&quot;, &quot;F5c2 clockwise labels as in the figure pqs=[1, 2, 3] cyclicOK=true&quot;, &quot;F5c2 CrossEdge F p q = false&quot;, &quot;F5c2 CrossEdge F q p = false&quot;, &quot;F5c2 MisUD F p q = true&quot;, &quot;F5c2 MisDU F p q = false&quot;, &quot;F5c3 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 p=1 q=3&quot;, &quot;F5c3 s=sigma^-1 p: 3  t=sigma^-1 q: 1&quot;, &quot;F5c3 entryPos(p,q)=(14, 4) exitPos(p,q)=(1, 11)&quot;, &quot;F5c3 coincidences s=q:true t=p:true s=p:false t=q:false&quot;, &quot;F5c3 clockwise labels as in the figure pq=[1, 3] cyclicOK=true&quot;, &quot;F5c3 CrossEdge F p q = false&quot;, &quot;F5c3 CrossEdge F q p = false&quot;, &quot;F5c3 MisUD F p q = true&quot;, &quot;F5c3 MisDU F p q = false&quot;, &quot;F5d1 window(1-based)=[3, 5, 1, 2, 4] n=5 modulus=25 p=1 q=4&quot;, &quot;F5d1 s=sigma^-1 p: 3  t=sigma^-1 q: 5&quot;, &quot;F5d1 entryPos(p,q)=(14, 24) exitPos(p,q)=(1, 16)&quot;, &quot;F5d1 coincidences s=q:false t=p:false s=p:false t=q:false&quot;, &quot;F5d1 clockwise labels as in the figure sqtp=[3, 4, 5, 1] cyclicOK=true&quot;, &quot;F5d1 CrossEdge F p q = false&quot;, &quot;F5d1 CrossEdge F q p = false&quot;, &quot;F5d1 MisUD F p q = false&quot;, &quot;F5d1 MisDU F p q = true&quot;], &quot;source&quot;: &quot;Lean output lines, verbatim&quot;}</metadata>
+<defs><marker id="ah3a84c4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3a84c4"/></marker><marker id="ahd17a22" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#d17a22"/></marker></defs>
+<line x1="113.14" y1="151.9" x2="113.36" y2="155.39" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="100.63" y1="151.11" x2="99.98" y2="154.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="88.71" y1="147.24" x2="87.22" y2="150.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="78.13" y1="140.53" x2="75.9" y2="143.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="69.55" y1="131.39" x2="66.72" y2="133.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="63.51" y1="120.41" x2="60.26" y2="121.69" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="60.39" y1="108.27" x2="56.92" y2="108.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="60.39" y1="95.73" x2="56.92" y2="95.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="63.51" y1="83.59" x2="60.26" y2="82.31" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="69.55" y1="72.61" x2="66.72" y2="70.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="78.13" y1="63.47" x2="75.9" y2="60.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="88.71" y1="56.76" x2="87.22" y2="53.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="100.63" y1="52.89" x2="99.98" y2="49.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="113.14" y1="52.1" x2="113.36" y2="48.61" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="125.45" y1="54.45" x2="126.53" y2="51.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="136.79" y1="59.78" x2="138.67" y2="56.83" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="146.45" y1="67.77" x2="149" y2="65.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="153.82" y1="77.91" x2="156.88" y2="76.23" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="158.43" y1="89.57" x2="161.82" y2="88.7" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="160" y1="102" x2="163.5" y2="102" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="158.43" y1="114.43" x2="161.82" y2="115.3" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="153.82" y1="126.09" x2="156.88" y2="127.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="146.45" y1="136.23" x2="149" y2="138.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="136.79" y1="144.22" x2="138.67" y2="147.17" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="125.45" y1="149.55" x2="126.53" y2="152.88" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="110" cy="102" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="70.67" y1="127.03" x2="86.97" y2="63.54" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="73.35" y1="75.02" x2="147.91" y2="122.34" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="69.55" cy="131.39" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="88.71" cy="56.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="69.55" cy="72.61" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="153.82" cy="126.09" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="168.71" y="137.28" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="168.71" y="148.28" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="2">21</text>
+<text x="44.47" y="152.61" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="44.47" y="163.61" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="2">4</text>
+<text x="55.8" y="65.62" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="55.8" y="76.62" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="2">9</text>
+<text x="75.51" y="31.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="75.51" y="42.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="2">11</text>
+<text x="110" y="214" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">window [3, 5, 1, 2, 4]</text>
+<text x="110" y="227" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="0">p=3 q=5</text>
+<text x="110" y="240" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="1">s=1 t=2</text>
+<text x="110" y="253" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="3">no coincidence</text>
+<text x="110" y="269" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="5" data-exact="1">CrossEdge F p q = true</text>
+<line x1="275.51" y1="120.41" x2="272.26" y2="121.69" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="272.39" y1="108.27" x2="268.92" y2="108.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="272.39" y1="95.73" x2="268.92" y2="95.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="275.51" y1="83.59" x2="272.26" y2="82.31" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="281.55" y1="72.61" x2="278.72" y2="70.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="290.13" y1="63.47" x2="287.9" y2="60.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="300.71" y1="56.76" x2="299.22" y2="53.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="312.63" y1="52.89" x2="311.98" y2="49.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="325.14" y1="52.1" x2="325.36" y2="48.61" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="337.45" y1="54.45" x2="338.53" y2="51.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="348.79" y1="59.78" x2="350.67" y2="56.83" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="358.45" y1="67.77" x2="361" y2="65.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="365.82" y1="77.91" x2="368.88" y2="76.23" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="370.43" y1="89.57" x2="373.82" y2="88.7" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="372" y1="102" x2="375.5" y2="102" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="370.43" y1="114.43" x2="373.82" y2="115.3" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="365.82" y1="126.09" x2="368.88" y2="127.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="358.45" y1="136.23" x2="361" y2="138.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="348.79" y1="144.22" x2="350.67" y2="147.17" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="337.45" y1="149.55" x2="338.53" y2="152.88" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="325.14" y1="151.9" x2="325.36" y2="155.39" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="312.63" y1="151.11" x2="311.98" y2="154.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="300.71" y1="147.24" x2="299.22" y2="150.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="290.13" y1="140.53" x2="287.9" y2="143.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="281.55" y1="131.39" x2="278.72" y2="133.45" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="322" cy="102" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="335.79" y1="145.37" x2="303.29" y2="63.27" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="286.04" y1="131.11" x2="358.83" y2="126.53" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="337.45" cy="149.55" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="300.71" cy="56.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="281.55" cy="131.39" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="365.82" cy="126.09" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="380.71" y="137.28" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="380.71" y="148.28" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="11">16</text>
+<text x="347.03" y="182.04" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="347.03" y="193.04" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="11">19</text>
+<text x="267.8" y="144.38" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="267.8" y="155.38" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="11">24</text>
+<text x="287.51" y="31.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="287.51" y="42.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="11">6</text>
+<text x="322" y="214" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="9">window [3, 5, 1, 2, 4]</text>
+<text x="322" y="227" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="9">p=2 q=4</text>
+<text x="322" y="240" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="10">s=4 t=5</text>
+<text x="322" y="253" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="12">coincidence s = q</text>
+<text x="322" y="269" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="14" data-exact="1">CrossEdge F p q = true</text>
+<line x1="537.14" y1="151.9" x2="537.36" y2="155.39" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="524.63" y1="151.11" x2="523.98" y2="154.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="512.71" y1="147.24" x2="511.22" y2="150.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="502.13" y1="140.53" x2="499.9" y2="143.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="493.55" y1="131.39" x2="490.72" y2="133.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="487.51" y1="120.41" x2="484.26" y2="121.69" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="484.39" y1="108.27" x2="480.92" y2="108.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="484.39" y1="95.73" x2="480.92" y2="95.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="487.51" y1="83.59" x2="484.26" y2="82.31" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="493.55" y1="72.61" x2="490.72" y2="70.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="502.13" y1="63.47" x2="499.9" y2="60.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="512.71" y1="56.76" x2="511.22" y2="53.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="524.63" y1="52.89" x2="523.98" y2="49.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="537.14" y1="52.1" x2="537.36" y2="48.61" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="549.45" y1="54.45" x2="550.53" y2="51.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="560.79" y1="59.78" x2="562.67" y2="56.83" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="570.45" y1="67.77" x2="573" y2="65.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="577.82" y1="77.91" x2="580.88" y2="76.23" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="582.43" y1="89.57" x2="585.82" y2="88.7" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="584" y1="102" x2="587.5" y2="102" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="582.43" y1="114.43" x2="585.82" y2="115.3" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="577.82" y1="126.09" x2="580.88" y2="127.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="570.45" y1="136.23" x2="573" y2="138.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="560.79" y1="144.22" x2="562.67" y2="147.17" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="549.45" y1="149.55" x2="550.53" y2="152.88" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="534" cy="102" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="494.67" y1="127.03" x2="510.97" y2="63.54" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="550.57" y1="145.19" x2="568.71" y2="74.55" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="493.55" cy="131.39" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="512.71" cy="56.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="549.45" cy="149.55" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="570.45" cy="67.77" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="582.84" y="59.14" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="582.84" y="70.14" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="20">16</text>
+<text x="559.03" y="182.04" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="559.03" y="193.04" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="20">24</text>
+<text x="479.8" y="144.38" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="479.8" y="155.38" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="20">4</text>
+<text x="499.51" y="31.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="499.51" y="42.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="20">11</text>
+<text x="534" y="214" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="18">window [3, 5, 1, 2, 4]</text>
+<text x="534" y="227" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="18">p=3 q=4</text>
+<text x="534" y="240" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="19">s=1 t=5</text>
+<text x="534" y="253" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="21">no coincidence</text>
+<text x="534" y="269" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="23" data-exact="1">CrossEdge F p q = false</text>
+<text x="534" y="282" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="24" data-exact="1">CrossEdge F q p = false</text>
+<text x="534" y="295" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="25" data-exact="1">MisUD F p q = false</text>
+<text x="534" y="308" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="26" data-exact="1">MisDU F p q = false</text>
+<line x1="709.55" y1="136.23" x2="707" y2="138.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="700.76" y1="123.29" x2="697.59" y2="124.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="696.39" y1="108.27" x2="692.92" y2="108.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="696.89" y1="92.63" x2="693.45" y2="91.98" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="702.18" y1="77.91" x2="699.12" y2="76.23" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="711.77" y1="65.55" x2="709.38" y2="63" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="724.71" y1="56.76" x2="723.22" y2="53.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="739.73" y1="52.39" x2="739.29" y2="48.92" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="755.37" y1="52.89" x2="756.02" y2="49.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="770.09" y1="58.18" x2="771.77" y2="55.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="782.45" y1="67.77" x2="785" y2="65.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="791.24" y1="80.71" x2="794.41" y2="79.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="795.61" y1="95.73" x2="799.08" y2="95.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="795.11" y1="111.37" x2="798.55" y2="112.02" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="789.82" y1="126.09" x2="792.88" y2="127.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="780.23" y1="138.45" x2="782.62" y2="141" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="767.29" y1="147.24" x2="768.78" y2="150.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="752.27" y1="151.61" x2="752.71" y2="155.08" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="736.63" y1="151.11" x2="735.98" y2="154.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="721.91" y1="145.82" x2="720.23" y2="148.88" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="746" cy="102" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="705.47" y1="74.83" x2="719.61" y2="61.55" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="789.96" y1="121.59" x2="791.02" y2="87.71" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="702.18" cy="77.91" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="724.71" cy="56.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="789.82" cy="126.09" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="791.24" cy="80.71" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="806.62" y="76.47" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="806.62" y="87.47" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="29">11</text>
+<text x="816.98" y="144.02" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="816.98" y="155.02" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="29">14</text>
+<text x="687.29" y="72.72" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="687.29" y="83.72" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="29">4</text>
+<text x="711.51" y="31.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="711.51" y="42.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="29">6</text>
+<text x="746" y="214" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="27">window [2, 1, 3, 4]</text>
+<text x="746" y="227" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="27">p=2 q=3</text>
+<text x="746" y="240" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="28">s=1 t=3</text>
+<text x="746" y="253" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="30">coincidence t = q</text>
+<text x="746" y="269" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="32" data-exact="1">CrossEdge F p q = false</text>
+<text x="746" y="282" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="33" data-exact="1">CrossEdge F q p = false</text>
+<text x="746" y="295" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="34" data-exact="1">MisUD F p q = false</text>
+<text x="746" y="308" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="35" data-exact="1">MisDU F p q = false</text>
+<line x1="75.77" y1="417.55" x2="73.38" y2="415" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="88.71" y1="408.76" x2="87.22" y2="405.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="103.73" y1="404.39" x2="103.29" y2="400.92" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="119.37" y1="404.89" x2="120.02" y2="401.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="134.09" y1="410.18" x2="135.77" y2="407.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="146.45" y1="419.77" x2="149" y2="417.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="155.24" y1="432.71" x2="158.41" y2="431.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="159.61" y1="447.73" x2="163.08" y2="447.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="159.11" y1="463.37" x2="162.55" y2="464.02" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="153.82" y1="478.09" x2="156.88" y2="479.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="144.23" y1="490.45" x2="146.62" y2="493" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="131.29" y1="499.24" x2="132.78" y2="502.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="116.27" y1="503.61" x2="116.71" y2="507.08" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="100.63" y1="503.11" x2="99.98" y2="506.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="85.91" y1="497.82" x2="84.23" y2="500.88" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="73.55" y1="488.23" x2="71" y2="490.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="64.76" y1="475.29" x2="61.59" y2="476.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="60.39" y1="460.27" x2="56.92" y2="460.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="60.89" y1="444.63" x2="57.45" y2="443.98" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="66.18" y1="429.91" x2="63.12" y2="428.23" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="110" cy="454" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="69.47" y1="426.83" x2="83.61" y2="413.55" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="150.53" y1="481.17" x2="136.39" y2="494.45" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="66.18" cy="429.91" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="88.71" cy="408.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="153.82" cy="478.09" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="131.29" cy="499.24" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="168.71" y="489.28" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="168.71" y="500.28" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="38">9</text>
+<text x="144.49" y="530.29" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="144.49" y="541.29" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="38">11</text>
+<text x="51.29" y="424.72" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="51.29" y="435.72" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="38">19</text>
+<text x="75.51" y="383.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="75.51" y="394.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="38">1</text>
+<text x="110" y="566" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="36">window [2, 3, 4, 1]</text>
+<text x="110" y="579" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="36">p=1 q=3</text>
+<text x="110" y="592" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="37">s=4 t=2</text>
+<text x="110" y="605" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="39">no coincidence</text>
+<text x="110" y="621" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="43" data-exact="1">MisUD F p q = true</text>
+<line x1="287.77" y1="417.55" x2="285.38" y2="415" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="300.71" y1="408.76" x2="299.22" y2="405.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="315.73" y1="404.39" x2="315.29" y2="400.92" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="331.37" y1="404.89" x2="332.02" y2="401.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="346.09" y1="410.18" x2="347.77" y2="407.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="358.45" y1="419.77" x2="361" y2="417.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="367.24" y1="432.71" x2="370.41" y2="431.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="371.61" y1="447.73" x2="375.08" y2="447.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="371.11" y1="463.37" x2="374.55" y2="464.02" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="365.82" y1="478.09" x2="368.88" y2="479.77" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="356.23" y1="490.45" x2="358.62" y2="493" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="343.29" y1="499.24" x2="344.78" y2="502.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="328.27" y1="503.61" x2="328.71" y2="507.08" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="312.63" y1="503.11" x2="311.98" y2="506.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="297.91" y1="497.82" x2="296.23" y2="500.88" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="285.55" y1="488.23" x2="283" y2="490.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="276.76" y1="475.29" x2="273.59" y2="476.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="272.39" y1="460.27" x2="268.92" y2="460.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="272.89" y1="444.63" x2="269.45" y2="443.98" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="278.18" y1="429.91" x2="275.12" y2="428.23" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="322" cy="454" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="298.05" y1="493.32" x2="300.49" y2="415.76" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="349.17" y1="413.47" x2="362.45" y2="427.61" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="297.91" cy="497.82" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="300.71" cy="408.76" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="346.09" cy="410.18" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="367.24" cy="432.71" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="354.28" y="398.29" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="354.28" y="409.29" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="47">4</text>
+<text x="395.29" y="422.51" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="395.29" y="433.51" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="47">6</text>
+<text x="289.72" y="515.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="289.72" y="526.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="47">14</text>
+<text x="287.51" y="383.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="287.51" y="394.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="47">1</text>
+<text x="322" y="566" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="45">window [2, 3, 1, 4]</text>
+<text x="322" y="579" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="45">p=1 q=2</text>
+<text x="322" y="592" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="46">s=3 t=1</text>
+<text x="322" y="605" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="48">coincidence t = p</text>
+<text x="322" y="621" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="52" data-exact="1">MisUD F p q = true</text>
+<line x1="521.57" y1="405.57" x2="520.7" y2="402.18" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="534" y1="404" x2="534" y2="400.5" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="546.43" y1="405.57" x2="547.3" y2="402.18" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="558.09" y1="410.18" x2="559.77" y2="407.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="568.23" y1="417.55" x2="570.62" y2="415" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="576.22" y1="427.21" x2="579.17" y2="425.33" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="581.55" y1="438.55" x2="584.88" y2="437.47" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="583.9" y1="450.86" x2="587.39" y2="450.64" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="583.11" y1="463.37" x2="586.55" y2="464.02" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="579.24" y1="475.29" x2="582.41" y2="476.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="572.53" y1="485.87" x2="575.22" y2="488.1" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="563.39" y1="494.45" x2="565.45" y2="497.28" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="552.41" y1="500.49" x2="553.69" y2="503.74" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="540.27" y1="503.61" x2="540.71" y2="507.08" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="527.73" y1="503.61" x2="527.29" y2="507.08" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="515.59" y1="500.49" x2="514.31" y2="503.74" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="504.61" y1="494.45" x2="502.55" y2="497.28" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="495.47" y1="485.87" x2="492.78" y2="488.1" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="488.76" y1="475.29" x2="485.59" y2="476.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="484.89" y1="463.37" x2="481.45" y2="464.02" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="484.1" y1="450.86" x2="480.61" y2="450.64" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="486.45" y1="438.55" x2="483.12" y2="437.47" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="491.78" y1="427.21" x2="488.83" y2="425.33" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="499.77" y1="417.55" x2="497.38" y2="415" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="509.91" y1="410.18" x2="508.23" y2="407.12" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="534" cy="454" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="528.02" y1="499.11" x2="533.56" y2="410.99" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="567.94" y1="422.04" x2="563.83" y2="487.46" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="527.73" cy="503.61" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="534" cy="404" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="568.23" cy="417.55" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="563.39" cy="494.45" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="534" y="390" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="534" y="401" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="56">1</text>
+<text x="589.45" y="397.95" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="589.45" y="408.95" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="56">4</text>
+<text x="573.38" y="511.2" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="573.38" y="522.2" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="56">11</text>
+<text x="523.85" y="537.36" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="523.85" y="548.36" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="56">14</text>
+<text x="534" y="566" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="54">window [3, 5, 1, 2, 4]</text>
+<text x="534" y="579" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="54">p=1 q=3</text>
+<text x="534" y="592" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="55">s=3 t=1</text>
+<text x="534" y="605" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="57">coincidence s = q, t = p</text>
+<text x="534" y="621" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="61" data-exact="1">MisUD F p q = true</text>
+<line x1="782.45" y1="488.23" x2="785" y2="490.62" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="772.79" y1="496.22" x2="774.67" y2="499.17" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="761.45" y1="501.55" x2="762.53" y2="504.88" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="749.14" y1="503.9" x2="749.36" y2="507.39" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="736.63" y1="503.11" x2="735.98" y2="506.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="724.71" y1="499.24" x2="723.22" y2="502.41" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="714.13" y1="492.53" x2="711.9" y2="495.22" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="705.55" y1="483.39" x2="702.72" y2="485.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="699.51" y1="472.41" x2="696.26" y2="473.69" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="696.39" y1="460.27" x2="692.92" y2="460.71" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="696.39" y1="447.73" x2="692.92" y2="447.29" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="699.51" y1="435.59" x2="696.26" y2="434.31" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="705.55" y1="424.61" x2="702.72" y2="422.55" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="714.13" y1="415.47" x2="711.9" y2="412.78" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="724.71" y1="408.76" x2="723.22" y2="405.59" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="736.63" y1="404.89" x2="735.98" y2="401.45" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="749.14" y1="404.1" x2="749.36" y2="400.61" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="761.45" y1="406.45" x2="762.53" y2="403.12" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="772.79" y1="411.78" x2="774.67" y2="408.83" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="782.45" y1="419.77" x2="785" y2="417.38" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="789.82" y1="429.91" x2="792.88" y2="428.23" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="794.43" y1="441.57" x2="797.82" y2="440.7" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="796" y1="454" x2="799.5" y2="454" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="794.43" y1="466.43" x2="797.82" y2="467.3" stroke="#8a8f98" stroke-width="0.9"/>
+<line x1="789.82" y1="478.09" x2="792.88" y2="479.77" stroke="#8a8f98" stroke-width="0.9"/>
+<circle cx="746" cy="454" r="50" fill="none" stroke="#8a8f98" stroke-width="0.9" opacity="0.7"/>
+<line x1="726.88" y1="412.7" x2="769.42" y2="490.08" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<line x1="787.65" y1="474.14" x2="752.51" y2="410.23" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<circle cx="724.71" cy="408.76" r="4" fill="#d17a22" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="772.79" cy="496.22" r="4" fill="none" stroke="#d17a22" stroke-width="1.6"/>
+<circle cx="789.82" cy="478.09" r="4" fill="#3a84c4" stroke="#3a84c4" stroke-width="1.6"/>
+<circle cx="749.14" cy="404.1" r="4" fill="none" stroke="#3a84c4" stroke-width="1.6"/>
+<text x="750.21" y="390.13" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">q</tspan><tspan dy="-3"></tspan></text>
+<text x="750.21" y="401.13" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="65">16</text>
+<text x="816.98" y="496.02" text-anchor="middle" font-size="12" fill="#3a84c4" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+<text x="816.98" y="507.02" text-anchor="middle" font-size="9" fill="#3a84c4" font-weight="normal" data-l="65">24</text>
+<text x="781.9" y="513.57" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">-</tspan><tspan dy="8" font-size="9">p</tspan><tspan dy="-3"></tspan></text>
+<text x="781.9" y="524.57" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="65">1</text>
+<text x="711.51" y="383.71" text-anchor="middle" font-size="12" fill="#d17a22" font-weight="normal">b<tspan dy="-5" font-size="9">+</tspan><tspan dy="8" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+<text x="711.51" y="394.71" text-anchor="middle" font-size="9" fill="#d17a22" font-weight="normal" data-l="65">14</text>
+<text x="746" y="566" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="63">window [3, 5, 1, 2, 4]</text>
+<text x="746" y="579" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="63">p=1 q=4</text>
+<text x="746" y="592" text-anchor="middle" font-size="10" fill="currentColor" font-weight="normal" data-l="64">s=3 t=5</text>
+<text x="746" y="605" text-anchor="middle" font-size="10" fill="#8a8f98" font-weight="normal" data-l="66">no coincidence</text>
+<text x="746" y="621" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold" data-l="71" data-exact="1">MisDU F p q = true</text>
+<text x="216" y="346" text-anchor="middle" font-size="14" fill="currentColor" font-weight="normal">(a) crossing</text>
+<text x="640" y="346" text-anchor="middle" font-size="14" fill="currentColor" font-weight="normal">(b) alignment</text>
+<text x="322" y="698" text-anchor="middle" font-size="14" fill="currentColor" font-weight="normal">(c) {p,q} ∈ Mis↑↓</text>
+<text x="746" y="698" text-anchor="middle" font-size="14" fill="currentColor" font-weight="normal">(d) {p,q} ∈ Mis↓↑</text>
+<line x1="428" y1="6" x2="428" y2="354" stroke="#8a8f98" stroke-width="0.8" opacity="0.6"/>
+<line x1="640" y1="358" x2="640" y2="706" stroke="#8a8f98" stroke-width="0.8" opacity="0.6"/>
+<line x1="4" y1="356" x2="852" y2="356" stroke="#8a8f98" stroke-width="0.5" opacity="0.4"/>
+<line x1="10" y1="724" x2="39" y2="724" stroke="#d17a22" stroke-width="2.0" marker-end="url(#ahd17a22)"/>
+<text x="46" y="728" text-anchor="start" font-size="10" fill="currentColor" font-weight="normal">strand into p</text>
+<line x1="150" y1="724" x2="179" y2="724" stroke="#3a84c4" stroke-width="2.0" marker-end="url(#ah3a84c4)"/>
+<text x="186" y="728" text-anchor="start" font-size="10" fill="currentColor" font-weight="normal">strand into q</text>
+<circle cx="305" cy="724" r="4" fill="currentColor" stroke="currentColor" stroke-width="1.4"/>
+<text x="314" y="728" text-anchor="start" font-size="10" fill="currentColor" font-weight="normal">entry b+ (filled)</text>
+<circle cx="430" cy="724" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/>
+<text x="439" y="728" text-anchor="start" font-size="10" fill="currentColor" font-weight="normal">exit b- (open)</text>
+<text x="540" y="728" text-anchor="start" font-size="10" fill="currentColor" font-weight="normal">ticks: all positions of the circle</text>
+</svg>

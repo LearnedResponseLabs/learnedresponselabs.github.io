@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Explore the boundary, necklace, crossing graph and matrices of any loopless cell on up to nine labels.">
+  <title>A cell, in pictures · Learned Response Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../assets/v2/site.css">
+  <link rel="icon" href="../../assets/v2/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="explorer.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the explorer</a>
+  <header class="site"><div class="wrap bar">
+<a class="brand" href="../../index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/><polygon points="11.3,3.2 22.4,9.6 20.7,19.4 6.6,20.6 3.6,9.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.3" cy="3.2" r="2" fill="var(--dot1)"/><circle cx="22.4" cy="9.6" r="2" fill="var(--dot2)"/><circle cx="20.7" cy="19.4" r="2" fill="var(--dot3)"/><circle cx="6.6" cy="20.6" r="2" fill="var(--dot4)"/><circle cx="3.6" cy="9.6" r="2" fill="var(--dot5)"/></svg> Learned Response Labs</a>
+<nav class="tabs" aria-label="Sections"><a href="../../index.html">Home</a><a href="../../projects.html">Projects</a><a href="../../papers.html">Papers</a><a href="../../software.html">Software</a><a href="../../editions.html">Reading editions</a><a href="../../videos.html">Videos</a><a href="../../explainers.html" aria-current="page">Explainers</a><a href="../../about.html">About</a></nav><button type="button" id="theme" hidden>Dark theme</button>
+</div></header>
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <p class="label">A convex gradient · interactive companion</p>
+      <h1>A cell, in pictures.</h1>
+      <p class="lede">One permutation gives a circle of strands, a necklace of sets, and a graph whose edges fit together into cycles. Change the cell and follow the same labels through all three.</p>
+      <p class="note">A window lists σ(1), …, σ(<i>n</i>), using each label from 1 to <i>n</i> once. A fixed label is a <em>coloop</em>: its strand makes a full turn. Start with the running example, or enter any window on 1–9 labels.</p>
+    </div>
+    <div class="input-panel">
+      <form id="window-form" novalidate>
+        <label for="window">Window σ <span class="muted">in one-line notation</span></label>
+        <div class="input-row"><input id="window" name="w" value="3,5,1,2,4" spellcheck="false" autocomplete="off" aria-describedby="input-help input-error"><button class="primary" type="submit">Draw the cell <span aria-hidden="true">↗</span></button></div>
+        <p id="input-help" class="note">Comma or space separated. The address keeps your window, so you can copy the link.</p>
+        <p id="input-error" role="alert" hidden></p>
+      </form>
+      <div class="presets" aria-label="Example windows">
+        <span class="label">Try a cell</span>
+        <button type="button" data-window="3,1,2">A triangle</button>
+        <button type="button" data-window="3,5,1,2,4">Running example</button>
+        <button type="button" data-window="5,1,3,2,4">With a coloop</button>
+        <button type="button" data-window="3,1,2,6,4,5">Two components</button>
+        <button type="button" data-window="2,5,3,7,1,4,6">Seven labels</button>
+      </div>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="results" hidden>
+      <div id="summary" class="facts"></div>
+      <nav class="toc" aria-label="Pictures">
+        <a href="#boundary">Strands &amp; graph</a><a href="#pairs">A pair</a><a href="#necklace">Necklace</a><a href="#columns">Columns</a><a href="#matrices">Matrices</a><a href="#cycles">Cycles</a><a href="#angles">Angles &amp; curvature</a>
+      </nav>
+      <section id="boundary" class="picture-section">
+        <div class="section-title"><span class="section-number">01</span><h2>The boundary and its crossing graph</h2></div>
+        <p class="caption">Each strand joins a filled entry to an open exit on the circle of 5<i>n</i> positions; positions increase clockwise from the top. Two strands give an arrow <i>p</i> → <i>q</i> when their endpoints alternate in the order entry <i>p</i>, entry <i>q</i>, exit <i>p</i>, exit <i>q</i>, the crossing convention of §2 used in Proposition 10. <a href="../../editions/clh/index.html#S10">Read the crossing definition</a>.</p>
+        <div id="boundary-output"></div>
+      </section>
+      <section id="pairs" class="picture-section">
+        <div class="section-title"><span class="section-number">02</span><h2>Read one pair of strands</h2></div>
+        <p class="caption">Follow the four endpoints clockwise to distinguish a crossing, an aligned pair, and the two misalignment classes Mis↑↓ and Mis↓↑. These are the pair classes in Galashin’s Figure 5, used in equation (22) of the paper and in the proof of Proposition 10; the chosen labels are ordered <i>p</i> &lt; <i>q</i>. <a href="../../editions/clh/index.html#S08">Read the pair predicates</a>.</p>
+        <label class="control" for="pair-select">Pair <select id="pair-select"></select></label>
+        <div id="pair-output"></div>
+      </section>
+      <section id="necklace" class="picture-section">
+        <div class="section-title"><span class="section-number">03</span><h2>The same necklace, as sets and arcs</h2></div>
+        <p class="caption">Row <i>I</i><sub>r</sub> records a set of labels; the next row removes <i>r</i> and inserts σ(<i>r</i>), returning to <i>I</i><sub>1</sub> after the last step. Equation (21), used in Proposition 10, says that label <i>x</i> belongs precisely to the rows on the half-open arc (σ<sup>−1</sup>(<i>x</i>), <i>x</i>], with a coloop taking the entire circle. <a href="../../editions/clh/index.html#S14">Read the necklace recursion</a>.</p>
+        <label class="control" for="row-select">Highlight row <select id="row-select"></select></label>
+        <div id="necklace-output"></div>
+      </section>
+      <section id="columns" class="picture-section">
+        <div class="section-title"><span class="section-number">04</span><h2>A crossing becomes a column</h2></div>
+        <p class="caption">Each crossing gets one column index <i>j</i>, ordered first by its tail and then by its head. The dot marks the geometric crossing of its two strands; this same order identifies the columns of <i>M</i> and <i>B</i> in Proposition 10. <a href="../../editions/clh/index.html#S18">Read the column map</a>.</p>
+        <label class="control" for="column-select">Follow column <select id="column-select"></select></label>
+        <div id="columns-output"></div>
+      </section>
+      <section id="matrices" class="picture-section">
+        <div class="section-title"><span class="section-number">05</span><h2>Row differences turn exponents into incidence</h2></div>
+        <p class="caption"><i>M</i> records the necklace exponents, <i>D</i> subtracts each row from the next, and <i>P</i> moves row σ<sup>−1</sup>(<i>x</i>) into row <i>x</i>. Proposition 10 is <i>PDM</i> = <i>B</i>: the result is −1 at each edge’s tail and +1 at its head, checked below at every entry. <a href="../../editions/clh/index.html#S24">Read the row-difference identity</a>.</p>
+        <div id="matrices-output"></div>
+      </section>
+      <section id="cycles" class="picture-section">
+        <div class="section-title"><span class="section-number">06</span><h2>Every edge, once around a cycle</h2></div>
+        <p class="caption">Proposition 15 partitions the crossing edges into simple cycles of winding one: the clockwise label advances sum to <i>n</i> in each cycle. One such partition is drawn here, with every edge used once; its closed cycles also display the equal in- and out-degrees of Proposition 16. <a href="../../editions/clh/index.html#S37">Read the partition statement</a> and <a href="../../editions/clh/index.html#S50">degree balance</a>.</p>
+        <div id="cycles-output"></div>
+      </section>
+      <section id="angles" class="picture-section">
+        <div class="section-title"><span class="section-number">07</span><h2>Angles on the running example</h2></div>
+        <p class="caption">For σ = (3,5,1,2,4), place label <i>j</i> at the circle angle 2θ<sub>j</sub>, fixing θ<sub>1</sub> = 0. Equations (7)–(8) define the lifted gap δ<sub>e</sub> = θ<sub>q</sub> − θ<sub>p</sub> + π[<i>q</i> &lt; <i>p</i>] and admissibility: every gap lies between 0 and π. <a href="../../editions/clh/index.html#S40">Read the cycle gap sum</a>.</p>
+        <div id="analytic-unavailable" hidden><p class="empty">The angle, curvature and inverse pictures use the running example.</p><button type="button" data-window="3,5,1,2,4">Open the running example</button></div>
+        <div id="analytic-content">
+          <div id="angle-controls" class="sliders"></div>
+          <div class="links"><button id="angle-reset" type="button">Restore angles</button><button id="angle-outside" type="button">Try θ<sub>5</sub>/π = 1.2</button></div>
+          <div id="angles-output"></div>
+          <section id="curvature" class="picture-section">
+            <div class="section-title"><span class="section-number">08</span><h2>Negative terms, nonnegative cycle sums</h2></div>
+            <p class="caption">Along a direction <i>h</i> in radians, each edge contributes cot(δ<sub>e</sub>)(<i>h</i><sub>q</sub> − <i>h</i><sub>p</sub>)<sup>2</sup> to the Hessian’s quadratic form <i>h</i><sup>T</sup><i>Hh</i>. Some terms can be negative; on the admissible chamber, Lemma 25 makes each winding-one cycle sum nonnegative, yielding Proposition 26. <a href="../../editions/clh/index.html#S42">Read the Hessian statement</a>.</p>
+            <div id="direction-controls" class="direction-controls"></div>
+            <div id="curvature-output"></div>
+          </section>
+          <section id="inverse" class="picture-section">
+            <div class="section-title"><span class="section-number">09</span><h2>Find the angles again</h2></div>
+            <p class="caption">Set <i>y</i> = <i>G</i>(θ), where <i>G</i> = <i>B</i> log sin δ, and start from θ/π = (0, 0.2, 0.4, 0.6, 0.8) on the same slice θ<sub>1</sub> = 0. Corollary 31 characterizes the inverse by a unique minimizer; these twelve damped Newton steps illustrate the recovery numerically, with no claim of guaranteed convergence. <a href="../../editions/clh/index.html#S60">Read the variational inverse</a>.</p>
+            <div id="inverse-output"></div>
+          </section>
+        </div>
+      </section>
+      <aside class="about-calculation"><h2>About these calculations</h2><p>The integer definitions here were compared with Lean on all 5,913 windows with <i>n</i> ≤ 7, including coloops. The cycle partitions were checked by their edges and winding; the angle and inverse calculations were compared with Lean’s floating-point values. Calculations on 8–9 labels extend the same formulas beyond that exhaustive comparison.</p><p>The pictures are learning aids. Integer matrix equality is exact; angles, cotangents and Newton steps use floating-point arithmetic, with a 10<sup>−9</sup> radian safety margin at the chamber boundary.</p><a href="../../editions/clh/index.html">Continue in the reading edition →</a></aside>
+    </div>
+    <noscript><p>This explorer needs JavaScript to calculate the pictures. The <a href="../../editions/clh/index.html">reading edition</a> also has static figures.</p></noscript>
+  </main>
+  <footer class="wrap explorer-footer">A convex gradient · <a href="../../editions/clh/index.html">Paper and reading edition</a> · <a href="../../explainers.html">Explainers</a></footer>
+</body>
+</html>

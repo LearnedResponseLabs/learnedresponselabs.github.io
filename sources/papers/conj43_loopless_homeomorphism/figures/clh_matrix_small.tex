@@ -1,0 +1,108 @@
+% Figure 3 of "Galashin's Conjecture 4.3 via a convex gradient": the row-difference identity for the window (3,1,2).
+% Source of the figure, typeset in the paper's own fonts (T1, Latin Modern, 11pt) at the paper's text
+% width (6.5in), so \includegraphics does not rescale it. Illustrates CLH-4; it adds no assertion.
+% Every value drawn is read from these Lean output lines:
+%   EX01 window(1-based)=[3, 1, 2] n=3 modulus=15 rank=2 coloops=[]
+%   EX01 crossEdges(paper labels)=[(1, 2), (2, 3), (3, 1)]
+%   EX01 M=[[0, -1, 0], [0, 0, -1], [-1, 0, 0]]
+%   EX01 P*D*M=[[-1, 0, 1], [1, -1, 0], [0, 1, -1]]
+%   EX01 B=[[-1, 0, 1], [1, -1, 0], [0, 1, -1]]
+%   EX01 PDM=B : true
+% Build: pdflatex <this file> && pdftocairo -svg <this file>.pdf <this file>.svg
+\documentclass[11pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% the palette of the paper's other figures: blue solid for the first strand or arc, ochre dashed for the second
+\definecolor{ink}{HTML}{233740}
+\definecolor{muted}{HTML}{65757D}
+\definecolor{pblue}{HTML}{0072B2}
+\definecolor{qochre}{HTML}{B87827}
+
+\tikzset{
+  base/.style={draw=muted, line width=0.5pt},
+  exit/.style={circle, draw=ink, fill=white, line width=0.6pt, inner sep=0pt, minimum size=4.6pt},
+  entry/.style={circle, draw=ink, fill=ink, line width=0.6pt, inner sep=0pt, minimum size=4.6pt},
+  exitP/.style={exit, draw=pblue}, entryP/.style={entry, draw=pblue, fill=pblue},
+  exitQ/.style={exit, draw=qochre}, entryQ/.style={entry, draw=qochre, fill=qochre},
+  strandP/.style={pblue, line width=1.1pt, -{Stealth[length=5pt,width=4.2pt]}, shorten >=2.4pt},
+  strandQ/.style={qochre, line width=1.1pt, dash pattern=on 4pt off 1.6pt, -{Stealth[length=5pt,width=4.2pt]}, shorten >=2.4pt},
+  lab/.style={font=\footnotesize, inner sep=1.2pt, text=ink},
+  labm/.style={font=\small, inner sep=1.2pt, text=ink},
+  labP/.style={font=\small, inner sep=1.2pt, text=pblue},
+  labQ/.style={font=\small, inner sep=1.2pt, text=qochre},
+  muted text/.style={text=muted},
+  ttl/.style={font=\small, text=ink, inner sep=0pt},
+  negE/.style={font=\small, text=pblue, inner sep=0pt},
+  posE/.style={font=\small, text=qochre, inner sep=0pt},
+  zeroE/.style={font=\small, text=ink, inner sep=0pt},
+  idx/.style={font=\footnotesize, text=muted, inner sep=0pt},
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\useasboundingbox (-0.25000,-5.68936) rectangle (16.26000,0.43936);
+\node[ttl] at (8.005,-0.100) {Columns: directed crossing edges}; %t heading
+\node[lab] at (4.605,-0.700) {$1$: $1\to 2$}; %t edge0
+\node[lab] at (8.005,-0.700) {$2$: $2\to 3$}; %t edge1
+\node[lab] at (11.405,-0.700) {$3$: $3\to 1$}; %t edge2
+\node[ttl] at (3.350,-1.550) {$M_{N}$}; %t title-m
+\node[idx] at (2.400,-2.450) {1}; %t m-col0
+\node[idx] at (3.350,-2.450) {2}; %t m-col1
+\node[idx] at (4.300,-2.450) {3}; %t m-col2
+\node[idx] at (1.780,-2.950) {1}; %t m-row0
+\node[zeroE] at (2.400,-2.950) {$0$}; %t m-0-0
+\node[negE] at (3.350,-2.950) {$-1$}; %t m-0-1
+\node[zeroE] at (4.300,-2.950) {$0$}; %t m-0-2
+\node[idx] at (1.780,-3.570) {2}; %t m-row1
+\node[zeroE] at (2.400,-3.570) {$0$}; %t m-1-0
+\node[zeroE] at (3.350,-3.570) {$0$}; %t m-1-1
+\node[negE] at (4.300,-3.570) {$-1$}; %t m-1-2
+\node[idx] at (1.780,-4.190) {3}; %t m-row2
+\node[negE] at (2.400,-4.190) {$-1$}; %t m-2-0
+\node[zeroE] at (3.350,-4.190) {$0$}; %t m-2-1
+\node[zeroE] at (4.300,-4.190) {$0$}; %t m-2-2
+\draw[ink, line width=0.6pt] (2.120,-2.650) -- (2.020,-2.650) -- (2.020,-4.490) -- (2.120,-4.490); %b m
+\draw[ink, line width=0.6pt] (4.580,-2.650) -- (4.680,-2.650) -- (4.680,-4.490) -- (4.580,-4.490); %b m
+\node[ttl] at (8.500,-1.550) {$P_{f}DM_{N}$}; %t title-pdm
+\node[idx] at (7.550,-2.450) {1}; %t pdm-col0
+\node[idx] at (8.500,-2.450) {2}; %t pdm-col1
+\node[idx] at (9.450,-2.450) {3}; %t pdm-col2
+\node[idx] at (6.930,-2.950) {1}; %t pdm-row0
+\node[negE] at (7.550,-2.950) {$-1$}; %t pdm-0-0
+\node[zeroE] at (8.500,-2.950) {$0$}; %t pdm-0-1
+\node[posE] at (9.450,-2.950) {$1$}; %t pdm-0-2
+\node[idx] at (6.930,-3.570) {2}; %t pdm-row1
+\node[posE] at (7.550,-3.570) {$1$}; %t pdm-1-0
+\node[negE] at (8.500,-3.570) {$-1$}; %t pdm-1-1
+\node[zeroE] at (9.450,-3.570) {$0$}; %t pdm-1-2
+\node[idx] at (6.930,-4.190) {3}; %t pdm-row2
+\node[zeroE] at (7.550,-4.190) {$0$}; %t pdm-2-0
+\node[posE] at (8.500,-4.190) {$1$}; %t pdm-2-1
+\node[negE] at (9.450,-4.190) {$-1$}; %t pdm-2-2
+\draw[ink, line width=0.6pt] (7.270,-2.650) -- (7.170,-2.650) -- (7.170,-4.490) -- (7.270,-4.490); %b pdm
+\draw[ink, line width=0.6pt] (9.730,-2.650) -- (9.830,-2.650) -- (9.830,-4.490) -- (9.730,-4.490); %b pdm
+\node[ttl] at (13.650,-1.550) {$B$}; %t title-b
+\node[idx] at (12.700,-2.450) {1}; %t b-col0
+\node[idx] at (13.650,-2.450) {2}; %t b-col1
+\node[idx] at (14.600,-2.450) {3}; %t b-col2
+\node[idx] at (12.080,-2.950) {1}; %t b-row0
+\node[negE] at (12.700,-2.950) {$-1$}; %t b-0-0
+\node[zeroE] at (13.650,-2.950) {$0$}; %t b-0-1
+\node[posE] at (14.600,-2.950) {$1$}; %t b-0-2
+\node[idx] at (12.080,-3.570) {2}; %t b-row1
+\node[posE] at (12.700,-3.570) {$1$}; %t b-1-0
+\node[negE] at (13.650,-3.570) {$-1$}; %t b-1-1
+\node[zeroE] at (14.600,-3.570) {$0$}; %t b-1-2
+\node[idx] at (12.080,-4.190) {3}; %t b-row2
+\node[zeroE] at (12.700,-4.190) {$0$}; %t b-2-0
+\node[posE] at (13.650,-4.190) {$1$}; %t b-2-1
+\node[negE] at (14.600,-4.190) {$-1$}; %t b-2-2
+\draw[ink, line width=0.6pt] (12.420,-2.650) -- (12.320,-2.650) -- (12.320,-4.490) -- (12.420,-4.490); %b b
+\draw[ink, line width=0.6pt] (14.880,-2.650) -- (14.980,-2.650) -- (14.980,-4.490) -- (14.880,-4.490); %b b
+\node[lab] at (8.005,-5.200) {Rows: $r$ for $M_{N}$; $x$ for $P_{f}DM_{N}$ and $B$}; %t rowkey
+\end{tikzpicture}
+\end{document}

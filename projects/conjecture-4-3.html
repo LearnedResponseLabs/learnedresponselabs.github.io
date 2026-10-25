@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galashin’s Conjecture 4.3 · Learned Response Labs</title>
+<meta name="description" content="The Conjecture 4.3 project: paper, software, reading edition, videos and laboratory.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/v2/site.css">
+<link rel="icon" href="../assets/v2/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="../index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/><polygon points="11.3,3.2 22.4,9.6 20.7,19.4 6.6,20.6 3.6,9.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.3" cy="3.2" r="2" fill="var(--dot1)"/><circle cx="22.4" cy="9.6" r="2" fill="var(--dot2)"/><circle cx="20.7" cy="19.4" r="2" fill="var(--dot3)"/><circle cx="6.6" cy="20.6" r="2" fill="var(--dot4)"/><circle cx="3.6" cy="9.6" r="2" fill="var(--dot5)"/></svg> Learned Response Labs</a>
+<nav class="tabs" aria-label="Sections"><a href="../index.html">Home</a><a href="../projects.html" aria-current="page">Projects</a><a href="../papers.html">Papers</a><a href="../software.html">Software</a><a href="../editions.html">Reading editions</a><a href="../videos.html">Videos</a><a href="../explainers.html">Explainers</a><a href="../about.html">About</a></nav>
+</div></header>
+<main class="wrap" id="main">
+<div class="page-head">
+<p class="label"><a href="../projects.html" style="color:inherit">Projects</a> · Released</p>
+<h1>Galashin’s Conjecture 4.3</h1>
+<p class="lede prose">Galashin’s measurement map turns angles on a circle into a point of a positroid cell’s critical variety; his Conjecture 4.3 says it is a homeomorphism. For every loopless cell, the map is the gradient of an explicit convex potential, so it is one, and its inverse is a convex minimization.</p>
+<div class="status"><div><span class="k"><span class="pip inverse"></span>Proof candidate</span><p>External mathematical review has not taken place yet.</p></div><div><span class="k"><span class="pip accent"></span>Checked in Lean 4</span><p>The combinatorial and convexity steps.</p></div><div><span class="k"><span class="pip ok"></span>Reviewed internally</span><p>External review pending.</p></div></div>
+<nav class="toc" aria-label="On this page"><a href="#k-papers">Papers</a><a href="#k-edition">Reading edition</a><a href="#k-software">Software</a><a href="#k-videos">Videos</a><a href="#k-explainers">Explainers</a></nav>
+</div>
+<div class="kind-block" id="k-papers"><h2>Papers</h2><div class="items-list">
+<div class="entry"><a class="t" href="../papers/conj43_loopless_homeomorphism.html">Galashin’s Conjecture 4.3 via a convex gradient</a><span class="d">Adam Guetz · 58 pages · proof candidate · October 23, 2026</span><span class="l"><a href="../sources/papers/conj43_loopless_homeomorphism/conj43_loopless_homeomorphism.pdf">PDF</a><a href="https://github.com/LearnedResponseLabs/positive-geometry-lean/blob/v0.1.0/papers/conj43_loopless_homeomorphism/main.tex">LaTeX source</a><a href="../papers/conj43_loopless_homeomorphism.html#manifest">Claim manifest</a><span class="slot">Archive (DOI): on release</span></span></div>
+</div></div>
+<div class="kind-block" id="k-edition"><h2>Reading edition</h2><div class="items-list">
+<div class="entry"><a class="t" href="../editions/clh/index.html">The paper, statement by statement</a><span class="d">91 items, each statement of the paper beside the frozen Lean statement that checks it, or the source it rests on.</span><span class="l"><a href="../editions/clh/index.html">Open the edition</a></span></div>
+</div></div>
+<div class="kind-block" id="k-software"><h2>Software</h2><div class="items-list">
+<div class="entry"><span class="t code">positive-geometry-lean</span><span class="d">Lean 4 libraries on Mathlib: total positivity (Cauchy–Binet, Lindström–Gessel–Viennot, networks, Le-networks, necklaces) and the steps of the Conjecture 4.3 argument. 327 frozen statements, all proved; each proof checked against its statement by an independent tool. The paper’s LaTeX source is in the repository too.</span><span class="l"><a href="https://github.com/LearnedResponseLabs/positive-geometry-lean">GitHub, v0.1.0</a><span class="slot">Archive (DOI): on release</span></span></div>
+<div class="entry"><span class="t">Source supplement</span><span class="d">The Lean source the paper’s Appendix A describes: its 91 frozen statements, with two standalone finite checks.</span><span class="l"><span class="slot">Archive (DOI): on release</span></span></div>
+</div></div>
+<div class="kind-block" id="k-videos"><h2>Videos</h2><div class="items-list">
+<div class="entry"><a class="t" href="../videos.html#totally_positive"><i>Totally Positive</i> · 10 episodes</a><span class="d">Signed areas, positive minors, cells, networks and the dimer model: the background.</span></div>
+<div class="entry"><a class="t" href="../videos.html#convex_bowl"><i>A Convex Bowl</i> · 9 episodes</a><span class="d">From angles to a point and back: the argument itself.</span></div>
+</div></div>
+<div class="kind-block" id="k-explainers"><h2>Explainers</h2><div class="items-list">
+<div class="entry"><a class="t" href="../explainers/conjecture-4-3/index.html">The idea, in seven steps</a><span class="d">How the argument works, at the level of intuition, each step with a picture and links to the details.</span></div>
+<div class="entry"><a class="t" href="../explainers/cells/index.html">A cell, in pictures</a><span class="d">Any cell, in the pictures of the formalization: the boundary, the crossing graph, the necklace, the matrices and the winding-one cycles, computed in the browser.</span></div>
+<div class="entry"><a class="t" href="../explainers/figures/index.html">Figures from the formalization</a><span class="d">Pictures drawn by Lean from its own values, grouped by the part of the paper they illustrate.</span></div>
+<div class="entry"><a class="t" href="../explainers/clh/index.html">The laboratory</a><span class="d">Recover the angles from the point, and explore the convex landscape, cycle contributions, ideal volume, the non-top shift, collisions and necklace coordinates in the browser, each linked to the statement of the paper it illustrates.</span></div>
+</div></div>
+<footer class="site"><span>Learned Response Labs</span><span>Software Apache-2.0 · papers CC BY 4.0</span><span>Results are proof candidates pending external review unless stated otherwise.</span></footer>
+</main>
+</body>
+</html>
