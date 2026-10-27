@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{graphicx}
+\usepackage{array,longtable}
 \usepackage{microtype}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 \hypersetup{
@@ -39,15 +40,15 @@
 \newcommand{\PaperDOI}{\href{https://doi.org/10.5281/zenodo.21650342}{\nolinkurl{10.5281/zenodo.21650342}}}
 
 \newcommand{\CertDOI}{\href{https://doi.org/10.5281/zenodo.21664478}{\nolinkurl{10.5281/zenodo.21664478}}}
-% Replace this pending marker with the published source-supplement version DOI.
-\newcommand{\SourceSupplementRef}{\emph{public source-supplement DOI pending}}
-\newcommand{\CertSHA}{\mbox{\scriptsize\texttt{3fcfbaad43f5196c5304bdb57f407ea394830cd476b7780595882a3ef9a45529}}}
+% The published source-supplement version DOI.
+\newcommand{\SourceSupplementRef}{\href{https://doi.org/10.5281/zenodo.23676891}{\nolinkurl{10.5281/zenodo.23676891}}}
+
 
 \title{Galashin's Conjecture 4.3 via a convex gradient}
-\author{Adam Guetz\thanks{Learned Response Labs;
+\author{Adam Guetz\thanks{Learned Response Labs; ORCID \href{https://orcid.org/0000-0003-0105-4628}{0000-0003-0105-4628};
 \texttt{\href{mailto:learnedresponselabs@gmail.com}{learnedresponselabs@gmail.com}}. See ``A note on process''
 for authorship and review status.}}
-\date{October 23, 2026\\Earlier version: \PaperDOI}
+\date{October 26, 2026\\Earlier version: \PaperDOI}
 
 \begin{document}
 \maketitle
@@ -116,7 +117,7 @@ $\Meas_f$ on the ambient chamber, and $\Critf:=\Meas_f(\Theadm)$ is its image
 \begin{equation}\label{eq:gauge-surjectivity}
    \Meas_f(\Thef)=\Meas_f(\Theadm)=\Critf .
 \end{equation}
-This is not a definition. It is Galashin's gauge invariance: adding a common constant to the angles
+This is Galashin's gauge invariance: adding a common constant to the angles
 $\theta_p$ of the labels $p$ in one connected component $C$ of $G_f^{\,x}$ leaves $\Meas_f(\theta)$
 unchanged \cite[Prop.~4.2 and the paragraph following it]{Galashin}, and such component shifts move any
 admissible $\theta$ into the slice, so that $\Meas_f\colon\Thef\to\Critf$ is surjective
@@ -263,17 +264,14 @@ formula are taken from \cite{Galashin}; the left twist is the automorphism of op
 constructed by Muller--Speyer \cite{MullerSpeyer}. Sections~\ref{sec:gradient}--\ref{sec:homeo} prove
 the convex-gradient homeomorphism, and Section~\ref{sec:shift} derives the shift corollary.
 
-\subsection*{Scope, and what is deferred to the companion manuscript}
-Everything in this paper is a symbolic proof: no step depends on a finite computation or a numerical
-certificate. Three further developments of the same machinery are correspondingly separated into the
-companion manuscript \cite{GuetzBoundary}, which is in preparation.
-It treats the boundary
-compactification of the shift and its stratified descent; the exact finite cross-stratum theorems at
-$n=5$ and on the $n=6$ one-skeleton, which are computer-assisted; and the partition-independent sharp
-full-Hessian modulus for the dense cyclic five-cell, which is an exact computer-assisted certificate.
-None of the three is used here. Decorated and looped cells lie outside the loopless scope of
-Theorem~\ref{thm:main}, as does Problem~5.2 of \cite{Galashin}; see Remark~\ref{rem:loops} for what a
-looped extension would involve, which we do not claim.
+Theorem~\ref{thm:main} is stated for loopless $f$, as Conjecture~4.3 is; Remark~\ref{rem:loops} records what a
+looped extension would involve, which we do not claim. A companion manuscript \cite{GuetzBoundary}, in
+preparation, develops the same machinery at the boundary and in finite computer-assisted results; nothing here
+depends on it (Appendix~\ref{app:scope}).
+
+Many of the claims are formally verified in Lean~4 with Mathlib, some in a conditional form;
+Appendix~\ref{app:lean-interface} describes the formal source, deposited as the source supplement
+(\SourceSupplementRef), and its Table~\ref{tab:formal-map} gives the formal status of each numbered result.
 
 The figures illustrate and are used in no proof. Most draw the worked example of
 Appendix~\ref{app:worked-example}, $f=(3,5,6,7,9)$, at the admissible angles
@@ -281,134 +279,34 @@ $\theta/\pi=(0,0.1,0.7,0.3,0.8)$. Their values were computed in Lean: combinator
 the formal definitions of Appendix~\ref{app:lean-interface} or by direct count, real values in
 floating point. Each caption says which.
 
-\subsection*{Relation to hyperbolic volume and to earlier variational principles}
+\subsection*{Relation to earlier work}
+The immediate antecedent is Kenyon's critical dimer model \cite{Kenyon}, from which Galashin constructs critical
+cells on isoradial plabic tilings \cite[Introduction and \S1.2]{Galashin}. Kenyon's critical dimer weight
+$2\sin\alpha$ \cite[\S2.3]{Kenyon} is the sine factor of Lemma~\ref{lem:hinge}, and his variational argument for
+isoradial embeddings \cite[\S8]{Kenyon}, which obtains strict concavity by restricting a sum of per-rhombus
+functions to a linear subspace, is a close antecedent of the mechanism here in the embedded regime. When every
+$\delta_e<\pi/2$ the Hessian~\eqref{eq:hessian} is a graph Laplacian with positive weights. The admissible chamber
+also permits $\delta_e>\pi/2$, where individual weights are negative (folded rhombi, which also occur in the
+isoradial immersions of \cite{BoutillierCimasoniDeTiliere}); there the winding-one cycles of
+Proposition~\ref{prop:wp} preserve positivity.
 
-The immediate statistical-mechanical antecedent is Kenyon's critical dimer model
-\cite{Kenyon}. Galashin's introduction constructs critical cells from this model on
-isoradial plabic tilings \cite[Introduction and \S1.2]{Galashin}. Kenyon's critical
-dimer weight is $2\sin\alpha$, where $\alpha$ is a rhombus half-angle
-\cite[\S2.3]{Kenyon}; the same sine factor appears in Lemma~\ref{lem:hinge},
-whereas Galashin's interior-edge normalization is $\sin(\theta_q-\theta_p)$.
-The train-track criterion for rhombic embeddings is due to Kenyon--Schlenker
-\cite[Thm.~3.1]{KenyonSchlenker}.
-Kenyon's earlier variational argument \cite[\S8, Prop.~8.1 and Thm.~8.2]{Kenyon}
-parametrizes isoradial embeddings by a convex space of rhombus angles and obtains
-strict concavity by restricting a sum of per-rhombus functions to a linear
-subspace. This is a close antecedent of the mechanism here in the embedded
-regime, though his normalized log-determinant includes an energy term and is
-not identified with $-\Psi_f$.
-
-The distinction relevant here is between positive individual cotangents and positivity
-after cycle assembly. When every $\delta_e<\pi/2$, $H_f$ is a graph Laplacian with
-positive weights, so its positivity and kernel follow directly from the incidence
-matrix. The admissible chamber also permits $\delta_e>\pi/2$, where individual
-weights are negative; Proposition~\ref{prop:wp} supplies the cycles that preserve
-positivity there. The local rhombus comparison requires an orientation convention:
-for ordered unit sides $u_p=e^{-2i\theta_p}$ and $u_q=e^{-2i\theta_q}$, the
-counterclockwise signed area is
-$\det(u_p,u_q)=-\sin(2\delta_e)$. Thus the \emph{clockwise} signed area is
-$\sin(2\delta_e)=2\sin^2(\delta_e)\cot\delta_e$ and has the sign of the Hessian
-weight. This local calculation does not assert that every admissible tuple gives
-a global rhombic embedding, or identify the crossing-graph Laplacian with the
-electrical network of \cite[\S1.6]{Galashin}.
-
-Folded rhombi also occur in the flat and minimal isoradial immersions of
-Boutillier--Cimasoni--de~Tili\`ere
-\cite[Thms.~15 and~23; \S3.4]{BoutillierCimasoniDeTiliere}.
-Their minimal-immersion theorem is stated for graphs without unbounded faces;
-the disk boundary and local angle-map conditions require a separate comparison
-before one could identify our admissible chamber with their space $Y_G$
-\cite[\S4 and Lem.~26]{BoutillierCimasoniDeTiliere}. No such identification is
-used here. Proposition~\ref{prop:wp} supplies the winding-one decomposition
-that extends our convexity argument across the folds.
-
-The potential of \eqref{eq:potential} is not a new function. Normalise the antiderivative by
-$L(u)=\int_0^u\log\sin t\,dt$ (so $L(0)=0$; \eqref{eq:potential} fixes only $L'$), and let
-$\Lambda(x)=-\int_0^x\log\lvert2\sin t\rvert\,dt$ be Milnor's Lobachevsky function. Then
-$L(u)=-\Lambda(u)-u\log2$ identically on $(0,\pi)$, and by \eqref{eq:cycle-sum} together with
-Proposition~\ref{prop:wp} the quantity $\sum_e\delta_e(\theta)$ is a constant --- $\pi$ times the number
-of cycles in any winding-one partition --- on the whole chamber. Hence
-\begin{equation}\label{eq:lobachevsky}
-   \Psi_f(\theta)=-\sum_e\Lambda\bigl(\delta_e(\theta)\bigr)+\mathrm{const},
-\end{equation}
-with the same gradient and the same Hessian as the right-hand sum: \emph{$\Psi_f$ is minus a sum of
-Lobachevsky functions.} Under Galashin's identification $v_p=\exp(2i\theta_p)$
-\cite[Rem.~1.2]{Galashin} a winding-one cycle of $G_f^{\,x}$ is an ideal polygon inscribed in a circle in
-$\partial\mathbb H^3$, whose edges are the chords of length $2\sin\delta_e$ of Remark~\ref{rem:chord},
-and $\sum_{e\in Z}\Lambda(\delta_e)$ is the hyperbolic volume of the ideal polyhedron $P_Z$ obtained by
-coning that polygon to the ideal point $\infty$. For a $3$-cycle, $P_Z$ is an ideal tetrahedron and this is
-Milnor's formula for its volume in terms of its dihedral angles \cite[Appendix, Lem.~2]{Milnor}, in the form
-$\mathrm{vol}(T)=\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ recorded in
-\cite[Lem.~5.1]{FuterGueritaud}.\footnote{No result of this paper depends on any reference of this
-subsection: \eqref{eq:lobachevsky}, the constancy of $\sum_e\delta_e$ and the fan triangulation below are
-internal, Lemma~\ref{lem:cot} is proved in \S\ref{sec:convex}, and the $m=3$ formula is used only to read
-\eqref{eq:lobachevsky}.}
-For $m\ge4$ it follows from that case by fan triangulation. Cutting the
-polygon from $v_{p_1}$ decomposes $P_Z$ into the ideal tetrahedra
-$\mathrm{conv}(v_{p_1},v_{p_j},v_{p_{j+1}},\infty)$, $2\le j\le m-1$; the Euclidean base triangle of the
-$j$-th is inscribed in the same circle, so by the inscribed-angle theorem its angles are $\delta_{e_j}$,
-$\pi-A_j$ and $A_{j-1}$, where $A_j=\delta_{e_1}+\dots+\delta_{e_j}$ (these sum to $\pi$, as they must,
-because $A_m=\pi$ by \eqref{eq:cycle-sum}). Since $\Lambda$ is odd and $\pi$-periodic
-\cite[Appendix, Lem.~1]{Milnor},
-$\Lambda(\pi-A_j)=-\Lambda(A_j)$, so summing Milnor's formula over $j$ telescopes to
-$\Lambda(A_1)-\Lambda(A_{m-1})+\sum_{j=2}^{m-1}\Lambda(\delta_{e_j})
-=\sum_{e\in Z}\Lambda(\delta_e)$, using $A_1=\delta_{e_1}$ and $A_{m-1}=\pi-\delta_{e_m}$.
-So Proposition~\ref{prop:psd} says that a total hyperbolic volume is concave in these angles --- the
-analytic mechanism of the Casson--Rivin programme, in which strict concavity of the volume functional on
-the space of angle structures of an ideal triangulation is the key input
-\cite{Rivin1994,Rivin1996}, \cite[Thm.~1.2 and Lem.~5.3]{FuterGueritaud}. The same functional underlies Bobenko and
-Springborn's variational principles for circle patterns, whose functionals are built from
-$\operatorname{Im}\mathrm{Li}_2$, i.e.\ from Clausen's $\mathrm{Cl}_2$ with
-$\Lambda(x)=\tfrac12\mathrm{Cl}_2(2x)$ \cite{BobenkoSpringborn}, and
-Lemma~\ref{lem:cot} for $m=3$ is the classical cotangent formula for the Dirichlet energy of a
-piecewise-linear function on a Euclidean triangle \cite{Duffin}, \cite[Lem.~5]{PinkallPolthier}; for $m\ge4$ the lemma
-reduces to $m=3$ by telescoping the partial sums $A_j=\alpha_1+\dots+\alpha_j$,
-$D_j=d_1+\dots+d_j$, so it may be read as a classical fact rather than a new one.
-Figure~\ref{fig:clh-lean-lobachevsky} draws $\Lambda$ at the seven gaps of the worked example of Appendix~\ref{app:worked-example}.
-
-Kenyon also relates the Lobachevsky sum to dimer entropy: in the periodic setting
-of \cite[\S10.4, Thm.~10.3]{Kenyon}, volume per site equals $2\pi$ times entropy
-per site. This is a related variational interpretation, not an entropy formula
-for our finite boundary problem. In particular, no normalization of a finite
-dimer partition function is identified with $\Psi_f$ here.
-
-What is new here is not the functional but the setting, and the decomposition that produces it. The
-domain is not the angle-structure polytope of an ideal triangulation: there is no $3$-manifold and no
-edge condition. The variables are the $n$ circle positions $\theta_p$; the ``angles'' are their
-differences along the crossing graph; and the relation $\sum_{e\in Z}\delta_e=\pi$ is an \emph{identity}
-in $\theta$, equation~\eqref{eq:cycle-sum}, not a constraint cutting out the domain --- so the
-nonemptiness of the angle-structure space, which is the hard part in the Casson--Rivin setting, does not
-arise, while the image of $\theta\mapsto(\delta_e)_e$ is in general a proper affine subspace of the
-product of the cycle simplices. Convexity restricts to a subspace, so the positivity in
-Proposition~\ref{prop:psd} is inherited from the classical concavity \emph{once the cycles are
-available}, and the new ingredient is Proposition~\ref{prop:wp}: the crossing graph of any
-loopless bounded affine permutation decomposes into inscribed polygons each winding exactly once around
-the circle. We are not aware of a counterpart to that statement in the variational literature.
-
-Two things this reading does not give. It does not identify $\Meas_f$ with a map studied there: Rivin's
-uniqueness of a critical point is a different assertion and is used nowhere below. And it does not
-supply boundary control. $\Lambda$ is finite at $0$ and at $\pi$, so $\Psi_f$ extends continuously to
-the closed chamber; each $\ell_e=\log\sin\delta_e$ is singular there, but the singularities can cancel in
-$G_f=B\ell$. For the directed triangle of Figure~\ref{fig:clh-matrix-small} and $\theta(t)=(0,t,2t)$,
-$\delta=(t,t,\pi-2t)$ and $G_f(\theta(t))=(\log(2\cos t),0,-\log(2\cos t))\to(\log2,0,-\log2)$ as
-$t\downarrow0$, although $\theta(t)$ tends to a vertex of the chamber. So the gradient need not diverge at
-the boundary, let alone with the uniform coercivity a compactification argument would need. Nor is the
-gradient image convex: for the same triangle $(\log2,0,-\log2)$ is the midpoint of the images of the
-triangles with side ratios $(1/4,1,1)$ and $(1,1/4,1)$, but it would need the degenerate ratio $(1:1:2)$.
-
+The potential itself is classical: $\Psi_f$ is minus a sum of Lobachevsky functions, a total hyperbolic volume
+of ideal polyhedra over the winding-one cycles (Appendix~\ref{app:volume}). So Proposition~\ref{prop:psd} says
+that this volume is concave in the angles, the analytic mechanism of the Casson--Rivin programme
+\cite{Rivin1994,Rivin1996} and of Bobenko and Springborn's variational principles for circle patterns
+\cite{BobenkoSpringborn}, and Lemma~\ref{lem:cot} reduces to the classical cotangent formula for the Dirichlet
+energy on a triangle \cite{Duffin}, \cite[Lem.~5]{PinkallPolthier}. What is new is the setting and the
+decomposition: the variables are the $n$ circle positions, the relation $\sum_{e\in Z}\delta_e=\pi$ is an identity
+in $\theta$ rather than a constraint, and the new ingredient is Proposition~\ref{prop:wp}, that the crossing graph
+of every loopless bounded affine permutation decomposes into inscribed polygons each winding once around the
+circle. Appendix~\ref{app:volume} gives the identification, the comparison, and what this reading does not give,
+boundary control in particular.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{figures/clh_convex_gradient_inverse.pdf}
 \caption{The proof architecture after the Muller--Speyer twist and logarithmic necklace coordinate change. The map becomes the gradient of an explicit potential; the row-difference and winding-cycle identities make its Hessian positive definite on the gauge slice, exposing the constructive inverse.}
 \label{fig:clh-architecture}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{figures/clh_lean_lobachevsky.pdf}
-\caption{The Lobachevsky function $\Lambda(\delta)=-\int_0^{\delta}\log\lvert2\sin t\rvert\,dt$ on $(0,\pi)$, with the seven gaps $\delta_e$ of $\ba=(3,5,1,2,4)$ and $\theta/\pi=(0,0.1,0.7,0.3,0.8)$ marked and labelled by their edges $e$. They sum to $2\pi$, so by \eqref{eq:lobachevsky} $\Psi_f=-\sum_e\Lambda(\delta_e)+\mathrm{const}$. Numerical values, in floating point.}
-\label{fig:clh-lean-lobachevsky}
 \end{figure}
 \section{Setup}\label{sec:setup}
 
@@ -571,7 +469,7 @@ cyclic order: for $f=(3,5,6,7,9)$ and $\theta/\pi=(0,0.1,0.7,0.3,0.8)$, the work
 Appendix~\ref{app:worked-example}, every crossing angle lies in $(0,\pi)$,
 yet labels $3$ and $4$ are out of order. The vertices of each winding-one cycle are in cyclic order, since
 their angles $2\delta_e$ are positive and sum to $2\pi$; that is all the volume reading of
-\S\ref{sec:intro} uses.
+Appendix~\ref{app:volume} uses.
 \end{remark}
 
 Figure~\ref{fig:clh-lean-hinge} draws the points $v_r$ and the chords $\lvert v_q-v_p\rvert$ for the worked example of Appendix~\ref{app:worked-example}.
@@ -690,23 +588,11 @@ it.
 
 \begin{remark}[loops: a proof candidate for the extension, not claimed here]\label{rem:loops}
 Galashin states Conjecture~4.3 for loopless $f$ only, and Theorem~\ref{thm:main} is stated on exactly that
-domain. Reading \cite[Def.~1.8]{Galashin} verbatim for an arbitrary $f\in\mathcal B(k,n)$ --- a reading
-that is ours, not Galashin's, since his Section~4 fixes $f$ loopless --- a loop label $p$ (that is,
-$f(p)=p$) is a lollipop in every reduced graph \cite[\S2.2]{Galashin}: its boundary vertex is white and
-adjacent to a black interior leaf, so the pendant edge lies in every almost perfect matching, carries
-weight $1$, and forces $p$ out of the index set of every nonvanishing minor. Hence the $p$-th column
-of $\Meas_f(\theta)$ vanishes, $p$ is an isolated vertex of $G_f^{\,x}$, $\Theadm=\Theta_{f'}^{\mathrm{adm}}\times\R$,
-and deleting the lollipop leaves a graph with strand permutation $f'=f\setminus\{p\}$,
-a bounded affine permutation of period $n-1$ and rank $k$. That graph is again reduced: deleting a pendant
-edge with a free end keeps the $k(n-k)+1-\ell(f)$ faces of a reduced graph \cite[\S2.2]{Galashin},
-and $\ell(f)=\ell(f')+k$ (stated in the proof of \cite[Thm.~7.12]{LamGrassmann}) makes this the count
-$k(n-1-k)+1-\ell(f')$ that characterizes the reduced graphs for $f'$; independently, the four conditions
-of \cite[Thm.~13.2]{Postnikov} pass to the deleted graph, the lollipop's edge lying on no other trip.
-The combinatorial facts are Lean theorems (\texttt{TP.\allowbreak deleteLoop\_\allowbreak bdd}, \texttt{TP.\allowbreak affRank\_\allowbreak deleteLoop}, \texttt{TP.\allowbreak affLength\_\allowbreak deleteLoop}). So $\Meas_f(\theta)$ is the image of
-$\Meas_{f'}(\theta')$, $\theta'$ the other angles, under the zero-column embedding $\Gr(k,n-1)\hookrightarrow\Gr(k,n)$,
-and the looped statement, that $\Meas_f$ is a homeomorphism from the gauge slice onto
-$\Critf$, follows from Theorem~\ref{thm:main} for $f$ with its loops deleted. This is a proof candidate
-under the reading above; \emph{none of it is claimed in this paper}, whose scope remains loopless.
+domain. Read verbatim for a looped $f$ (a reading that is ours, not Galashin's), \cite[Def.~1.8]{Galashin} makes
+a loop a lollipop whose column of $\Meas_f$ vanishes, and deleting it reduces the looped statement to
+Theorem~\ref{thm:main} for $f$ with its loops deleted; \S\ref{app:loops} gives the argument, whose combinatorial
+facts are Lean theorems. This is a proof candidate under that reading; \emph{none of it is claimed in this
+paper}, whose scope remains loopless.
 \end{remark}
 
 Figure~\ref{fig:clh-lean-reduction} shows the two constructions of this subsection: the components of the crossing graph (Lemma~\ref{lem:reduction}) and the deletion of a loop (Remark~\ref{rem:loops}).
@@ -1104,7 +990,7 @@ Figure~\ref{fig:clh-lean-wp-count} counts the cycles of \eqref{eq:wp-cycle-count
 \end{figure}
 
 The refined-endpoint crossing rule depends only on the induced permutation
-$\ba$, not on the decoration of its fixed points. Every permutation has a
+$\ba$. Every permutation has a
 loopless bounded affine lift, obtained by choosing $p<f(p)\le p+n$; a fixed
 point then has $f(p)=p+n$. Thus the purely combinatorial partition statement
 also holds for every decorated permutation, by applying the proposition to
@@ -1862,57 +1748,14 @@ this form that the gradient identity uses it (Proposition~\ref{prop:grad}).
 \end{remark}
 
 \begin{remark}[Machine verification]\label{rem:machine}
-Three components of the proof have Lean formalizations: the cotangent cycle
-inequality (Lemma~\ref{lem:cot}), which is analytic, and two combinatorial
-statements over every loopless $f$, coloops included: the row-difference
-identity (Proposition~\ref{prop:rowdiff}) and the
-winding-one partition (Proposition~\ref{prop:wp}). The row-difference identity
-is formalized in full: crossing columns, the isolation, necklace-membership and
-zero-row facts for coloops, and, through
-\texttt{Conj43.\allowbreak pairExponent\_\allowbreak nonCross},
-\texttt{Conj43.\allowbreak full\_\allowbreak pair\_\allowbreak columns\_\allowbreak zero} and
-\texttt{Conj43.\allowbreak rowdiff\_\allowbreak full\_\allowbreak pairs},
-noncrossing-column vanishing and the full unordered-pair identity. The winding
-partition is formalized via the window induction of this subsection, together
-with both forms of the cycle count \eqref{eq:wp-cycle-count} and the
-extension to decorated permutations; the strand-diagram proof is not formalized. The auxiliary cover
-theorem of that proof (\emph{Existence of a winding-one partition} in Appendix~\ref{app:lean-interface})
-is a further named Lean result, not a further mathematical component.
-
-The analytic steps are formalized as well: the lifted cycle sum
-\eqref{eq:cycle-sum}, the hinge identity (Lemma~\ref{lem:hinge}), the assembled
-Hessian with its positivity and kernel (Proposition~\ref{prop:psd}), the
-potential's gradient $B\ell$ and Hessian $B\operatorname{diag}(\cot\delta_e)B^{\mathsf T}$,
-strict convexity on the gauge slice, an injective gradient that is an open
-embedding into $\im B$, the variational inverse \eqref{eq:variational-inverse},
-and the computation that turns the logarithm of \eqref{eq:gal512} on necklace
-rows into $G_f$ (Proposition~\ref{prop:grad}). These compose into a
-\emph{conditional} form of Theorem~\ref{thm:main}: if a map on the gauge slice
-is continuous and onto a set $\mathrm{Crit}$, and a continuous map $N$ on
-$\mathrm{Crit}$ satisfies, along it, the logarithmic necklace-row form of
-\eqref{eq:gal512}, then the first map is a homeomorphism, with inverse
-$G_f^{-1}\circ P_fD\circ N$. Appendix~\ref{app:lean-interface} states these
-hypotheses in mathematical notation and names the results of \cite{Galashin}
-and \cite{MullerSpeyer} that they stand for. The interface with the definitions
-of \cite{Galashin} is formalized as well: against Lean transcriptions of those
-definitions, the encoding used here is a bijection onto his loopless bounded
-affine permutations, its necklace rows are given by his affine formula, its
-crossings and misalignment classes are his, its exponent table is that of
-\eqref{eq:gal512}, and Lemma~\ref{lem:halfopen} holds on his refined boundary.
-Lean constructs neither the measurement map nor the twist, so it certifies
-components, their interface and a conditional composition, not
-Theorem~\ref{thm:main} itself; whether the transcribed definitions and the
-hypotheses say what \cite{Galashin} and \cite{MullerSpeyer} say is for the
-reader to check. Two later results are formalized, the first in full. Of the sharp modulus, Lean has
-Theorem~\ref{thm:sharp-cot} with its extremal pair, the bounds of Lemma~\ref{lem:sharp-localization} on
-$\kappa_m^\star(\eta)$, the two-sided bound \eqref{eq:sharp-laplacian-sandwich}, and the
-inverse-Lipschitz bound \eqref{eq:sharp-inverse-lipschitz}. Of Corollary~\ref{cor:shift}, it has the
-combinatorial half: $f^\downarrow$ is a bounded affine permutation of rank $k-1$, looplessness is exactly
-what keeps it at or above the identity, and $(f_\tau^{\mathrm{elec}})^\downarrow=f_\tau^{\mathrm{Ising}}$.
-The homeomorphism $\Phi_f$, which rests on Theorem~\ref{thm:main}, is not formalized.
-
-The current formal source and the historical certificate archive, with its
-checksum, are described in Appendix~\ref{app:lean-interface}.
+Lean formalizes the window induction of this subsection as the proof of
+\texttt{Conj43.\allowbreak winding\_\allowbreak one\_\allowbreak partition}, with both forms of the cycle count \eqref{eq:wp-cycle-count} and the
+extension to decorated permutations. Lemma~\ref{lem:winding-simple} and
+Lemmas~\ref{lem:wp-active-set}--\ref{lem:wp-winding-arithmetic} are also frozen statements of their own, with
+Lemma~\ref{lem:wp-measure-decrease} in the measure \eqref{eq:wp-measure}; the formal proof of the partition
+terminates on a different measure (Appendix~\ref{app:lean-interface}). The strand-diagram proof of
+\S\ref{sec:wp-strand} is not formalized. Table~\ref{tab:formal-map} lists every numbered result with its Lean
+statements.
 \end{remark}
 
 \subsection{A second proof, from strand diagrams}\label{sec:wp-strand}
@@ -2634,7 +2477,7 @@ meaning.
 \begin{remark}[Independent measurement controls]\label{rem:top-cell-control}
 Two finite numerical cross-checks of $R_f\circ\Meas_f=B\ell$ --- one against Galashin's independent
 top-cell reconstruction \cite[\S9]{Galashin}, and one on every non-top loopless cell with $2\le n\le7$
---- are recorded in Appendix~\ref{app:lean-interface} (\emph{Finite checks}). They are not premises.
+--- are recorded in Appendix~\ref{app:lean-interface} (\emph{Finite checks}).
 \end{remark}
 
 \section{The all-rank critical Gr--OG shift}\label{sec:shift}
@@ -2714,7 +2557,7 @@ to the image of the $\tau$-admissible tuples in $\Crit_f^{>0}$;
 the gauge representative $\theta^0$ need not itself be isotropic.
 \end{proof}
 
-\begin{remark}[what Corollary~\ref{cor:shift} is not]\label{rem:shift-scope}
+\begin{remark}\label{rem:shift-scope}
 Corollary~\ref{cor:shift} is a statement about \emph{critical} loci only. It is not an answer to
 Question~9.2 of \cite{GalashinPylyavskyy}, which asks for a homeomorphism between the full electrical and
 Ising spaces: for the top matching with $N\ge3$ the open electrical network cell has dimension
@@ -2775,7 +2618,7 @@ preprint is prepared for public circulation; it is not yet an arXiv version.
   The numbered statements cited here use arXiv v4.
 % ---------------------------------------------------------------------------
 % The seven entries Milnor through Pinkall--Polthier support only the
-% "Relation to hyperbolic volume" subsection of Section 1; no theorem of this
+% hyperbolic-volume comparison (Appendix D and its summary in Section 1); no theorem of this
 % paper uses them.  All seven were checked against the sources on 2026-09-08
 % (bibliographic data and the statement each is cited for).
 % ---------------------------------------------------------------------------
@@ -2802,12 +2645,32 @@ preprint is prepared for public circulation; it is not yet an arXiv version.
 \appendix
 \section{Formal statements and their geometric interface}\label{app:lean-interface}
 
+Most of the argument is machine-checked: the formal source described below gives proofs of 123 frozen statements.
+They include the row-difference identity (Proposition~\ref{prop:rowdiff}), the winding-one
+partition (Proposition~\ref{prop:wp}, by the window induction of \S\ref{sec:wp-combinatorial-bridge}), the cotangent
+cycle inequality (Lemma~\ref{lem:cot}), the hinge identity (Lemma~\ref{lem:hinge}), the positivity and kernel of the
+Hessian (Proposition~\ref{prop:psd}), the gradient, strict convexity and variational inverse of the potential
+(Corollary~\ref{cor:gradient-preimage}), the sharp modulus (Theorem~\ref{thm:sharp-cot} and
+Corollary~\ref{cor:sharp-laplacian-sandwich}), the combinatorial half of Corollary~\ref{cor:shift}, the lemmas of
+the window induction as stated (Lemmas~\ref{lem:winding-simple} and
+\ref{lem:wp-active-set}--\ref{lem:wp-winding-arithmetic}) and the combinatorial and slice parts of the component
+reduction (Lemma~\ref{lem:reduction}). Lean also
+transcribes the definitions of \cite{Galashin} and proves that the encoding used here agrees with them. Lean
+constructs neither the critical measurement map nor the Muller--Speyer twist, so it formalizes Theorem~\ref{thm:main}
+in a \emph{conditional} form: four hypotheses stand for \cite[Props.~5.1, 4.2 and~5.12 and Lem.~5.13]{Galashin}
+and the twist of \cite{MullerSpeyer}. Corollary~\ref{cor:necklace-embedding} is formalized in the same conditional
+form, with hypotheses on the ordinary necklace minors that do not mention the twist, and so is the measurement half
+of Lemma~\ref{lem:reduction}, from \cite[Prop.~4.10]{Galashin}. Whether those hypotheses and the transcribed
+definitions say what the sources say is for the reader to check; this appendix states both in
+mathematical notation. Not formalized are Corollary~\ref{cor:analytic-critical}, the homeomorphism of Corollary~\ref{cor:shift} and
+the strand-diagram proof of \S\ref{sec:wp-strand}; their written proofs are the only ones.
+
 The formal source for this paper is written in Lean~\texttt{4.33.0-rc1} with Mathlib; the exact
 Mathlib revision is recorded in its dependency lockfile, \texttt{lake-manifest.json}. The coloop-inclusive
 source supplement (\SourceSupplementRef) includes a source manifest, that lockfile, the exact
 declarations and their proof modules. Every theorem named in this appendix, except the auxiliary lemmas
-marked as such, is also stated, without its proof, in one of fifteen frozen
-statement files kept apart from the proofs: thirteen for the \texttt{Conj43.} statements, and two for the
+marked as such, is also stated, without its proof, in one of nineteen frozen
+statement files kept apart from the proofs: seventeen for the \texttt{Conj43.} statements, and two for the
 \texttt{TP.} statements on loops and on decorated permutations, which come from a companion formal
 library for totally positive combinatorics and are included in the supplement. The proofs are checked
 against those frozen statements by
@@ -2817,6 +2680,51 @@ proofs in the Lean kernel, and admits only the axioms \texttt{propext}, \texttt{
 not construct the measurement map: the conditional theorem at the end of this appendix takes the
 properties of the measurement map that the proof of Theorem~\ref{thm:main} uses as hypotheses, and the
 paragraph after it says what each hypothesis stands for.
+
+\subsection*{The formal status of each result}
+Table~\ref{tab:formal-map} lists the numbered results in the order of the text, with the frozen statements
+that formalize them; the paragraphs below state those statements in mathematical notation. \emph{Formalized}
+means that the frozen statements prove the result as stated; \emph{conditional}, that they prove it from
+hypotheses that stand for published results: $(\mathrm H_1)$--$(\mathrm H_4)$ of the conditional theorem below, or
+the variants stated below with Lemma~\ref{lem:reduction} and Corollary~\ref{cor:necklace-embedding};
+\emph{not formalized}, that the written proof is the only one. Lemma~\ref{lem:winding-simple} and
+Lemmas~\ref{lem:wp-active-set}--\ref{lem:wp-winding-arithmetic} are frozen as stated, beside the formal proof of
+Proposition~\ref{prop:wp}, which terminates on a different measure (\emph{Two differences between the text and the
+formal source}, below).
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.54\linewidth}@{}}
+\caption{The formal status of each numbered result.}\label{tab:formal-map}\\
+\hline Result & Status & Lean statements \\ \hline
+\endfirsthead
+\hline Result & Status & Lean statements \\ \hline
+\endhead
+Theorem~\ref{thm:main} & conditional & \texttt{Conj43.\allowbreak gal512\_\allowbreak measurement\_\allowbreak homeomorphism}, \texttt{Conj43.\allowbreak potential\_\allowbreak variational\_\allowbreak inverse}, \texttt{Conj43.\allowbreak variational\_\allowbreak image\_\allowbreak minimizer} \\
+Corollary~\ref{cor:shift} & combinatorial half & \texttt{Conj43.\allowbreak shift\_\allowbreak bounds}, \texttt{Conj43.\allowbreak shift\_\allowbreak periodic}, \texttt{Conj43.\allowbreak shift\_\allowbreak bijective}, \texttt{Conj43.\allowbreak shift\_\allowbreak rank}, \texttt{Conj43.\allowbreak shift\_\allowbreak self\_\allowbreak le\_\allowbreak iff}, \texttt{Conj43.\allowbreak elec\_\allowbreak shift\_\allowbreak eq\_\allowbreak ising} \\
+Lemma~\ref{lem:hinge} & formalized & \texttt{Conj43.\allowbreak hinge\_\allowbreak identity} \\
+Remark~\ref{rem:loops} & combinatorial facts & \texttt{TP.\allowbreak deleteLoop\_\allowbreak bdd}, \texttt{TP.\allowbreak affRank\_\allowbreak deleteLoop}, \texttt{TP.\allowbreak affLength\_\allowbreak deleteLoop} \\
+Lemma~\ref{lem:reduction}: in (1) the permutation and crossings, in (3) the crossing condition and the slice, (4), and the slice half of (2) & formalized & \texttt{Conj43.\allowbreak restrictEntry\_\allowbreak bijective}, \texttt{Conj43.\allowbreak restrictBAP\_\allowbreak inv}, \texttt{Conj43.\allowbreak restrict\_\allowbreak crossEdge}, \texttt{Conj43.\allowbreak restrict\_\allowbreak connected}, \texttt{Conj43.\allowbreak component\_\allowbreak card\_\allowbreak eq\_\allowbreak one\_\allowbreak iff}, \texttt{Conj43.\allowbreak restrict\_\allowbreak fixedPointFree}, \texttt{Conj43.\allowbreak admissible\_\allowbreak iff\_\allowbreak components}, \texttt{Conj43.\allowbreak slice\_\allowbreak homeomorph\_\allowbreak components}, \texttt{Conj43.\allowbreak singleton\_\allowbreak slice} \\
+Lemma~\ref{lem:reduction}, the measurement half of (2) & conditional on \cite[Prop.~4.10]{Galashin} & \texttt{Conj43.\allowbreak reduction\_\allowbreak homeomorphism\_\allowbreak iff} \\
+Lemma~\ref{lem:halfopen} & on Galashin's boundary & \texttt{Conj43.\allowbreak halfopen\_\allowbreak a}, \texttt{Conj43.\allowbreak halfopen\_\allowbreak b}, \texttt{Conj43.\allowbreak halfopen\_\allowbreak L1}, \texttt{Conj43.\allowbreak halfopen\_\allowbreak L2}, \texttt{Conj43.\allowbreak halfopen\_\allowbreak L3} \\
+Proposition~\ref{prop:rowdiff} & formalized & \texttt{Conj43.\allowbreak rowdiff\_\allowbreak full\_\allowbreak pairs}, \texttt{Conj43.\allowbreak rowdiff}, \texttt{Conj43.\allowbreak pairExponent\_\allowbreak nonCross}, \texttt{Conj43.\allowbreak full\_\allowbreak pair\_\allowbreak columns\_\allowbreak zero} \\
+Proposition~\ref{prop:grad} & conditional on $(\mathrm H_3)$, $(\mathrm H_4)$ & \texttt{Conj43.\allowbreak potential\_\allowbreak gradient}, \texttt{Conj43.\allowbreak gradient\_\allowbreak hessian}, \texttt{Conj43.\allowbreak necklace\_\allowbreak log\_\allowbreak gradient}, \texttt{Conj43.\allowbreak gal512\_\allowbreak gradient} \\
+Lemma~\ref{lem:winding-simple} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak walk\_\allowbreak advance\_\allowbreak multiple}, \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak walk\_\allowbreak simple\_\allowbreak of\_\allowbreak advance} \\
+Proposition~\ref{prop:wp} & formalized & \texttt{Conj43.\allowbreak winding\_\allowbreak one\_\allowbreak partition}, \texttt{Conj43.\allowbreak partition\_\allowbreak card}, \texttt{Conj43.\allowbreak partition\_\allowbreak advance}, \texttt{TP.\allowbreak dec\_\allowbreak winding\_\allowbreak one\_\allowbreak partition} \\
+Proposition~\ref{prop:wp-direct-balance} & formalized & \texttt{Conj43.\allowbreak incidence\_\allowbreak degree\_\allowbreak balance} \\
+Lemma~\ref{lem:wp-active-set} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak active\_\allowbreak set\_\allowbreak restriction} \\
+Lemma~\ref{lem:wp-adjacent-active-ascent} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak adjacent\_\allowbreak active\_\allowbreak ascent}, \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak adjacent\_\allowbreak ascent\_\allowbreak bounds} \\
+Lemma~\ref{lem:wp-measure-decrease} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak swap\_\allowbreak measure\_\allowbreak drop} \\
+Lemma~\ref{lem:wp-local-transition} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak local\_\allowbreak transition\_\allowbreak identity}, \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak local\_\allowbreak transition} \\
+Lemma~\ref{lem:wp-winding-arithmetic} & formalized & \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak winding\_\allowbreak arithmetic} \\
+Lemma~\ref{lem:cot} & formalized & \texttt{Conj43.\allowbreak cot\_\allowbreak cycle\_\allowbreak inequality} \\
+Proposition~\ref{prop:psd} & formalized & \texttt{Conj43.\allowbreak hessian\_\allowbreak matrix\_\allowbreak form}, \texttt{Conj43.\allowbreak hessian\_\allowbreak psd}, \texttt{Conj43.\allowbreak hessian\_\allowbreak kernel\_\allowbreak components}, \texttt{Conj43.\allowbreak hessian\_\allowbreak matrix\_\allowbreak kernel} \\
+Lemma~\ref{lem:sharp-localization} & formalized & \texttt{Conj43.\allowbreak kappaStar\_\allowbreak pos}, \texttt{Conj43.\allowbreak kappaStar\_\allowbreak lt\_\allowbreak tan} \\
+Theorem~\ref{thm:sharp-cot} & formalized & \texttt{Conj43.\allowbreak sharp\_\allowbreak cot\_\allowbreak cycle}, \texttt{Conj43.\allowbreak sharp\_\allowbreak cot\_\allowbreak extremizer} \\
+Corollary~\ref{cor:sharp-laplacian-sandwich} & formalized & \texttt{Conj43.\allowbreak sharp\_\allowbreak laplacian\_\allowbreak sandwich}, \texttt{Conj43.\allowbreak sharp\_\allowbreak strong\_\allowbreak monotone}, \texttt{Conj43.\allowbreak sharp\_\allowbreak inverse\_\allowbreak lipschitz} \\
+Corollary~\ref{cor:gradient-preimage} & formalized & \texttt{Conj43.\allowbreak variational\_\allowbreak gradient\_\allowbreak preimage} \\
+Corollary~\ref{cor:necklace-embedding} & conditional, without the twist & \texttt{Conj43.\allowbreak necklace\_\allowbreak conditional\_\allowbreak embedding}, \texttt{Conj43.\allowbreak untwisted\_\allowbreak measurement\_\allowbreak homeomorphism}, \texttt{Conj43.\allowbreak untwisted\_\allowbreak recovery\_\allowbreak ratio} \\
+Corollary~\ref{cor:analytic-critical} & not formalized & --- \\
+\hline
+\end{longtable}
+
 
 \paragraph{Domain and crossing convention.}
 \texttt{Conj43.\allowbreak LooplessBAP n} contains a permutation $\sigma$ of
@@ -2954,7 +2862,7 @@ $\ell_e=\log\sin\delta_e$, $G=B\ell$,
  \Psi(\theta)=\sum_{e\in E_f}\int_{\pi/2}^{\delta_e(\theta)}\log\sin t\,dt ;
 \]
 this $\Psi$ satisfies \eqref{eq:potential} and differs from any other antiderivative choice, such as
-the normalization $L(0)=0$ of \S\ref{sec:intro}, by a constant. Two labels lie in the same component when a path of crossing edges, taken in either
+the normalization $L(0)=0$ of Appendix~\ref{app:volume}, by a constant. Two labels lie in the same component when a path of crossing edges, taken in either
 direction, joins them. For $a\in\R^n$ the formal gauge slice is
 \[
  S_a=\{\theta\in\Theadm:\ \theta_p=a_p\ \text{whenever $p$ is the least label of its component}\}.
@@ -3106,16 +3014,93 @@ $g(p-1)\ge p$ for every $p$ exactly when $g$ has no fixed point. For a matching 
 \texttt{Conj43.\allowbreak elec\_\allowbreak shift\_\allowbreak eq\_\allowbreak ising} states $(f_\tau^{\mathrm{elec}})^\downarrow=f_\tau^{\mathrm{Ising}}$,
 the two permutations having residues $p\mapsto\tau(p+1)$ and $p\mapsto\tau(p)$ as in \S\ref{sec:shift}.
 
+\paragraph{The component reduction.}
+For $F:\texttt{LooplessBAP n}$ and a label $p$, \texttt{Conj43.\allowbreak component F p} is the set $C$ of labels
+joined to $p$ by a path of crossing edges taken in either direction (\texttt{Conj43.\allowbreak mem\_\allowbreak component\_\allowbreak iff}), and
+$\iota_C\colon\{0,\ldots,|C|-1\}\to C$ is its increasing enumeration. Erasing the strands outside $C$ and relabeling
+the survivors through $\iota_C$ is the construction of Lemma~\ref{lem:reduction}(1): the entry of the surviving strand
+$j$, at position $\sigma^{-1}(\iota_C(j))$, goes to the new vertex of the last surviving exit at or before it, read
+cyclically. This entry map is a bijection (\texttt{Conj43.\allowbreak restrictEntry\_\allowbreak bijective}), because the surviving endpoints alternate,
+and the inverse of the restricted permutation $\sigma^{(C)}$ is that map (\texttt{Conj43.\allowbreak restrictBAP\_\allowbreak inv}). Two labels of $C$ cross
+after the relabeling exactly when they crossed before (\texttt{Conj43.\allowbreak restrict\_\allowbreak crossEdge}), the crossing graph of $\sigma^{(C)}$
+is connected (\texttt{Conj43.\allowbreak restrict\_\allowbreak connected}), $|C|=1$ exactly when $p$ crosses nothing (\texttt{Conj43.\allowbreak component\_\allowbreak card\_\allowbreak eq\_\allowbreak one\_\allowbreak iff}), and
+$\sigma^{(C)}$ has no fixed point when $|C|\ge2$ (\texttt{Conj43.\allowbreak restrict\_\allowbreak fixedPointFree}): the permutation and crossing data of part (1), the first claim of part (3), and part (4), in the
+encoding of the first paragraph. Admissibility splits over the components (\texttt{Conj43.\allowbreak admissible\_\allowbreak iff\_\allowbreak components}), and
+$\theta\mapsto(\theta\circ\iota_C)_C$, over the components with their least labels as anchors, is a homeomorphism of
+$S_a$ onto the product of the components' slices (\texttt{Conj43.\allowbreak slice\_\allowbreak homeomorph\_\allowbreak components}); the slice of a one-label component
+is a point (\texttt{Conj43.\allowbreak singleton\_\allowbreak slice}); its factor of $\mathrm{Crit}$ is then a point, the image of that point. The slice statements are the first half of part (2). For the second half,
+\texttt{Conj43.\allowbreak reduction\_\allowbreak homeomorphism\_\allowbreak iff} takes as hypotheses a homeomorphism $\Sigma$ of $\mathrm{Crit}$ onto a product
+$\prod_C\mathrm{Crit}_C$ and maps $\mathrm{Meas}_C$ on the components' slices with
+$\Sigma(\mathrm{Meas}\,\theta)_C=\mathrm{Meas}_C(\theta\circ\iota_C)$; they stand for \cite[Prop.~4.10]{Galashin} and
+the square \eqref{eq:reduction-square}. Given them, $\mathrm{Meas}$ is a homeomorphism exactly when every
+$\mathrm{Meas}_C$ is; no continuity of either is assumed. Three controls show what the statements need: a component
+need not be carried to itself by $\sigma$ (\texttt{Conj43.\allowbreak component\_\allowbreak not\_\allowbreak sigma\_\allowbreak stable}, Remark~\ref{rem:not-restriction}); for a
+set of strands that is not a union of components the entry map can fail to be a bijection
+(\texttt{Conj43.\allowbreak entryMapOn\_\allowbreak not\_\allowbreak bijective}); and a one-label component can be a fixed point (\texttt{Conj43.\allowbreak restrict\_\allowbreak coloop\_\allowbreak fixed}).
+\texttt{Conj43.\allowbreak fixture\_\allowbreak two\_\allowbreak components} evaluates the two components of Figure~\ref{fig:clh-lean-reduction}(a). The relabeling
+starts at the least label of $C$; \cite[\S4.4]{Galashin} leaves this rotation open, and another choice rotates
+$f^{(r)}$ cyclically. The ranks of the components need not add up to $k$, and no statement says they do.
+
+\paragraph{The window lemmas.}
+In the notation of \S\ref{sec:wp-combinatorial-bridge}, with labels in $\{0,\ldots,n-1\}$: a decorated bounded window
+is a tuple $w$ whose residues form a permutation $\sigma_w$ and with $i\le w_i\le i+n$; $E(\sigma)$ is the edge set of
+\eqref{eq:wp-directed-crossing}, read on a circle of $2n$ points with $i^-$ at $2i$ and $i^+$ at $2i+1$, which is the
+crossing relation of the earlier paragraphs; and $\operatorname{inv}$ and $\mu$ are as in \eqref{eq:wp-measure}. For a
+vertex list $c$ with at least two entries whose consecutive entries, the last and the first included, are distinct,
+\texttt{Conj43.\allowbreak WindowLemmas.\allowbreak walk\_\allowbreak advance\_\allowbreak multiple} states that its total advance $\operatorname{winding}(c)$ is a positive multiple of $n$,
+and \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak walk\_\allowbreak simple\_\allowbreak of\_\allowbreak advance} that $c$ has no repeated entry if the total is $n$: Lemma~\ref{lem:winding-simple}.
+\texttt{Conj43.\allowbreak WindowLemmas.\allowbreak active\_\allowbreak set\_\allowbreak restriction} states that $\sigma_w$ maps the active positions bijectively to themselves
+(Lemma~\ref{lem:wp-active-set}). \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak adjacent\_\allowbreak active\_\allowbreak ascent} gives an adjacent active ascent $a<b$ when some position
+is active, and \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak adjacent\_\allowbreak ascent\_\allowbreak bounds} gives, for every adjacent active ascent, $b\le A$, $B\le a+n$ and a
+decorated bounded window with the two values exchanged (Lemma~\ref{lem:wp-adjacent-active-ascent}; $A<B$ is part of
+the definition of the ascent). \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak swap\_\allowbreak measure\_\allowbreak drop} states $\operatorname{inv}(g)=\operatorname{inv}(w)+1$ and
+$\mu(g)+1=\mu(w)$ (Lemma~\ref{lem:wp-measure-decrease}, written without subtraction).
+\texttt{Conj43.\allowbreak WindowLemmas.\allowbreak local\_\allowbreak transition\_\allowbreak identity} and \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak local\_\allowbreak transition} state Lemma~\ref{lem:wp-local-transition}, with $S$ as in
+\eqref{eq:wp-S-lift}, the three regimes as mutually exclusive guards, each with its set equation and its
+absent-edge clauses. \texttt{Conj43.\allowbreak WindowLemmas.\allowbreak winding\_\allowbreak arithmetic} states, whenever $A>b$, that $b\to\alpha\to\beta\to b$ has total advance
+$n$ and that each two-edge replacement has the advance of the edge it replaces (Lemma~\ref{lem:wp-winding-arithmetic},
+which states each identity in its own regime; the arithmetic does not use the regime). Two controls: the walk
+$0\to1\to0\to1\to0$ in $\{0,1,2\}$ has distinct consecutive labels and total advance $2\cdot3$ and repeats its labels
+(\texttt{Conj43.\allowbreak WindowLemmas.\allowbreak control\_\allowbreak two\_\allowbreak laps}); and in the window $(2,3,4,5)$ with $n=4$, exchanging positions $0$ and $2$, which have an
+active position between them, gives a window with three more inversions (\texttt{Conj43.\allowbreak WindowLemmas.\allowbreak control\_\allowbreak nonadjacent\_\allowbreak swap}).
+
+\paragraph{The ordinary necklace minors.}
+Two statements replace $N$, $(\mathrm H_3)$ and $(\mathrm H_4)$ of the conditional theorem by a map
+$\Delta\colon\mathrm{Crit}\to\R^n$ and
+\begin{align*}
+ &(\mathrm H_3')\ \ \Delta\text{ is continuous and }\Delta(z)_r>0\text{ for all }z,r;\\
+ &(\mathrm H_4')\ \ \text{for every }\theta\in S_a\text{ there is }c(\theta)\in\R\text{ such that, for every row }r,\\
+ &\qquad\qquad -\log\Delta(\mathrm{Meas}\,\theta)_r=\sum_{1\le p<q\le n}(M_N)_{r,\{p,q\}}\,\lambda_{pq}(\theta)+c(\theta).
+\end{align*}
+With $(\mathrm H_1)$, $(\mathrm H_2)$, $(\mathrm H_3')$ and $(\mathrm H_4')$, and $R(z)=-P_fD\log\Delta(z)$,
+\texttt{Conj43.\allowbreak untwisted\_\allowbreak measurement\_\allowbreak homeomorphism} states that $\mathrm{Meas}$ is a homeomorphism $S_a\to\mathrm{Crit}$ with
+$\mathrm{Meas}^{-1}=(G|_{S_a})^{-1}\circ R$, which is Theorem~\ref{thm:main} with $R_f$ read as in
+\eqref{eq:untwisted}. \texttt{Conj43.\allowbreak necklace\_\allowbreak conditional\_\allowbreak embedding} states, with $\mathbb P^{n-1}_{>0}$ the positive vectors modulo positive rescaling
+with the quotient topology, that $z\mapsto[\Delta(z)]$ is a topological embedding of $\mathrm{Crit}$, and that for
+every positive $v$ with $[v]=[\Delta(z)]$ the vector $-P_fD\log v$ lies in $G(S_a)$ and
+$\mathrm{Meas}\bigl((G|_{S_a})^{-1}(-P_fD\log v)\bigr)=z$: Corollary~\ref{cor:necklace-embedding}.
+\texttt{Conj43.\allowbreak untwisted\_\allowbreak recovery\_\allowbreak ratio} is the ratio form of \eqref{eq:untwisted}, $(-P_fD\log v)_x=\log(v_{s_x}/v_{s_x+1})$ with
+$s_x+1$ read cyclically, and \texttt{Conj43.\allowbreak untwisted\_\allowbreak recovery\_\allowbreak rescale} its independence of the representative.
+\texttt{Conj43.\allowbreak necklace\_\allowbreak hypotheses\_\allowbreak nonvacuous} exhibits $\mathrm{Crit}$, $\mathrm{Meas}$ and $\Delta$ satisfying all four
+hypotheses for every $f$ and $a$, and \texttt{Conj43.\allowbreak necklace\_\allowbreak log\_\allowbreak needed} shows that $(\mathrm H_4')$ cannot be dropped: on the
+slice of $\sigma=(2,0,1)$, with $\mathrm{Meas}$ the identity and $\Delta$ constant, the other hypotheses hold and the
+necklace map is not injective. They stand for the following, with $X=\Gr(k,n)$, $\mathrm{Crit}=\Critf$, $a=0$,
+$\mathrm{Meas}=\Meas_f|_{\Thef}$ and $\Delta(X)_r=\lvert\Delta_{I_{r+1}}(X)/\Delta_{I_1}(X)\rvert$:
+$(\mathrm H_3')$ is continuity of Pl\"ucker ratios on $\Pi_f^\circ$, which contains $\Critf$ and on which the
+necklace minors do not vanish, as for $(\mathrm H_3)$; and $(\mathrm H_4')$ is \eqref{eq:untwisted}, that is,
+\cite[Prop.~5.12]{Galashin} at the twisted minors with $\Delta_I(A)\Delta_I(\widetilde\tau(A))=1$
+\cite[proof of Prop.~5.4]{Galashin}. No hypothesis mentions the twist; it enters only through the identity that
+$(\mathrm H_4')$ stands for.
+
 \paragraph{What is not formalized.}
 Lean does not construct the critical measurement map, Galashin's curve, the boundary-measurement graphs,
 the left twist or the Grassmannian; Propositions~4.2, 5.1 and~5.12 and Lemma~5.13 of \cite{Galashin} and
-the twist of \cite{MullerSpeyer} enter only through $(\mathrm H_1)$--$(\mathrm H_4)$. Also not formalized
+the twist of \cite{MullerSpeyer} enter only through hypotheses: $(\mathrm H_1)$--$(\mathrm H_4)$, their variants
+for the ordinary necklace minors, and, for the components, \cite[Prop.~4.10]{Galashin}. Also not formalized
 are the strand-diagram proof of Proposition~\ref{prop:wp} (only the window induction of
-\S\ref{sec:wp-combinatorial-bridge} is), the component
-reduction (Lemma~\ref{lem:reduction}),
-the homeomorphism $\Phi_f$ of Corollary~\ref{cor:shift}, the untwisted recovery
-(Remark~\ref{rem:untwisted} and Corollary~\ref{cor:necklace-embedding}), and the hyperbolic-volume reading
-of the introduction.
+\S\ref{sec:wp-combinatorial-bridge} is),
+the homeomorphism $\Phi_f$ of Corollary~\ref{cor:shift}, and the hyperbolic-volume reading
+of Appendix~\ref{app:volume}.
 Nor is the real-analytic strengthening of Corollary~\ref{cor:analytic-critical}.
 
 \paragraph{Artifact scope, and what remains for the reader.}
@@ -3123,9 +3108,9 @@ The historical archive \CertDOI\ uses the same Lean and Mathlib versions,
 but its \texttt{LooplessBAP} additionally requires
 $\sigma(i)\ne i$ for every label. Its combinatorial statements therefore have
 fixed-point-free scope, and it contains none of the statements added after it: the full-pair row
-difference, the analytic statements, the conditional theorem and the interface. Its SHA-256 is
-\begin{center}\CertSHA\end{center}
-and its DOI does not identify the newer source. The source supplement above admits
+difference, the analytic statements, the conditional theorem and the interface. Its DOI identifies
+that archive, not the newer source.
+The source supplement above admits
 coloops; it is the snapshot of the formal source that contains every statement named in this
 appendix. Its retained cross-validation report compares the definitions with an exact-integer mirror on
 $5{,}912$ loopless cells with $2\le n\le7$, including $3{,}737$ with coloops. This is finite interface
@@ -3137,7 +3122,8 @@ them, so what the reader checks is that the transcriptions listed in the interfa
 identity rests, is proved three times: in the encoding, inside the formal proofs of
 \texttt{Conj43.\allowbreak rowdiff} and \texttt{Conj43.\allowbreak rowdiff\_\allowbreak full\_\allowbreak pairs}; on Galashin's refined boundary, by the
 interface statements; and by hand in \S\ref{sec:gradient}. The hypotheses: that
-$(\mathrm H_1)$--$(\mathrm H_4)$ say what the cited results say, as listed above. And the statements that
+$(\mathrm H_1)$--$(\mathrm H_4)$, and those stated with the component reduction and the ordinary necklace minors,
+say what the cited results say, as listed above. And the statements that
 are not formalized, whose proofs are the written ones.
 
 \paragraph{Finite checks.}
@@ -3181,9 +3167,9 @@ numerical tolerance is $10^{-8}$. This finite convention check does not test col
 or prove the identity beyond its sampled parameters.
 
 \paragraph{Two differences between the text and the formal source.}
-The termination measure of the window induction in \S\ref{sec:wp-combinatorial-bridge} is
-$\mu(w)=\binom n2-\operatorname{inv}(w)$ (Lemma~\ref{lem:wp-measure-decrease}). The formal proof
-(\texttt{Conj43.\allowbreak WindowAscent}) instead uses the position-weighted lift sum
+The window lemmas are frozen with the paper's measure $\mu(w)=\binom n2-\operatorname{inv}(w)$
+(Lemma~\ref{lem:wp-measure-decrease}). The formal proof of the partition
+(\texttt{Conj43.\allowbreak WindowAscent}) instead terminates on the position-weighted lift sum
 $\texttt{Window.measure}(w)=\sum_{i=0}^{n-1}i\,w_i$. An $(a,b)$-swap with $a<b$ and $w_a<w_b$ lowers it
 by $(b-a)(w_b-w_a)>0$, without counting intermediate inversions; the induction is otherwise the same.
 Likewise the formal proof represents a winding-one cycle by its sorted vertex set, with edges
@@ -3293,5 +3279,210 @@ The two winding-one partitions in Figure~\ref{fig:clh-partitions} are
 Both have two cycles, one containing the wrapped edge $(5,1)$ and the other $(5,2)$.
 Each cycle advances a total of $5$ around the labels, so its winding is one.
 Either choice therefore gives the cycle decomposition used in the Hessian argument.
+
+
+\section{Scope: the companion manuscript, and cells with loops}\label{app:scope}
+Everything in this paper is a symbolic proof: no step depends on a finite computation or a numerical
+certificate. Three further developments of the same machinery are correspondingly separated into the
+companion manuscript \cite{GuetzBoundary}, which is in preparation.
+It treats the boundary
+compactification of the shift and its stratified descent; the exact finite cross-stratum theorems at
+$n=5$ and on the $n=6$ one-skeleton, which are computer-assisted; and the partition-independent sharp
+full-Hessian modulus for the dense cyclic five-cell, which is an exact computer-assisted certificate.
+None of the three is used here. Decorated and looped cells lie outside the loopless scope of
+Theorem~\ref{thm:main}, as does Problem~5.2 of \cite{Galashin}; see Remark~\ref{rem:loops} and \S\ref{app:loops} for what a
+looped extension would involve, which we do not claim.
+
+\subsection{Cells with loops}\label{app:loops}
+Galashin states Conjecture~4.3 for loopless $f$ only, and Theorem~\ref{thm:main} is stated on exactly that
+domain. Reading \cite[Def.~1.8]{Galashin} verbatim for an arbitrary $f\in\mathcal B(k,n)$ --- a reading
+that is ours, not Galashin's, since his Section~4 fixes $f$ loopless --- a loop label $p$ (that is,
+$f(p)=p$) is a lollipop in every reduced graph \cite[\S2.2]{Galashin}: its boundary vertex is white and
+adjacent to a black interior leaf, so the pendant edge lies in every almost perfect matching, carries
+weight $1$, and forces $p$ out of the index set of every nonvanishing minor. Hence the $p$-th column
+of $\Meas_f(\theta)$ vanishes, $p$ is an isolated vertex of $G_f^{\,x}$, $\Theadm=\Theta_{f'}^{\mathrm{adm}}\times\R$,
+and deleting the lollipop leaves a graph with strand permutation $f'=f\setminus\{p\}$,
+a bounded affine permutation of period $n-1$ and rank $k$. That graph is again reduced: deleting a pendant
+edge with a free end keeps the $k(n-k)+1-\ell(f)$ faces of a reduced graph \cite[\S2.2]{Galashin},
+and $\ell(f)=\ell(f')+k$ (stated in the proof of \cite[Thm.~7.12]{LamGrassmann}) makes this the count
+$k(n-1-k)+1-\ell(f')$ that characterizes the reduced graphs for $f'$; independently, the four conditions
+of \cite[Thm.~13.2]{Postnikov} pass to the deleted graph, the lollipop's edge lying on no other trip.
+The combinatorial facts are Lean theorems (\texttt{TP.\allowbreak deleteLoop\_\allowbreak bdd}, \texttt{TP.\allowbreak affRank\_\allowbreak deleteLoop}, \texttt{TP.\allowbreak affLength\_\allowbreak deleteLoop}). So $\Meas_f(\theta)$ is the image of
+$\Meas_{f'}(\theta')$, $\theta'$ the other angles, under the zero-column embedding $\Gr(k,n-1)\hookrightarrow\Gr(k,n)$,
+and the looped statement, that $\Meas_f$ is a homeomorphism from the gauge slice onto
+$\Critf$, follows from Theorem~\ref{thm:main} for $f$ with its loops deleted. This is a proof candidate
+under the reading above; \emph{none of it is claimed in this paper}, whose scope remains loopless.
+
+
+\section{Hyperbolic volume and earlier variational principles}\label{app:volume}
+This appendix expands the comparison summarized in \S\ref{sec:intro}.
+
+The immediate statistical-mechanical antecedent is Kenyon's critical dimer model
+\cite{Kenyon}. Galashin's introduction constructs critical cells from this model on
+isoradial plabic tilings \cite[Introduction and \S1.2]{Galashin}. Kenyon's critical
+dimer weight is $2\sin\alpha$, where $\alpha$ is a rhombus half-angle
+\cite[\S2.3]{Kenyon}; the same sine factor appears in Lemma~\ref{lem:hinge},
+whereas Galashin's interior-edge normalization is $\sin(\theta_q-\theta_p)$.
+The train-track criterion for rhombic embeddings is due to Kenyon--Schlenker
+\cite[Thm.~3.1]{KenyonSchlenker}.
+Kenyon's earlier variational argument \cite[\S8, Prop.~8.1 and Thm.~8.2]{Kenyon}
+parametrizes isoradial embeddings by a convex space of rhombus angles and obtains
+strict concavity by restricting a sum of per-rhombus functions to a linear
+subspace. This is a close antecedent of the mechanism here in the embedded
+regime, though his normalized log-determinant includes an energy term and is
+not identified with $-\Psi_f$.
+
+The distinction relevant here is between positive individual cotangents and positivity
+after cycle assembly. When every $\delta_e<\pi/2$, $H_f$ is a graph Laplacian with
+positive weights, so its positivity and kernel follow directly from the incidence
+matrix. The admissible chamber also permits $\delta_e>\pi/2$, where individual
+weights are negative; Proposition~\ref{prop:wp} supplies the cycles that preserve
+positivity there. The local rhombus comparison requires an orientation convention:
+for ordered unit sides $u_p=e^{-2i\theta_p}$ and $u_q=e^{-2i\theta_q}$, the
+counterclockwise signed area is
+$\det(u_p,u_q)=-\sin(2\delta_e)$. Thus the \emph{clockwise} signed area is
+$\sin(2\delta_e)=2\sin^2(\delta_e)\cot\delta_e$ and has the sign of the Hessian
+weight. This local calculation does not assert that every admissible tuple gives
+a global rhombic embedding, or identify the crossing-graph Laplacian with the
+electrical network of \cite[\S1.6]{Galashin}.
+
+Folded rhombi also occur in the flat and minimal isoradial immersions of
+Boutillier--Cimasoni--de~Tili\`ere
+\cite[Thms.~15 and~23; \S3.4]{BoutillierCimasoniDeTiliere}.
+Their minimal-immersion theorem is stated for graphs without unbounded faces;
+the disk boundary and local angle-map conditions require a separate comparison
+before one could identify our admissible chamber with their space $Y_G$
+\cite[\S4 and Lem.~26]{BoutillierCimasoniDeTiliere}. No such identification is
+used here. Proposition~\ref{prop:wp} supplies the winding-one decomposition
+that extends our convexity argument across the folds.
+
+The potential of \eqref{eq:potential} is not a new function. Normalise the antiderivative by
+$L(u)=\int_0^u\log\sin t\,dt$ (so $L(0)=0$; \eqref{eq:potential} fixes only $L'$), and let
+$\Lambda(x)=-\int_0^x\log\lvert2\sin t\rvert\,dt$ be Milnor's Lobachevsky function. Then
+$L(u)=-\Lambda(u)-u\log2$ identically on $(0,\pi)$, and by \eqref{eq:cycle-sum} together with
+Proposition~\ref{prop:wp} the quantity $\sum_e\delta_e(\theta)$ is a constant --- $\pi$ times the number
+of cycles in any winding-one partition --- on the whole chamber. Hence
+\begin{equation}\label{eq:lobachevsky}
+   \Psi_f(\theta)=-\sum_e\Lambda\bigl(\delta_e(\theta)\bigr)+\mathrm{const},
+\end{equation}
+with the same gradient and the same Hessian as the right-hand sum: \emph{$\Psi_f$ is minus a sum of
+Lobachevsky functions.} Under Galashin's identification $v_p=\exp(2i\theta_p)$
+\cite[Rem.~1.2]{Galashin} a winding-one cycle of $G_f^{\,x}$ is an ideal polygon inscribed in a circle in
+$\partial\mathbb H^3$, whose edges are the chords of length $2\sin\delta_e$ of Remark~\ref{rem:chord},
+and $\sum_{e\in Z}\Lambda(\delta_e)$ is the hyperbolic volume of the ideal polyhedron $P_Z$ obtained by
+coning that polygon to the ideal point $\infty$. For a $3$-cycle, $P_Z$ is an ideal tetrahedron and this is
+Milnor's formula for its volume in terms of its dihedral angles \cite[Appendix, Lem.~2]{Milnor}, in the form
+$\mathrm{vol}(T)=\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ recorded in
+\cite[Lem.~5.1]{FuterGueritaud}.\footnote{No result of this paper depends on any reference of this
+appendix: \eqref{eq:lobachevsky}, the constancy of $\sum_e\delta_e$ and the fan triangulation below are
+internal, Lemma~\ref{lem:cot} is proved in \S\ref{sec:convex}, and the $m=3$ formula is used only to read
+\eqref{eq:lobachevsky}.}
+For $m\ge4$ it follows from that case by fan triangulation. Cutting the
+polygon from $v_{p_1}$ decomposes $P_Z$ into the ideal tetrahedra
+$\mathrm{conv}(v_{p_1},v_{p_j},v_{p_{j+1}},\infty)$, $2\le j\le m-1$; the Euclidean base triangle of the
+$j$-th is inscribed in the same circle, so by the inscribed-angle theorem its angles are $\delta_{e_j}$,
+$\pi-A_j$ and $A_{j-1}$, where $A_j=\delta_{e_1}+\dots+\delta_{e_j}$ (these sum to $\pi$, as they must,
+because $A_m=\pi$ by \eqref{eq:cycle-sum}). Since $\Lambda$ is odd and $\pi$-periodic
+\cite[Appendix, Lem.~1]{Milnor},
+$\Lambda(\pi-A_j)=-\Lambda(A_j)$, so summing Milnor's formula over $j$ telescopes to
+$\Lambda(A_1)-\Lambda(A_{m-1})+\sum_{j=2}^{m-1}\Lambda(\delta_{e_j})
+=\sum_{e\in Z}\Lambda(\delta_e)$, using $A_1=\delta_{e_1}$ and $A_{m-1}=\pi-\delta_{e_m}$.
+So Proposition~\ref{prop:psd} says that a total hyperbolic volume is concave in these angles --- the
+analytic mechanism of the Casson--Rivin programme, in which strict concavity of the volume functional on
+the space of angle structures of an ideal triangulation is the key input
+\cite{Rivin1994,Rivin1996}, \cite[Thm.~1.2 and Lem.~5.3]{FuterGueritaud}. The same functional underlies Bobenko and
+Springborn's variational principles for circle patterns, whose functionals are built from
+$\operatorname{Im}\mathrm{Li}_2$, i.e.\ from Clausen's $\mathrm{Cl}_2$ with
+$\Lambda(x)=\tfrac12\mathrm{Cl}_2(2x)$ \cite{BobenkoSpringborn}, and
+Lemma~\ref{lem:cot} for $m=3$ is the classical cotangent formula for the Dirichlet energy of a
+piecewise-linear function on a Euclidean triangle \cite{Duffin}, \cite[Lem.~5]{PinkallPolthier}; for $m\ge4$ the lemma
+reduces to $m=3$ by telescoping the partial sums $A_j=\alpha_1+\dots+\alpha_j$,
+$D_j=d_1+\dots+d_j$, so it may be read as a classical fact rather than a new one.
+Figure~\ref{fig:clh-lean-lobachevsky} draws $\Lambda$ at the seven gaps of the worked example of Appendix~\ref{app:worked-example}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/clh_lean_lobachevsky.pdf}
+\caption{The Lobachevsky function $\Lambda(\delta)=-\int_0^{\delta}\log\lvert2\sin t\rvert\,dt$ on $(0,\pi)$, with the seven gaps $\delta_e$ of $\ba=(3,5,1,2,4)$ and $\theta/\pi=(0,0.1,0.7,0.3,0.8)$ marked and labelled by their edges $e$. They sum to $2\pi$, so by \eqref{eq:lobachevsky} $\Psi_f=-\sum_e\Lambda(\delta_e)+\mathrm{const}$. Numerical values, in floating point.}
+\label{fig:clh-lean-lobachevsky}
+\end{figure}
+
+Kenyon also relates the Lobachevsky sum to dimer entropy: in the periodic setting
+of \cite[\S10.4, Thm.~10.3]{Kenyon}, volume per site equals $2\pi$ times entropy
+per site. This is a related variational interpretation, not an entropy formula
+for our finite boundary problem. In particular, no normalization of a finite
+dimer partition function is identified with $\Psi_f$ here.
+
+What is new here is not the functional but the setting, and the decomposition that produces it. The
+domain is not the angle-structure polytope of an ideal triangulation: there is no $3$-manifold and no
+edge condition. The variables are the $n$ circle positions $\theta_p$; the ``angles'' are their
+differences along the crossing graph; and the relation $\sum_{e\in Z}\delta_e=\pi$ is an \emph{identity}
+in $\theta$, equation~\eqref{eq:cycle-sum}, not a constraint cutting out the domain --- so the
+nonemptiness of the angle-structure space, which is the hard part in the Casson--Rivin setting, does not
+arise, while the image of $\theta\mapsto(\delta_e)_e$ is in general a proper affine subspace of the
+product of the cycle simplices. Convexity restricts to a subspace, so the positivity in
+Proposition~\ref{prop:psd} is inherited from the classical concavity \emph{once the cycles are
+available}, and the new ingredient is Proposition~\ref{prop:wp}: the crossing graph of any
+loopless bounded affine permutation decomposes into inscribed polygons each winding exactly once around
+the circle. We are not aware of a counterpart to that statement in the variational literature.
+
+Two things this reading does not give. It does not identify $\Meas_f$ with a map studied there: Rivin's
+uniqueness of a critical point is a different assertion and is used nowhere below. And it does not
+supply boundary control. $\Lambda$ is finite at $0$ and at $\pi$, so $\Psi_f$ extends continuously to
+the closed chamber; each $\ell_e=\log\sin\delta_e$ is singular there, but the singularities can cancel in
+$G_f=B\ell$. For the directed triangle of Figure~\ref{fig:clh-matrix-small} and $\theta(t)=(0,t,2t)$,
+$\delta=(t,t,\pi-2t)$ and $G_f(\theta(t))=(\log(2\cos t),0,-\log(2\cos t))\to(\log2,0,-\log2)$ as
+$t\downarrow0$, although $\theta(t)$ tends to a vertex of the chamber. So the gradient need not diverge at
+the boundary, let alone with the uniform coercivity a compactification argument would need. Nor is the
+gradient image convex: for the same triangle $(\log2,0,-\log2)$ is the midpoint of the images of the
+triangles with side ratios $(1/4,1,1)$ and $(1,1/4,1)$, but it would need the degenerate ratio $(1:1:2)$.
+
+\section{Two constructions on actual instances}\label{app:lean-regimes}
+The two figures of this appendix draw constructions of the paper on actual instances: the window transition of
+Lemma~\ref{lem:wp-local-transition} and the component reduction of Lemma~\ref{lem:reduction}. Every value in them is
+computed by the formal definitions of Appendix~\ref{app:lean-interface} (\texttt{Conj43.\allowbreak WindowLemmasDefs} and
+\texttt{Conj43.\allowbreak ReductionDefs}); like the paper's other figures, they illustrate and are used in no proof.
+
+\subsection*{The window transition}
+Figure~\ref{fig:clh-window} draws the three regimes of Lemma~\ref{lem:wp-local-transition} schematically.
+Figure~\ref{fig:clh-lean-regimes} draws them, with the case $A=b$, on actual decorated bounded windows: in each panel
+an adjacent active ascent $a<b$ of a window $w$ is exchanged to give $g$, and the chords of both are drawn on one
+lifted turn.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/clh_lean_regimes.pdf}
+\caption{The cases of Lemma~\ref{lem:wp-local-transition} on actual windows: $S<A$ (top left), $A\le S<B$ (top
+right), $B\le S$ (bottom left) and $A=b$ (bottom right). Positions are the lifted positions of one turn, counted from
+$1$; entries are filled and exits hollow, and each chord runs from a strand's entry to its exit: $\alpha$'s strand
+blue, $\beta$'s ochre and dashed, $b$'s dark, the others grey. In the case $A=b$ the strands of $\alpha$ and $b$
+coincide. Green dots mark the crossings in $E(w)$ only and vermillion squares those in $E(g)$ only; the two sets are
+listed below each panel. Computed by the formal definitions of Appendix~\ref{app:lean-interface}.}
+\label{fig:clh-lean-regimes}
+\end{figure}
+
+\subsection*{The component reduction}
+Figure~\ref{fig:clh-lean-reduction-parts} draws the parts of Lemma~\ref{lem:reduction} on small cells, writing
+$f^{(C)}$ for the restriction to a component $C$. In (a), the cell $\ba=(3,1,2,6,4,5)$ of
+Figure~\ref{fig:clh-lean-reduction} has two crossing components; erasing the strands outside each and relabeling the
+survivors from the least label gives $\overline{f^{(C)}}=(3,1,2)$ for both, with every crossing kept, as part (1)
+says. In (b), $\ba=(3,1,2,4)$: the label $4$ crosses nothing, so $\{4\}$ is a component, whose gauge slice is a point
+(part (3)), while the other component restricts to $(3,1,2)$, which has no fixed point (part (4)). In (c), the angles
+$\theta/\pi=(0,0.2,0.8,0.1,0.4,0.7)$ on the cell of (a) restrict to each component, anchored at its least label, and
+every gap $\delta_e$ is unchanged: the slice half of part (2). Panel (d) is the smallest instance of
+Remark~\ref{rem:not-restriction}: for $\ba=(2,1)$ the crossing graph has no edges, so $\{1\}$ is a component, yet
+$\ba(1)=2$ lies outside it.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/clh_lean_reduction_parts.pdf}
+\caption{Lemma~\ref{lem:reduction} on actual cells. (a) Part (1): the two components of $\ba=(3,1,2,6,4,5)$ each
+restrict, after erasure and relabeling, to $(3,1,2)$. (b) Parts (3) and (4): for $\ba=(3,1,2,4)$ the coloop $4$ is a
+one-label component with a one-point slice, and the other component restricts to a permutation without fixed points.
+(c) The slice half of part (2): restricting $\theta$ to each component keeps every gap $\delta_e$; the bars show
+$\delta_e/\pi$ before and after the relabeling. (d) Remark~\ref{rem:not-restriction}: for $\ba=(2,1)$ the component
+$\{1\}$ is not carried to itself. Computed by the formal definitions of Appendix~\ref{app:lean-interface}.}
+\label{fig:clh-lean-reduction-parts}
+\end{figure}
 
 \end{document}

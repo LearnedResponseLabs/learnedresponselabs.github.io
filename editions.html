@@ -18,11 +18,11 @@
 <main class="wrap" id="main">
 <div class="page-head"><h1>Reading editions</h1><p class="lede">A reading edition sets each statement of a paper beside the frozen Lean statement that checks it, or the source it rests on, so you can see exactly what the machine verified and what it did not. Every edition is reviewed internally before its paper is released; external reviews are noted as they arrive.</p></div>
 <div class="edition-card"><p class="label">Edition of the paper</p><h2>Galashin’s Conjecture 4.3 via a convex gradient</h2>
-<p class="muted">91 items, from the paper’s formal statements to the steps the formalization leaves out.</p>
+<p class="muted">106 items, from the paper’s formal statements to the steps the formalization leaves out.</p>
 <p style="font-size:.9375rem"><span class="pip ok" style="margin-right:8px"></span>Reviewed internally before release. External review is pending; reviews received will be noted here.</p>
 <div class="links"><a class="btn primary" href="editions/clh/index.html">Open the edition</a></div></div>
 <div class="block"><h2>One item, as the edition shows it</h2>
-<div class="facing"><div><p class="label">The paper · Corollary 31 · p. 43</p>
+<div class="facing"><div><p class="label">The paper · Corollary 31 · p. 39</p>
 <p class="paper-text"><b style="font-weight:600">Corollary 31</b> (inverting <span class="m">G<sub>f</sub></span> is minimizing). For every <span class="m">y</span> ∈ <span class="m">G<sub>f</sub></span>(<span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup>) there is exactly one <span class="m">θ</span> ∈ <span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup> with <span class="m">G<sub>f</sub></span>(<span class="m">θ</span>) = <span class="m">y</span>, and it is the unique minimizer of <span class="m">F<sub>y</sub></span> = <span class="m">Ψ<sub>f</sub></span> − ⟨<span class="m">y</span>, ·⟩ on <span class="m">Θ<sub>f</sub></span><sup>&gt;0</sup>.</p></div>
 <div><p class="label">Lean · the frozen statement</p><pre class="lean"><span class="kw">theorem</span> variational_gradient_preimage (F : LooplessBAP n) (a : Fin n → ℝ) :
     <span class="kw">let</span> δ := (<span class="kw">fun</span> (θ : Fin n → ℝ) (e : Fin n × Fin n) =&gt; θ e.2 - θ e.1 + Real.pi * (if e.2 &lt; e.1 then 1 else 0))
