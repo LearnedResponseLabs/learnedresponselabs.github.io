@@ -111,17 +111,18 @@ computation or a numerical certificate. The computer-assisted results are in the
 
 ## Status
 `CLAIMS.md` is authoritative (CLH-1..CLH-7, CLH-12..CLH-15). Build with `pdflatex main.tex` (×3);
-`conj43_loopless_homeomorphism.pdf` is the tracked, named PDF. The earlier paper and certificate DOIs
-and the rights metadata are inserted in the source. The coloop-inclusive source supplement awaits a
-public version DOI, marked as pending in Appendix A.
+`conj43_loopless_homeomorphism.pdf` is the tracked, named PDF. The earlier paper and certificate DOIs,
+the source supplement's DOI and the rights metadata are inserted in the source. This version was posted
+on 2026-10-26 as version 2 of the paper's record (10.5281/zenodo.23676807), together with its source
+supplement (10.5281/zenodo.23676891); the tracked PDF is the posted file.
 
-Since the deposited version, the paper has gained the variational inverse, Kenyon's variational
-antecedent, the folded-immersion comparison with its stated limitations, the formal-interface appendix,
-a named half-open reading lemma, the window induction as the primary proof of the partition (with the
-strand proof's sign count derived ray by ray), a proof candidate for looped cells (not claimed), the sharp
-modulus with its inverse-Lipschitz bound, Corollaries 31–33, figures drawn from values computed in Lean,
-and a worked example (Appendix B). Statement numbers changed in the 2026-10-20 revision and again when
-the corollaries were added.
+Since the first deposited version (10.5281/zenodo.21650342), the paper has gained the variational
+inverse, Kenyon's variational antecedent, the folded-immersion comparison with its stated limitations,
+the formal-interface appendix, a named half-open reading lemma, the window induction as the primary
+proof of the partition (with the strand proof's sign count derived ray by ray), a proof candidate for
+looped cells (not claimed), the sharp modulus with its inverse-Lipschitz bound, Corollaries 31–33,
+figures drawn from values computed in Lean, and a worked example (Appendix B). Statement numbers changed
+in the 2026-10-20 revision and again when the corollaries were added.
 
 This revision has not been published. `Whiteboard ready: NO` remains an author-owned
 release gate. The paper was reviewed internally before release; external mathematical review has not

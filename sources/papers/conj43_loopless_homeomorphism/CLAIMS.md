@@ -52,7 +52,8 @@ by finite cross-validation. Complete receipt metadata does not assert full theor
 coverage. A separate exact re-derivation receipt covers all loopless cells through
 `n=8`, including coloops; this finite execution does not replace a uniform formal
 receipt. Public
-formal-source references and their remaining DOI gap are stated in Appendix A.
+formal-source references, with the source supplement's DOI (10.5281/zenodo.23676891), are stated in
+Appendix A.
 
 **Attribution.** `Meas_f`, the curve `γ_{f,θ}`, the necklace exponent formula (Prop 5.12),
 the admissibility chamber, the bracket `[[x,y]]` and the specialization `t_p = e^{iθ_p}` (Def. 1.12,
