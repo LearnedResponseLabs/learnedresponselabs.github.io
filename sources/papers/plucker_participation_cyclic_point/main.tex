@@ -1,0 +1,956 @@
+\documentclass[11pt]{article}
+% claims-sync: status=AUTHOR_REVIEW manifest=CLAIMS.md
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  unicode=true,
+  pdftitle={The Regular Cyclic Point Maximizes Plücker Participation on the Positive Grassmannian},
+  pdfauthor={Adam Guetz},
+  pdfsubject={Extremal property of the regular cyclic point for the Plücker participation ratio, via the comass of the all-ones Plücker form},
+  pdfkeywords={positive Grassmannian, Plücker coordinates, participation ratio, comass, Wirtinger inequality, regular cyclic point}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\Part}{\mathsf{Part}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+\title{The Regular Cyclic Point Maximizes Plücker Participation on the Positive Grassmannian}
+\author{Adam Guetz\thanks{Learned Response Labs; ORCID \href{https://orcid.org/0000-0003-0105-4628}{0000-0003-0105-4628}; \texttt{\href{mailto:learnedresponselabs@gmail.com}{learnedresponselabs@gmail.com}}. See ``A note on process'' for authorship and review status. A reading edition of this paper beside the Lean source, with narrated interactive explainers, is at \href{https://learnedresponselabs.github.io/papers/plucker_participation_cyclic_point.html}{\mbox{\nolinkurl{https://learnedresponselabs.github.io/papers/plucker_participation_cyclic_point.html}}}.}}
+\date{November 24, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a proof candidate, pending external mathematical review, for the
+maximum over the positive top cell \(\Gr_{>0}(k,n)\) of the
+Plücker participation ratio
+\[
+  \Part(C)=
+  \frac{\left(\sum_{|I|=k}\Delta_I(C)\right)^2}
+       {\sum_{|I|=k}\Delta_I(C)^2}.
+\]
+The maximum is attained at the regular cyclic point and is
+\[
+  \begin{cases}
+  \displaystyle
+  \prod_{r=1}^{m}\cot^2\!\left(\frac{(2r-1)\pi}{2n}\right),
+  & k=2m,\\[1.2em]
+  \displaystyle
+  n\prod_{r=1}^{m}\cot^2\!\left(\frac{r\pi}{n}\right),
+  & k=2m+1.
+  \end{cases}
+\]
+Moreover the regular cyclic point is the \emph{unique} global maximizer (for
+each \((k,n)\) the equality locus is a single cyclic Fourier plane).
+The proof converts the positive Plücker participation problem into the comass
+of the all-ones Plücker \(k\)-form.  That form is
+\(\Omega^m/m!\) in even degree and \(\eta\wedge\Omega^m/m!\) in odd degree,
+where \(\Omega=\sum_{i<j} e_i\wedge e_j\) is the sign-kernel two-form and
+\(\eta=\sum_i e_i\).  A finite Fourier diagonalization of the sign kernel,
+followed by the standard Wirtinger comass bound for powers of a two-form, gives
+the displayed product.  The equality planes are the cyclic Fourier planes,
+whose Plücker coordinates are the regular cyclic chord products.
+\end{abstract}
+
+\paragraph{Scope.}
+This note presents proof candidates for the positive top-cell bound and
+uniqueness (Corollary~\ref{cor:uniqueness}) and their extension to the
+nonnegative Grassmannian, with strict inequality at every boundary point
+(Corollary~\ref{cor:tnn}); external mathematical review is pending. It does
+not determine the maximum or maximizers on individual lower positroid cells
+or boundary strata, or assert an optimization theorem for arbitrary
+non-decomposable signed coordinate vectors.  The term
+\emph{Plücker participation ratio} is used throughout; the same statistic is
+also the inverse Simpson concentration of the normalized Plücker weights.
+
+\noindent\begin{minipage}{\textwidth}
+\tableofcontents
+\end{minipage}
+
+\section{Introduction}
+
+The positive Grassmannian has a distinguished regular cyclic point: the point
+whose Plücker coordinates are proportional to the chord products of \(n\)
+regularly spaced points on a circle.  This point appears naturally in the
+cyclic symmetry and critical-variety literature around the positive
+Grassmannian \cite{Postnikov2006,Karp2018,GalashinCritical}.  The purpose of
+this note is to record a sharp extremal property of that point for a simple
+scale-invariant functional on Plücker coordinates.
+
+Ogranovich~\cite{ogranovich2020regular} minimizes the largest-to-smallest
+Plücker \emph{spread} on \(\Gr_{>0}(2,n)\), proving the regular-polygon point
+extremal for \(k=2\) and stating the general-\(k\) spread extremality as a
+conjecture (his Conjecture~1.2); here we instead maximize the inverse-Simpson
+\emph{participation} \((\sum_I\Delta_I)^2/\sum_I\Delta_I^2\) on \(\Gr_{>0}(k,n)\)
+for all \(k\), via the comass of the all-ones Plücker form, with an explicit
+\(\cot^2\) value.  The two functionals differ, so our all-\(k\) proposed theorem is
+complementary to --- and does not resolve --- his conjecture. The uniqueness argument appears in
+Corollary~\ref{cor:uniqueness}, using the rigidity clause of the Wirtinger
+lemma; it is a proof candidate pending external review.
+
+For a positive Plücker vector \(p=(p_I)\), define
+\[
+  \Part(p)=\frac{\norm{p}_1^2}{\norm{p}_2^2}.
+\]
+Intuitively, this ratio measures how many Plücker coordinates meaningfully
+contribute to \(p\): values near \(1\) indicate concentration, while large
+values indicate that the Plücker mass is distributed as evenly as the Plücker
+relations allow.
+Equivalently, after normalizing \(w_I=p_I/\sum_J p_J\), one has
+\[
+  \Part(p)=\frac{1}{\sum_I w_I^2}.
+\]
+Thus \(\Part\) is the inverse Simpson concentration of the normalized Plücker
+weights.  We use the more descriptive algebraic-geometry phrase
+\emph{Plücker participation ratio}.
+With \(N=\binom nk\) and \(u\) the uniform weight vector, \(u_I=1/N\),
+\[
+  \norm{w-u}_2^2=\sum_I w_I^2-\frac1N=\frac{1}{\Part(p)}-\frac1N .
+\]
+So maximizing \(\Part\) is the same as minimizing the Euclidean distance from the normalized
+Plücker weights to the uniform weights.
+
+The functional is defined using Plücker coordinates in the fixed standard
+coordinate basis of \(\R^n\).  It is invariant under change of row basis and
+global Plücker rescaling, hence is well-defined on \(\Gr(k,n)\), but it is not
+invariant under the positive diagonal torus acting on the ambient coordinates:
+torus rescaling moves the Grassmannian point and can change \(\Part\).  The
+statistic therefore does not descend without further normalization to the
+configuration quotient \(\Gr(k,n)/T\).  This is not an additional hypothesis
+in Theorem~\ref{thm:main}; it is a boundary on how the statistic should be
+reused outside this paper.
+
+\begin{theorem}[top-cell Plücker participation maximum]
+\label{thm:main}
+Let \(1\leq k\leq n\), and let \(C\in\Gr_{>0}(k,n)\).  Then
+\[
+  \Part(C)
+  =
+  \frac{\left(\sum_{|I|=k}\Delta_I(C)\right)^2}
+       {\sum_{|I|=k}\Delta_I(C)^2}
+\]
+is bounded as follows.
+If \(k=2m\), then
+\[
+  \Part(C)
+  \leq
+  \prod_{r=1}^{m}\cot^2\!\left(\frac{(2r-1)\pi}{2n}\right).
+\]
+If \(k=2m+1\), then
+\[
+  \Part(C)
+  \leq
+  n\prod_{r=1}^{m}\cot^2\!\left(\frac{r\pi}{n}\right).
+\]
+Both bounds are attained by the regular cyclic point, and by no other point of
+\(\Gr_{>0}(k,n)\) (Corollary~\ref{cor:uniqueness}).
+\end{theorem}
+
+Empty products are interpreted as \(1\).  Thus the formula includes, for
+example, the case \(k=1\), where it reduces to
+\(\Part(C)\leq n\).  At the other endpoint \(k=n\), the cotangent products
+reduce to \(1\), matching the single Plücker coordinate of \(\Gr(n,n)\).
+
+The proof actually bounds a larger problem: it computes the comass of the
+all-ones Plücker form on all oriented \(k\)-planes in \(\R^n\).  Positivity
+enters when identifying \(\Part(C)\) with the square of that form on the
+positive Plücker representative and when verifying that the cyclic equality
+plane lies in \(\Gr_{>0}(k,n)\).
+
+The same comass computation also gives a signed decomposable variant.  If
+\(E\) is an oriented \(k\)-plane with nonzero Plücker representative
+\(\xi=\sum_I p_Ie_I\), define
+\[
+  \Part_{\pm}(E)
+  =
+  \frac{\left(\sum_{|I|=k}p_I\right)^2}{\sum_{|I|=k}p_I^2}.
+\]
+The square makes \(\Part_{\pm}\) independent of reversing the orientation of
+the plane.  Unlike \(\Part\) on the positive Grassmannian, this signed
+functional allows cancellations among the Plücker coordinates.
+
+\section{Participation and the All-Ones Plücker Form}
+
+Fix the orthonormal basis \(e_0,\ldots,e_{n-1}\) of \(\R^n\).  All subsets
+\(I\) are subsets of the zero-based ground set \(\{0,\ldots,n-1\}\).  For
+\(I=\{i_1<\cdots<i_k\}\), write
+\[
+  e_I=e_{i_1}\wedge\cdots\wedge e_{i_k}.
+\]
+Define the all-ones Plücker \(k\)-form
+\[
+  \Phi_k=\sum_{|I|=k} e_I.
+\]
+Here and below the standard inner product identifies \(\bigwedge^k\R^n\) with its dual, so
+\(\Phi_k\) acts as a \(k\)-form: \(\Phi_k(\xi)=\langle\Phi_k,\xi\rangle=\sum_I p_I\) for
+\(\xi=\sum_I p_Ie_I\).  The Plücker relations constrain the decomposable vector \(\xi\) on which
+\(\Phi_k\) is evaluated.  They place no condition on \(\Phi_k\) itself, which is in general not
+decomposable.
+For a \(d\)-form \(\alpha\) on an inner-product space \(W\), write
+\[
+  \norm{\alpha}_{*,W}
+  =
+  \sup\{\abs{\alpha(\xi)}:\xi\in\bigwedge^d W
+  \text{ is unit and decomposable}\}.
+\]
+When the ambient space is clear we write simply \(\norm{\alpha}_*\).
+
+\begin{proposition}[reduction to comass]
+\label{prop:comass-reduction}
+Let \(C\in\Gr_{>0}(k,n)\), and let
+\[
+  \xi=\sum_{|I|=k}p_I e_I
+\]
+be a decomposable representative with all \(p_I=\Delta_I(C)>0\).  Then
+\[
+  \Part(C)=\Phi_k(\widehat{\xi})^2,
+  \qquad
+  \widehat{\xi}=\frac{\xi}{\norm{\xi}}.
+\]
+Consequently,
+\[
+  \Part(C)\leq \norm{\Phi_k}_*^2,
+\]
+where \(\norm{\cdot}_*\) denotes comass.
+\end{proposition}
+
+\begin{proof}
+Since the exterior basis \(e_I\) is orthonormal,
+\[
+  \norm{\xi}^2=\sum_I p_I^2.
+\]
+Also
+\[
+  \Phi_k(\xi)=\sum_I p_I.
+\]
+Dividing by \(\norm{\xi}\) gives
+\[
+  \Phi_k(\widehat{\xi})^2
+  =
+  \frac{\left(\sum_I p_I\right)^2}{\sum_I p_I^2}
+  =
+  \Part(C).
+\]
+The comass bound follows because \(\widehat{\xi}\) is a unit decomposable
+\(k\)-vector, so it is one of the vectors over which the comass supremum is
+taken.
+\end{proof}
+
+\paragraph{Example: \(\Gr_{>0}(2,4)\).}
+Order the six coordinates as \((p_{01},p_{02},p_{03},p_{12},p_{13},p_{23})\).  The coefficient
+vector of \(\Phi_2\) has \(\norm{\Phi_2}^2=6\), and Cauchy--Schwarz gives \(\Part\le6\) with
+equality only when all six coordinates have a common value \(t\).  That vector is not
+decomposable: the Plücker relation
+\[
+  p_{01}p_{23}-p_{02}p_{13}+p_{03}p_{12}=0
+\]
+would read \(t^2=0\).  The regular cyclic point has coordinates proportional to
+\((1,\sqrt2,1,1,\sqrt2,1)\), the sides and diagonals of a square.  For it the relation reads
+\(1-2+1=0\), and
+\[
+  \Part=\frac{(4+2\sqrt2)^2}{8}=3+2\sqrt2=\cot^2\frac{\pi}{8}\approx5.83 .
+\]
+By Theorem~\ref{thm:main} this is the maximum.  So \(\norm{\Phi_2}^2=6\) while
+\(\norm{\Phi_2}_*^2=3+2\sqrt2\): the comass is the bound that takes the Plücker relation into
+account.
+
+\section{The Sign-Kernel Two-Form}
+
+Let
+\[
+  \eta=\sum_{i=0}^{n-1} e_i,
+  \qquad
+  \Omega=\sum_{0\leq i<j\leq n-1} e_i\wedge e_j.
+\]
+The key point is that the all-ones Plücker forms are powers of the same
+two-form.  Here and throughout, a power of a form is its exterior power:
+\(\Omega^m=\Omega\wedge\cdots\wedge\Omega\) with \(m\) factors, and \(\Omega^0=1\).
+
+\begin{lemma}[exterior identities]
+\label{lem:exterior-identities}
+For \(m\geq 0\),
+\[
+  \Phi_{2m}=\frac{\Omega^m}{m!},
+  \qquad
+  \Phi_{2m+1}=\eta\wedge\frac{\Omega^m}{m!}.
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(C\) be a skew matrix and \(\omega=\sum_{i<j}C_{ij}\,e_i\wedge e_j\). For
+\(I=\{i_1<\cdots<i_{2m}\}\), the coefficient of \(e_I\) in \(\omega^m/m!\) is the
+Pfaffian of the principal submatrix \(C_I\). This is the standard exterior-algebra
+form of the Pfaffian; for a \(2m\times 2m\) matrix it reads
+\(\omega^m/m!=\operatorname{Pf}(C)\,e_1\wedge\cdots\wedge e_{2m}\). It follows from
+the definition of the Pfaffian as a signed sum over perfect matchings
+\cite[\S2]{Stembridge1990}. Two-forms commute, so \(\omega^m/m!\) is the sum, over
+the perfect matchings \(\pi\) of \(I\) into pairs \(i<j\), of
+\(\prod_{(i,j)\in\pi}C_{ij}\) times the wedge of the \(e_i\wedge e_j\) listed by
+smaller end. Sorting that wedge into \(e_I\) takes one transposition for each two
+pairs of \(\pi\) that cross and zero or two for each two that do not, so its sign
+is the sign of the matching.
+
+For \(\omega=\Omega\), the matrix \(C_I\) is the \(2m\times 2m\) skew matrix
+\(A_I\) with entries
+\[
+  (A_I)_{ab}=\operatorname{sgn}(i_b-i_a).
+\]
+In the ordered basis this is the skew matrix with \(1\)'s above the diagonal
+and \(-1\)'s below.  Its Pfaffian is \(1\)
+\cite[Proposition~2.3(c)]{Stembridge1990}.  One quick proof is induction by
+expanding along the first row: every even principal deletion has the same
+form, and the alternating sum \(1-1+\cdots+1\) over \(2m-1\) terms equals
+\(1\).
+
+For odd degree, let \(|I|=2m+1\). Since
+\(e_{i_q}\wedge e_{I\setminus\{i_q\}}=(-1)^{q+1}e_I\), the coefficient of
+\(e_I\) in \(\eta\wedge\Omega^m/m!\) is
+\[
+  \sum_{q=1}^{2m+1}(-1)^{q+1}
+  \operatorname{Pf}(A_{I\setminus\{i_q\}}).
+\]
+Each even Pfaffian in this sum is \(1\), and the alternating sum has an odd
+number of terms.  Hence the coefficient is again \(1\).
+\end{proof}
+
+\section{Fourier Spectrum of the Sign Kernel}\label{sec:fourier}
+
+Let \(A\) be the skew matrix of \(\Omega\):
+\[
+  A_{ij}=
+  \begin{cases}
+    1, & i<j,\\
+   -1, & i>j,\\
+    0, & i=j.
+  \end{cases}
+\]
+Throughout, the singular values of a two-form are listed once per singular pair.  Each is a
+singular value of the form's skew matrix, where it occurs twice.
+
+\begin{lemma}[spectrum on \(\R^n\)]
+\label{lem:spectrum-rn}
+The positive singular values of \(\Omega\) on \(\R^n\) are
+\[
+  \lambda_r=\cot\!\left(\frac{(2r-1)\pi}{2n}\right),
+  \qquad
+  r=1,\ldots,\left\lfloor\frac n2\right\rfloor,
+\]
+listed in decreasing order.
+\end{lemma}
+
+\begin{proof}
+For a complex Fourier vector
+\[
+  v_z=(1,z,z^2,\ldots,z^{n-1}),
+\]
+if \(z^n=-1\), then a direct geometric-sum computation gives
+\[
+  (A v_z)_i
+  =
+  \sum_{j>i}z^j-\sum_{j<i}z^j
+  =
+  z^i\frac{1+z}{1-z}.
+\]
+Thus \(v_z\) is an eigenvector with eigenvalue \((1+z)/(1-z)\).  For
+\(z=e^{i\theta}\),
+\[
+  \frac{1+z}{1-z}=i\cot(\theta/2).
+\]
+The roots with \(z^n=-1\) have \(\theta=(2r-1)\pi/n\), and the real skew
+matrix has singular values given by the absolute values of these imaginary
+eigenvalues.  Pairing conjugate roots gives the displayed positive list.
+\end{proof}
+
+The odd-degree case uses the restriction of \(\Omega\) to
+\(\eta^\perp\).
+
+\begin{lemma}[spectrum on \(\eta^\perp\)]
+\label{lem:spectrum-eta-perp}
+The positive singular values of \(\Omega|_{\eta^\perp}\) are
+\[
+  \mu_r=\cot\!\left(\frac{r\pi}{n}\right),
+  \qquad
+  r=1,\ldots,\left\lfloor\frac{n-1}{2}\right\rfloor,
+\]
+listed in decreasing order.
+\end{lemma}
+
+\begin{proof}
+Let \(z^n=1\) and \(z\neq 1\).  Then \(v_z\in\eta^\perp_\C\), and
+\[
+  A v_z
+  =
+  \frac{1+z}{1-z}v_z-\frac{2}{1-z}\eta.
+\]
+After projecting away the \(\eta\)-component, \(v_z\) is an eigenvector of
+the projected operator with eigenvalue \((1+z)/(1-z)\).  Writing
+\(z=e^{2\pi i r/n}\) gives \(i\cot(r\pi/n)\), and conjugate pairing gives
+the displayed singular values.
+\end{proof}
+
+\section{Comass and the Sharp Bound}
+
+We use the standard Wirtinger comass calculation for powers of a two-form.  The
+classical calibration perspective is discussed in \cite{HarveyLawson1982}.
+We give the norm computation and the equality argument needed here directly.
+
+\begin{lemma}[Wirtinger comass for powers of a two-form]
+\label{lem:wirtinger}
+Let \(\Theta\) be a real two-form on a Euclidean vector space with singular
+values
+\[
+  \sigma_1\geq \sigma_2\geq \cdots \geq \sigma_s\geq 0.
+\]
+For \(0\le m\le s\), with the empty product understood as one,
+\[
+  \left\|\frac{\Theta^m}{m!}\right\|_*
+  =
+  \sigma_1\sigma_2\cdots\sigma_m.
+\]
+The supremum defining the comass is attained on the \(2m\)-plane spanned by the
+first \(m\) singular pairs.  Moreover \emph{(rigidity)}, if \(m\ge1\) and
+\(\sigma_m>\sigma_{m+1}\) then it is attained \emph{only} on that plane; in particular, when the top \(m\) singular
+values are distinct from the remaining ones the maximizing \(2m\)-plane is
+\emph{unique}.
+\end{lemma}
+
+\begin{proof}
+Choose an orthonormal singular-pair basis in which
+\(\Theta=\sum_{r=1}^{s}\sigma_r\,x_r\wedge y_r\). The two-forms \(x_r\wedge y_r\) commute and
+have square zero, so expanding the power gives
+\[
+  \frac{\Theta^m}{m!}
+  =\sum_{\substack{J\subseteq\{1,\dots,s\}\\ |J|=m}}
+   \Bigl(\prod_{r\in J}\sigma_r\Bigr)\bigwedge_{r\in J}(x_r\wedge y_r),
+\]
+each \(m\)-set \(J\) arising from its \(m!\) orderings. In particular
+\(\Theta^m/m!\) takes the value \(\sigma_1\cdots\sigma_m\) on the unit simple
+\(2m\)-vector of the first \(m\) singular pairs, so the comass is at least this
+product. Conversely, for a unit simple \(2m\)-vector
+\(\xi\) spanning an oriented \(2m\)-plane \(P\), evaluation against an orthonormal
+oriented basis of \(P\) gives
+\(\langle\Theta^m/m!,\xi\rangle=\operatorname{Pf}\!\bigl(\Theta|_P\bigr)\), the
+Pfaffian of the restriction of \(\Theta\) to \(P\), by the identity at the start of the proof of
+Lemma~\ref{lem:exterior-identities} in that basis. Restriction to a subspace is a
+compression of the skew operator dual to \(\Theta\). (Convention: we list a skew
+form's \emph{singular pair-values} \(\beta_1\ge\beta_2\ge\cdots\), one entry per
+singular pair --- the underlying matrix's singular values occur doubled.) By the
+Cauchy/Poincar\'e
+interlacing theorem for compressions, applied to the Hermitian complexification
+used below, the \(j\)-th singular pair-value of \(\Theta|_P\)
+is at most \(\sigma_j\) for every \(j\). Since \(\bigl|\operatorname{Pf}(\Theta|_P)\bigr|\)
+is the product of the \(m\) singular pair-values of \(\Theta|_P\),
+\[
+  \bigl|\langle\Theta^m/m!,\xi\rangle\bigr|
+  =\prod_{j=1}^{m}\bigl(j\text{-th singular pair-value of }\Theta|_P\bigr)
+  \;\le\;\sigma_1\cdots\sigma_m,
+\]
+with equality on the span of the first \(m\) singular pairs, as computed above; this is
+the comass value.
+
+For the rigidity, assume \(\sigma_m>\sigma_{m+1}\) (convention:
+\(\sigma_{m+1}:=0\) when \(m\) equals the number of singular pairs) and
+equality. The following interlacing equality argument includes multiplicities. Let \(A\) be the real skew operator dual to
+\(\Theta\) and complexify: \(H:=iA_{\C}\) is Hermitian on \(V_{\C}\), with
+eigenvalue list, in decreasing order,
+\(\sigma_1\ge\cdots\ge\sigma_s\ge0=\cdots=0\ge-\sigma_s\ge\cdots\ge-\sigma_1\).
+Let \(P_{\C}\subset V_{\C}\) be the complexification of \(P\) and \(K\) the
+compression of \(H\) to \(P_{\C}\); since compression commutes with
+complexification and with multiplication by \(i\), \(K\) is Hermitian with
+eigenvalues \(\pm\beta_1,\dots,\pm\beta_m\), the \(\beta_j\) being the singular
+pair-values of \(\Theta|_P\). Equality gives \(\beta_j=\sigma_j\) for all
+\(j\le m\).
+
+\emph{Top family.} \(\lambda_1(K)=\sigma_1=\lambda_1(H)\), so a unit top
+eigenvector \(\psi_1\in P_{\C}\) of \(K\) attains the global Rayleigh maximum
+of \(H\) and is therefore an \(H\)-eigenvector with eigenvalue \(\sigma_1\).
+As \(\psi_1\) is an \(H\)-eigenvector, \(\psi_1^\perp\) is \(H\)-invariant,
+\(H|_{\psi_1^\perp}\) has the spectrum of \(H\) with one copy of \(\sigma_1\)
+removed, and the compression of \(H|_{\psi_1^\perp}\) to
+\(P_{\C}\cap\psi_1^\perp\) is \(K|_{P_{\C}\cap\psi_1^\perp}\) (for
+\(v\in P_{\C}\cap\psi_1^\perp\) one has
+\(\langle Hv,\psi_1\rangle=\sigma_1\langle v,\psi_1\rangle=0\)), with top
+eigenvalue \(\lambda_2(K)=\sigma_2=\lambda_1(H|_{\psi_1^\perp})\). Iterating
+\(m\) times produces orthonormal \(\psi_1,\dots,\psi_m\in P_{\C}\) with
+\(H\psi_j=\sigma_j\psi_j\).
+
+\emph{Bottom family.} The bottom \(m\) eigenvalues of \(K\) are
+\(-\sigma_m,\dots,-\sigma_1\), equal to the bottom \(m\) of \(H\); the same
+induction applied to \(-H\) produces orthonormal
+\(\varphi_1,\dots,\varphi_m\in P_{\C}\) with \(H\varphi_j=-\sigma_j\varphi_j\).
+Every \(\sigma_j\) with \(j\le m\) is strictly positive
+(\(\sigma_j\ge\sigma_m>\sigma_{m+1}\ge0\)), so the two families have disjoint
+eigenvalue sets and are mutually orthogonal: together they form \(2m\)
+orthonormal vectors in the \(2m\)-dimensional \(P_{\C}\), hence span it.
+
+\emph{Identification.} For \(j\le m\), the full \(H\)-eigenspaces of
+\(\pm\sigma_j\) lie inside
+\(\bigl(\bigoplus_{r\le m}\operatorname{span}(x_r,y_r)\bigr)_{\C}\): a pair
+index \(r>m\) with \(\sigma_r=\sigma_j\) would force
+\(\sigma_j\le\sigma_{m+1}<\sigma_m\le\sigma_j\), a contradiction. Hence
+\(P_{\C}\subseteq\bigl(\bigoplus_{r\le m}\operatorname{span}(x_r,y_r)\bigr)_{\C}\);
+both sides have complex dimension \(2m\), so they are equal, and taking real
+points, \(P=\bigoplus_{r\le m}\operatorname{span}(x_r,y_r)\). The maximizing
+plane is therefore unique.
+\end{proof}
+
+\begin{remark}[on the rigidity clause]
+\label{rem:rigidity-clause}
+The rigidity clause runs by Pfaffian compression and interlacing; we invoke
+Harvey--Lawson only for the comass value and the calibration convention, not
+for the equality-case carry-through. Its hypothesis \(\sigma_m>\sigma_{m+1}\)
+is immediate for the sign-kernel cotangents (they are strictly monotone on
+their ranges; \S\ref{sec:fourier}).
+
+The rigidity proof allows ties within the selected group and a zero
+next pair-value, but requires a strict gap at the cutoff. Kernel directions
+cannot occur in an equality plane under that hypothesis. The wedge-line
+classification requires a nonzero residual form; every application here
+satisfies this requirement. Positivity and the orientation of the Fourier
+witness are established by Lemma~\ref{lem:fourier-minors}.
+\end{remark}
+
+\begin{lemma}[wedging with a distinguished line]
+\label{lem:wedge-line}
+Use the Euclidean metric to identify vectors and covectors.
+Let \(V=\R u\oplus W\) be an orthogonal decomposition with \(\norm{u}=1\).
+If \(\alpha\in\bigwedge^d W^*\), then
+\[
+  \norm{u^*\wedge\alpha}_{*,V}=\norm{\alpha}_{*,W},
+\]
+with equality classification for \(\alpha\neq0\): a unit decomposable \((d+1)\)-vector attains
+\(\norm{u^*\wedge\alpha}_{*,V}\) only if its plane is \(\R u\oplus Q'\), where
+\(Q'\subset W\) is a \(d\)-plane whose unit \(d\)-vector attains
+\(\norm{\alpha}_{*,W}\).
+Consequently, for any nonzero \(\eta\in V^*\) and
+\(\alpha\in\bigwedge^d(\eta^\perp)^*\),
+\[
+  \norm{\eta\wedge\alpha}_{*,V}
+  =
+  \norm{\eta}\,\norm{\alpha}_{*,\eta^\perp}.
+\]
+Moreover, if a two-form \(\Theta\) is decomposed as
+\(\Theta=\Theta_{\eta^\perp}+\eta_0\wedge\tau\), where
+\(\eta_0=\eta/\norm{\eta}\), then
+\[
+  \eta\wedge\Theta^m=\eta\wedge\Theta_{\eta^\perp}^m.
+\]
+\end{lemma}
+
+\begin{proof}
+For any unit decomposable \(d\)-vector \(\xi\in\bigwedge^d W\), the vector
+\(u\wedge\xi\) is unit decomposable in \(V\), so
+\[
+  \norm{u^*\wedge\alpha}_{*,V}\geq\norm{\alpha}_{*,W}.
+\]
+Conversely, let \(\xi\) be a unit decomposable \((d+1)\)-vector with plane
+\(Q\). Since \(W=u^\perp\), the subspace \(Q\cap u^\perp\) has dimension at
+least \(d\); choose an orthonormal set \(q_2,\dots,q_{d+1}\) spanning a
+\(d\)-dimensional subspace of \(Q\cap u^\perp\subset W\), and complete it by a
+unit \(q_1\in Q\) orthogonal to it, so
+\(\xi=\pm\,q_1\wedge q_2\wedge\cdots\wedge q_{d+1}\). Because
+\(u^*(q_j)=0\) for \(j\ge2\), the evaluation collapses to
+\[
+  (u^*\wedge\alpha)(q_1,\dots,q_{d+1})
+  =\langle u,q_1\rangle\,\alpha(q_2,\dots,q_{d+1}),
+\]
+whence
+\(\bigl|(u^*\wedge\alpha)(\xi)\bigr|
+\le\lvert\langle u,q_1\rangle\rvert\,\norm{\alpha}_{*,W}
+\le\norm{\alpha}_{*,W}\), proving the first identity. \emph{Equality
+classification:} Since a nonzero form evaluates nontrivially on some
+coordinate simple wedge, \(\alpha\neq0\) implies \(\norm{\alpha}_{*,W}>0\). Thus equality forces
+\(\lvert\langle u,q_1\rangle\rvert=1\), i.e.\ \(q_1=\pm u\), so
+\(Q=\R u\oplus\operatorname{span}(q_2,\dots,q_{d+1})\) with
+\(q_2\wedge\cdots\wedge q_{d+1}\) a unit \(d\)-vector of \(W\) attaining
+\(\norm{\alpha}_{*,W}\). Scaling \(u^*\) gives the second identity and the
+same classification with \(\R\eta_0\) in place of \(\R u\).  The last
+identity follows because every term in \(\Theta^m\) containing the factor
+\(\eta_0\wedge\tau\) vanishes after wedging with \(\eta\).
+\end{proof}
+
+\begin{proposition}[comass of the all-ones form]
+\label{prop:comass-values}
+If \(k=2m\), then
+\[
+  \norm{\Phi_{2m}}_*
+  =
+  \prod_{r=1}^{m}\cot\!\left(\frac{(2r-1)\pi}{2n}\right).
+\]
+If \(k=2m+1\), then
+\[
+  \norm{\Phi_{2m+1}}_*
+  =
+  \sqrt{n}\prod_{r=1}^{m}\cot\!\left(\frac{r\pi}{n}\right).
+\]
+\end{proposition}
+
+\begin{proof}
+For even \(k=2m\), combine Lemma~\ref{lem:exterior-identities},
+Lemma~\ref{lem:spectrum-rn}, and Lemma~\ref{lem:wirtinger}.
+
+For odd \(k=2m+1\), decompose
+\[
+  \R^n=\R\eta\oplus\eta^\perp.
+\]
+By Lemma~\ref{lem:wedge-line}, only the restriction of \(\Omega\) to
+\(\eta^\perp\) contributes in \(\eta\wedge\Omega^m/m!\), and wedging by
+\(\eta\) multiplies the comass by \(\norm{\eta}=\sqrt n\).  Therefore
+Lemma~\ref{lem:spectrum-eta-perp} and Lemma~\ref{lem:wirtinger} give
+\[
+  \norm{\eta\wedge\Omega^m/m!}_*
+  =
+  \sqrt n\prod_{r=1}^{m}\cot(r\pi/n).
+\]
+\end{proof}
+
+\begin{corollary}[signed participation on oriented planes]
+\label{cor:signed-oriented-planes}
+Let \(E\in\Gr(k,n)\) be an oriented \(k\)-plane, and let
+\(\Part_{\pm}(E)\) be defined as above.  Then the same bounds as in
+Theorem~\ref{thm:main} hold:
+\[
+  \Part_{\pm}(E)
+  \leq
+  \prod_{r=1}^{m}\cot^2\!\left(\frac{(2r-1)\pi}{2n}\right)
+  \qquad (k=2m),
+\]
+and
+\[
+  \Part_{\pm}(E)
+  \leq
+  n\prod_{r=1}^{m}\cot^2\!\left(\frac{r\pi}{n}\right)
+  \qquad (k=2m+1).
+\]
+The cyclic Fourier equality planes attain these bounds.
+\end{corollary}
+
+\begin{proof}
+Let \(\xi=\sum_I p_Ie_I\) be a nonzero decomposable Plücker representative of
+the plane and set \(\widehat{\xi}=\xi/\norm{\xi}\).  Then
+\[
+  \Part_{\pm}(E)=\Phi_k(\widehat{\xi})^2.
+\]
+The bound is therefore \(\norm{\Phi_k}_*^2\), whose value is computed in
+Proposition~\ref{prop:comass-values}.  The equality planes are the Wirtinger
+equality planes used in Section~\ref{sec:cyclic-equality-plane}; in the
+positive orientation they are the regular cyclic point.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:comass-reduction} gives
+\[
+  \Part(C)\leq \norm{\Phi_k}_*^2.
+\]
+Squaring the values in Proposition~\ref{prop:comass-values} gives the two
+displayed bounds.  Equality is treated in the next section:
+Lemma~\ref{lem:fourier-minors} gives a positive equality plane, and
+Corollary~\ref{cor:uniqueness} shows that it is the only one.
+\end{proof}
+
+\section{The Regular Cyclic Equality Plane}
+\label{sec:cyclic-equality-plane}
+
+The equality planes in Proposition~\ref{prop:comass-values} are explicit
+Fourier subspaces.
+
+\begin{itemize}
+\item If \(k=2m\), take the real and imaginary parts of the \(m\) Fourier
+  modes with frequencies \((2r-1)/(2n)\), \(r=1,\ldots,m\).
+\item If \(k=2m+1\), take \(\eta/\sqrt n\) together with the real and imaginary
+  parts of the \(m\) Fourier modes in \(\eta^\perp\) with frequencies
+  \(r/n\), \(r=1,\ldots,m\).
+\end{itemize}
+
+Here is an explicit column identification, including orientation and scale.
+Put \(\theta_j=2\pi j/n\), \(0\leq j<n\), and \(m=\lfloor k/2\rfloor\).
+Define the real \(k\times n\) matrix \(K=K_{k,n}\), with rows numbered from
+one, by the following ordered pairs, for \(1\leq r\leq m\):
+\begin{align}
+k=2m:\quad
+ (K_{2r-1,j},K_{2r,j})
+ &=\bigl(\cos((r-\tfrac12)\theta_j),
+          \sin((r-\tfrac12)\theta_j)\bigr),\notag\\
+k=2m+1:\quad K_{1,j}=1,\qquad
+ (K_{2r,j},K_{2r+1,j})
+ &=\bigl(\cos(r\theta_j),\sin(r\theta_j)\bigr).
+\label{eq:fourier-karp-rows}
+\end{align}
+Thus \(K(:,j)=f_k(\theta_j)\) for the moment curve in Karp's
+Equation~(1.3). In his Proposition~2.5, taking the phase parameter
+\(\vartheta=-2\pi/n\) and the column index \(\ell=j+1\) gives exactly
+these columns \cite[arXiv~v2 numbering]{Karp2018}. An oriented orthonormal
+representative of the equality plane is
+\begin{equation}
+ F=D_{k,n}K,\qquad
+ D_{k,n}=\begin{cases}
+    \sqrt{2/n}\,I_{2m},&k=2m,\\
+    \operatorname{diag}\bigl(n^{-1/2},\sqrt{2/n}\,I_{2m}\bigr),&k=2m+1.
+ \end{cases}
+\label{eq:fourier-karp-match}
+\end{equation}
+The Fourier orthogonality sums give \(FF^{\mathsf T}=I_k\), also when
+\(k=n\). Every factor in \(D_{k,n}\) is positive; the identification is
+a change of row basis with all ambient columns fixed.
+
+\begin{lemma}[Fourier equality-plane minors]
+\label{lem:fourier-minors}
+For \(1\leq k\leq n\), the representative \(F\) in
+\eqref{eq:fourier-karp-match} has, for every ordered set
+\(I=\{i_1<\cdots<i_k\}\subseteq\{0,\ldots,n-1\}\),
+\[
+  \Delta_I(F)=n^{-k/2}
+    \prod_{a<b}\abs{\zeta^{i_b}-\zeta^{i_a}}>0,
+  \qquad
+  \zeta=e^{2\pi i/n}.
+\]
+Writing \(M=\binom{k}{2}\), the corresponding unnormalized formula is
+\[
+ \Delta_I(K)=2^{M-m}\prod_{a<b}
+      \sin\!\left(\frac{\pi(i_b-i_a)}n\right).
+\]
+\end{lemma}
+
+\begin{proof}
+Convert the ordered real rows of \(K\) to complex exponential rows with
+increasing frequencies
+\[
+ -\frac{k-1}{2},-\frac{k-3}{2},\ldots,\frac{k-1}{2}.
+\]
+Call the resulting matrix \(V=T_kK\). Each cosine--sine pair first becomes
+\((\cos-i\sin,\cos+i\sin)\), with conversion determinant \(2i\).
+The permutation to increasing frequencies has \(m(m-1)\) inversions in
+even rank and \(m^2\) in odd rank, including the constant row. Hence
+\(\det T_k=2^m i^M\) in both cases.
+
+On the columns \(I\), the Vandermonde identity gives
+\begin{align*}
+ \det V_I
+ &=\prod_{a=1}^k e^{-i(k-1)\theta_{i_a}/2}
+      \prod_{a<b}\bigl(e^{i\theta_{i_b}}-e^{i\theta_{i_a}}\bigr)\\
+ &=(2i)^M\prod_{a<b}
+      \sin\!\left(\frac{\theta_{i_b}-\theta_{i_a}}2\right).
+\end{align*}
+In the second line, use
+\(e^{i\beta}-e^{i\alpha}
+ =2i e^{i(\alpha+\beta)/2}\sin((\beta-\alpha)/2)\).
+Each angle occurs \(k-1\) times in the product of differences, so the
+phases cancel exactly. Dividing by \(\det T_k\) yields the stated
+positive constant \(2^{M-m}\), agreeing with Karp's Lemma~2.3 because
+\(M-m=\lfloor(k-1)^2/2\rfloor\).
+
+Every sine factor is positive since \(0<i_b-i_a<n\). Replacing a sine
+factor by half its chord length gives
+\(\Delta_I(K)=2^{-m}\prod_{a<b}|\zeta^{i_b}-\zeta^{i_a}|\).
+Finally,
+\(\det D_{k,n}=(2/n)^m n^{-(k-2m)/2}\), which gives the formula for
+\(F\). For \(k=1\) the products are empty and the entries are
+\(n^{-1/2}\). For \(k=n\), positivity and orthonormality make the single
+maximal minor exactly \(1\).
+\end{proof}
+
+The signed wrap is equally explicit. Let \(R\) be block diagonal with
+the usual real rotation blocks of angles \(2\pi(r-\tfrac12)/n\) in
+even rank or \(2\pi r/n\) in odd rank, and a leading \(1\) in odd rank.
+The addition formulas give
+\begin{equation}
+ RF=[F_1\mid\cdots\mid F_{n-1}\mid(-1)^{k-1}F_0],\qquad
+ \det R=1,\qquad R^n=(-1)^{k-1}I_k.
+\label{eq:fourier-signed-wrap}
+\end{equation}
+Thus this is the positive cyclic fixed point of Karp's Theorem~1.1;
+his Formula~(1.4) is the sine-product formula above with its common
+projective factor suppressed \cite{Karp2018}.
+Galashin's critical-variety setting supplies adjacent regular-polygon and
+Ptolemy-flavored context for the same sine/chord geometry
+\cite{GalashinCritical}.  The present proof uses these sources for the cyclic
+equality witness, not for the aggregate cotangent product calculation.
+
+Therefore the comass equality plane is represented by a point of
+\(\Gr_{>0}(k,n)\), and the bounds in Theorem~\ref{thm:main} are sharp.
+
+\begin{corollary}[Uniqueness of the maximizer]
+\label{cor:uniqueness}
+For \(k=1\), Cauchy--Schwarz gives \(\Part(C)\le n\), with equality
+exactly when all positive coordinates agree, yielding the line \(\R\eta\).
+For \(k\ge2\), the singular values of the sign kernel are \(\cot((2r-1)\pi/2n)\) (even degree)
+and \(\cot(r\pi/n)\) (odd degree), which are \emph{strictly decreasing and
+distinct} on the listed ranges, so the separation \(\sigma_m>\sigma_{m+1}\) of
+Lemma~\ref{lem:wirtinger} holds.  By the rigidity clause the relevant
+maximizing plane is \emph{unique}: the top \(m\) singular-pair plane in even
+degree, and \(\R\eta\) plus the top \(m\) singular pairs in odd degree;
+the reduction chain (Lemma~\ref{lem:exterior-identities},
+Proposition~\ref{prop:comass-reduction}, Lemma~\ref{lem:wedge-line}) preserves
+the equality case (for Lemma~\ref{lem:wedge-line}, by its equality
+classification), and
+Lemma~\ref{lem:fourier-minors} identifies that unique
+plane with the regular cyclic point in \(\Gr_{>0}(k,n)\).  Hence the regular
+cyclic point is the \emph{unique} maximizer of \(\Part\) on \(\Gr_{>0}(k,n)\).
+\end{corollary}
+
+\noindent The sharpness argument for Theorem~\ref{thm:main} is
+independent of this corollary; the corollary upgrades sharpness to uniqueness,
+its only inputs being the rigidity clause of Lemma~\ref{lem:wirtinger} (see
+Remark~\ref{rem:rigidity-clause}), the strict monotonicity of
+the sign-kernel cotangents, and the equality-witness identification of
+Lemma~\ref{lem:fourier-minors}.
+
+\begin{corollary}[the totally nonnegative Grassmannian]\label{cor:tnn}
+Let \(C\in\Gr_{\ge0}(k,n)\), with \(\Part(C)\) defined by the same formula.  Then \(\Part(C)\)
+satisfies the bounds of Theorem~\ref{thm:main}, with equality only at the regular cyclic point.
+In particular, \(\Part\) is strictly below the top-cell maximum at every point of the boundary
+\(\Gr_{\ge0}(k,n)\setminus\Gr_{>0}(k,n)\).
+\end{corollary}
+
+\begin{proof}
+A point of \(\Gr_{\ge0}(k,n)\) has a Plücker representative with all \(p_I\ge0\), so
+\(\Part(C)=\Part_{\pm}(E)\) for the underlying plane \(E\), and
+Corollary~\ref{cor:signed-oriented-planes} gives the bounds.  If equality holds, then
+\(\abs{\Phi_k(\widehat{\xi})}=\norm{\Phi_k}_*\), so \(E\) is a comass-maximizing plane.  The
+proof of Corollary~\ref{cor:uniqueness} shows that there is only one such plane, and by
+Lemma~\ref{lem:fourier-minors} it is the regular cyclic point, which lies in \(\Gr_{>0}(k,n)\).
+\end{proof}
+
+\noindent The corollary does not determine the maximum of \(\Part\) on a given boundary cell.
+
+\section{What Is Not Claimed}
+
+The preceding results concern the maximum of participation and its equality
+locus on the totally nonnegative Grassmannian
+(Theorem~\ref{thm:main}, Corollary~\ref{cor:tnn}).  Two neighboring questions
+remain outside the claim boundary.
+
+\begin{enumerate}
+\item It does not prove that the same cyclic point controls every lower
+  positroid cell or every boundary stratum.
+\item It does not classify absolute maxima over arbitrary signed coordinate
+  vectors in \(\bigwedge^k\R^n\) after dropping decomposability.  That is a
+  different ambient-sphere problem: Cauchy--Schwarz gives the all-ones vector,
+  which is generally not decomposable.  Corollary~\ref{cor:signed-oriented-planes}
+  is only the signed decomposable, or oriented-plane, statement.
+\end{enumerate}
+
+\section*{A note on process}
+Learned Response Labs is a research collaboration between the author and AI systems. The proofs, text,
+software, atlases, and other artifacts of this program were primarily generated by AI coding harnesses
+(OpenAI Codex and Anthropic Claude Code) operating adversarially: results produced by one system were
+frozen, independently rederived, and hostilely audited by the other before internal acceptance, with
+machine-checked Lean~4/Mathlib components where noted. The author designed and directed the research
+program --- the choice of problems, the harness and adversarial-audit architecture, and the cross-domain
+references that shaped it. \par Each paper has a \emph{reading edition}, which sets every formal statement
+beside what checks it (a frozen Lean statement or a pinned exact certificate) and every step without one
+beside its source. The author checks the paper's main statements, and the definitions they use, against
+the edition; a version is archived and announced only after that check is complete, and the paper's page
+says where the check stands. External review is pending, and reviews received will be noted with the
+paper's public reading edition. \par The decision to circulate this document, and the
+judgment that the process behind it makes the results worth a referee's time, are the author's; the
+mathematics itself awaits external verification, which is exactly what this document requests.
+Accordingly, the headline results are offered as \emph{proof candidates pending external review}, and no
+claim in this document should be treated as established until that review has occurred. This
+external-review preprint is prepared for public circulation; it is not yet an arXiv version.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\clearpage
+\appendix
+\begingroup\sloppy\emergencystretch=3em
+\providecommand{\CyclicArchiveDOI}{DOI-PENDING}
+\section*{Appendix: Formal statements and their mathematical interface}
+The formal source is the \texttt{cyclic\_point/} directory of
+\texttt{positive-geometry-lean}, version 0.2.0 (archive DOI: \texttt{\CyclicArchiveDOI}).
+The paper remains a proof candidate pending external mathematical review.
+Here ``proved'' refers to the displayed Lean statement with all its hypotheses,
+not to independent validation of the translation from the written mathematics.
+The project uses Lean \texttt{4.33.0-rc1} and the Mathlib revision in its lockfile.
+Its 68 comparison configurations cover 193 distinct theorem names, including supporting algebra.
+The checking procedure compares each solution statement against its frozen statement,
+checks its axioms, and replays the exported proof through the Lean kernel and through nanoda, an independent implementation of Lean's type checker.
+Only \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} are admitted.
+Frozen files use proof placeholders and are not themselves accepted proofs.
+The following list distinguishes checked conclusions from the portions of the written argument that are not formalized.
+
+\paragraph{Theorem~\ref{thm:main}: proved.}
+For $1\le k\le n$, on matrices with positive increasing maximal minors; equality means equality of row spans. The formal headline uses a compound Rayleigh argument.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak flagship}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak part}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak cyclicValue\_\allowbreak self}.
+
+\paragraph{Proposition~\ref{prop:comass-reduction}: proved under stated hypotheses.}
+Full row rank is explicit. The formal comass is defined using orthonormal row frames.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak part\_\allowbreak mul\_\allowbreak gram}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak part\_\allowbreak le\_\allowbreak sq\_\allowbreak comass}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak part\_\allowbreak eq\_\allowbreak sq\_\allowbreak comass\_\allowbreak iff}.
+
+\paragraph{Lemma~\ref{lem:exterior-identities}: proved.}
+Alternating forms are represented by their evaluation on row frames.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer4.\allowbreak signMatrix\_\allowbreak pf}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak allOnes\_\allowbreak even\_\allowbreak eq}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak allOnes\_\allowbreak odd\_\allowbreak eq}.
+
+\paragraph{Lemma~\ref{lem:spectrum-rn}: proved under stated hypotheses.}
+The dimension bounds in the Fourier statements are retained.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak evenFourier\_\allowbreak orthonormal}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak evenFourier\_\allowbreak eigen}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak evenPairs\_\allowbreak order}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak evenFourier\_\allowbreak top}.
+
+\paragraph{Lemma~\ref{lem:spectrum-eta-perp}: proved under stated hypotheses.}
+The compression uses the orthogonal complement of the distinguished all-ones vector.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak oddFourier\_\allowbreak frame}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak oddFourier\_\allowbreak eigen}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak oddPairs\_\allowbreak order}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak oddFourier\_\allowbreak top}.
+
+\paragraph{Lemma~\ref{lem:wirtinger}: proved under stated hypotheses.}
+The rigidity statement retains the strict spectral gap. Its proof uses spectral trace saturation; the recursive deflation argument is not separately formalized.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak skewNormalForm\_\allowbreak exists}, \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak compression\_\allowbreak interlacing}, \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak interlacing\_\allowbreak equality}, \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak powerForm\_\allowbreak eval}, \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak wirtinger\_\allowbreak value}, \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak wirtinger\_\allowbreak rigid}.
+
+\paragraph{Remark~\ref{rem:rigidity-clause}: proved under stated hypotheses.}
+The strict-gap consequence and the strict ordering of the explicit pair values are separate statements.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer8.\allowbreak wirtinger\_\allowbreak rigid}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak evenPairs\_\allowbreak order}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak oddPairs\_\allowbreak order}.
+
+\paragraph{Lemma~\ref{lem:wedge-line}: proved under stated hypotheses.}
+The equality classification requires the residual alternating form to be nonzero. Without this hypothesis a zero form attains its comass on every plane.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak wedgeOne\_\allowbreak eval}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak wedge\_\allowbreak line\_\allowbreak comass}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak wedge\_\allowbreak line\_\allowbreak rigid}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak wedge\_\allowbreak eta\_\allowbreak comass}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak wedge\_\allowbreak powerForm\_\allowbreak perp}.
+
+\paragraph{Proposition~\ref{prop:comass-values}: proved under stated hypotheses.}
+The even and odd dimension bounds and the normalization of the distinguished vector are explicit.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak comass\_\allowbreak allOnes\_\allowbreak even}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak comass\_\allowbreak allOnes\_\allowbreak odd}.
+
+\paragraph{Corollary~\ref{cor:signed-oriented-planes}: proved under stated hypotheses.}
+The bound and equality statement require full row rank and allow either global orientation.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak flagship\_\allowbreak bound}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak flagship\_\allowbreak equality}.
+
+\paragraph{Lemma~\ref{lem:fourier-minors}: proved in part.}
+The sine-product formula for the matrix $K$, its positive minors and existence of a determinant-one signed row shift are checked. The chord-length formula for $F$, the explicit rotation matrix and its power are not separately frozen statements.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak even\_\allowbreak frame}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak odd\_\allowbreak frame}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak minor}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak positive}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak karp\_\allowbreak twistedShift}.
+
+\paragraph{Corollary~\ref{cor:uniqueness}: proved under stated hypotheses.}
+The equality plane is checked. The written comass chain is not assembled into a separate formal headline; the checked headline follows a different route.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak flagship}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak flagship\_\allowbreak equality}.
+
+\paragraph{Corollary~\ref{cor:tnn}: proved under stated hypotheses.}
+For a full-row-rank representative with nonnegative maximal minors, the bound, equality plane and strict boundary inequality are checked; this is pointwise strictness, with no uniform gap or boundary-cell extremum asserted. The supporting statement \texttt{zero\_minor\_strict}, which the paper does not state, gives strictness at a vanishing minor without a sign hypothesis.
+Checked statements: \texttt{CyclicPoint.\allowbreak Layer9.\allowbreak nonneg\_\allowbreak bound\_\allowbreak equality}, \texttt{CyclicPoint.\allowbreak Layer9.\allowbreak nonneg\_\allowbreak boundary\_\allowbreak strict}, \texttt{CyclicPoint.\allowbreak Layer9.\allowbreak zero\_\allowbreak minor\_\allowbreak strict}.
+
+\paragraph{Supporting statements and interfaces.}
+The restriction identities \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak pullback\_\allowbreak eval}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak pullback\_\allowbreak powerForm}, \texttt{CyclicPoint.\allowbreak Layer8b.\allowbreak pullback\_\allowbreak attains}, and the determinant evaluations \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak even\_\allowbreak value}, \texttt{CyclicPoint.\allowbreak Layer6.\allowbreak odd\_\allowbreak value}, supply intermediate steps.
+The correspondence between row-frame evaluations and exterior algebra, the chord-length normalization, and identification with the cited geometric constructions require mathematical reading.
+\par\endgroup
+
+\end{document}

@@ -1,0 +1,457 @@
+{
+ "schema": "reading-edition/public-export/v1",
+ "mode": "release",
+ "built": "2026-11-24",
+ "engine": "0.1.0",
+ "edition": "cpf",
+ "certified": false,
+ "paper": {
+  "tex": {
+   "name": "main.tex",
+   "sha256": "9d0a94e73e312be878fab2d2145c9a24fe41834271795c1ff4cccd99c8af8d6b"
+  },
+  "pdf": {
+   "name": "plucker_participation_cyclic_point.pdf",
+   "sha256": "708fbb60e47f650faa1c810846c1d5f9c4a449a3eec3f65d8c8b012955a43acf"
+  }
+ },
+ "paper_served_is_pinned": true,
+ "lean": {
+  "tag": "v0.2.0",
+  "files": [
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer4.lean",
+    "sha256": "8ff6db47ca7ce1d7fef0d147213168f582d0d227c30f4bebd93afdaf719f4397",
+    "relation": "identical",
+    "checked_sha256": "8ff6db47ca7ce1d7fef0d147213168f582d0d227c30f4bebd93afdaf719f4397"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6.lean",
+    "sha256": "1be0d6851ab43f08da7704ed8ad7b9ce1376412766874ea300069a5e4ed15486",
+    "relation": "identical",
+    "checked_sha256": "1be0d6851ab43f08da7704ed8ad7b9ce1376412766874ea300069a5e4ed15486"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6Flagship.lean",
+    "sha256": "915582867d612b52eb2bc2a237ca04eb9468435a118d5f4cc1649167e84a8ce7",
+    "relation": "identical",
+    "checked_sha256": "915582867d612b52eb2bc2a237ca04eb9468435a118d5f4cc1649167e84a8ce7"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6Headline.lean",
+    "sha256": "912f635785bef8dd80e08990b37ee5e73602a041890d0dbcb17de04334048b47",
+    "relation": "identical",
+    "checked_sha256": "912f635785bef8dd80e08990b37ee5e73602a041890d0dbcb17de04334048b47"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6Spectrum.lean",
+    "sha256": "234c8e158b8ab503648f061d41b30035ee63a116d1101ff0e1d2c2c4e83b311e",
+    "relation": "identical",
+    "checked_sha256": "234c8e158b8ab503648f061d41b30035ee63a116d1101ff0e1d2c2c4e83b311e"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6Values.lean",
+    "sha256": "2e7bd14f39627f9bdf6f3dd7b39cc1fd73042fac72794f595f78543ba2b79d3b",
+    "relation": "identical",
+    "checked_sha256": "2e7bd14f39627f9bdf6f3dd7b39cc1fd73042fac72794f595f78543ba2b79d3b"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer6Witness.lean",
+    "sha256": "b4cc2544f994dde9dbf7dd4e0529ada669bd77cb061fca79dad67de7357af373",
+    "relation": "identical",
+    "checked_sha256": "b4cc2544f994dde9dbf7dd4e0529ada669bd77cb061fca79dad67de7357af373"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8.lean",
+    "sha256": "1ccf0e99b202a709b17c870caea7246bd6376c63e52b524d37961c49b9882a25",
+    "relation": "identical",
+    "checked_sha256": "1ccf0e99b202a709b17c870caea7246bd6376c63e52b524d37961c49b9882a25"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8Headline.lean",
+    "sha256": "b612f77ec656c397c71f48108bea631c3ab02c9e7bdfe2371b8080273119bf80",
+    "relation": "identical",
+    "checked_sha256": "b612f77ec656c397c71f48108bea631c3ab02c9e7bdfe2371b8080273119bf80"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8Interlacing.lean",
+    "sha256": "4e68b1edda70da4709ba939a99d4717503e4949eee216d90dc4e7bf7a8fc145b",
+    "relation": "identical",
+    "checked_sha256": "4e68b1edda70da4709ba939a99d4717503e4949eee216d90dc4e7bf7a8fc145b"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8Normal.lean",
+    "sha256": "71af07ee250edef26e9552a0fe2d84e884a91a87358853c049c63df2be7b3990",
+    "relation": "identical",
+    "checked_sha256": "71af07ee250edef26e9552a0fe2d84e884a91a87358853c049c63df2be7b3990"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8Wirtinger.lean",
+    "sha256": "4efcfa856d766146dcdf27ac87aa6759bac540ddb7e40ba64f959c1f1737ed84",
+    "relation": "identical",
+    "checked_sha256": "4efcfa856d766146dcdf27ac87aa6759bac540ddb7e40ba64f959c1f1737ed84"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8b.lean",
+    "sha256": "8c6932dcc2f9b93039a4eda9ce3d86b3e77890fecc7ac62c222d7004d17bd7d9",
+    "relation": "identical",
+    "checked_sha256": "8c6932dcc2f9b93039a4eda9ce3d86b3e77890fecc7ac62c222d7004d17bd7d9"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8bHeadline.lean",
+    "sha256": "cb9ce43e8bfd3927b9e21b08b27053fd7f5deb757ca7546f6445033be5fe9b81",
+    "relation": "identical",
+    "checked_sha256": "cb9ce43e8bfd3927b9e21b08b27053fd7f5deb757ca7546f6445033be5fe9b81"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8bReduction.lean",
+    "sha256": "62e413553809c85f23df8b17c5996a023eab01f85c695bb858f2c63bb4696701",
+    "relation": "identical",
+    "checked_sha256": "62e413553809c85f23df8b17c5996a023eab01f85c695bb858f2c63bb4696701"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8bRestriction.lean",
+    "sha256": "2bdfd4dc51829bc1d139a8cd8cc0428dcc74a61098cf3250efd05624da4f05a9",
+    "relation": "identical",
+    "checked_sha256": "2bdfd4dc51829bc1d139a8cd8cc0428dcc74a61098cf3250efd05624da4f05a9"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8bValues.lean",
+    "sha256": "9c9fd6c1d8bd01819df4748085229b66dc00a109c581173b9a515ce093afef16",
+    "relation": "identical",
+    "checked_sha256": "9c9fd6c1d8bd01819df4748085229b66dc00a109c581173b9a515ce093afef16"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer8bWedge.lean",
+    "sha256": "43ef5d28d4e22d09ea4c382cbe70064cc85a651c29aef8760a1c7d97f0d5a616",
+    "relation": "identical",
+    "checked_sha256": "43ef5d28d4e22d09ea4c382cbe70064cc85a651c29aef8760a1c7d97f0d5a616"
+   },
+   {
+    "path": "cyclic_point/lean/Challenge/CyclicPointLayer9.lean",
+    "sha256": "43799b48ad0f10230f536060add97bf00b80ce71ed6767fc0068923a2ea9a378",
+    "relation": "identical",
+    "checked_sha256": "43799b48ad0f10230f536060add97bf00b80ce71ed6767fc0068923a2ea9a378"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Defs.lean",
+    "sha256": "8d743a08f1357dbdd91f2a6a735e114c3a1434b5252203163d696ab71c5c3a31",
+    "relation": "identical",
+    "checked_sha256": "8d743a08f1357dbdd91f2a6a735e114c3a1434b5252203163d696ab71c5c3a31"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer1/Defs.lean",
+    "sha256": "2564d0a97670c92888a71b88e9d277e09c30067f9470692d23415fc60e39eb44",
+    "relation": "identical",
+    "checked_sha256": "2564d0a97670c92888a71b88e9d277e09c30067f9470692d23415fc60e39eb44"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer3/Defs.lean",
+    "sha256": "e421494eac3003acc7dac7ac7ca88330685674b69d5e4ce8cf3ea9bee6b3f9bf",
+    "relation": "identical",
+    "checked_sha256": "e421494eac3003acc7dac7ac7ca88330685674b69d5e4ce8cf3ea9bee6b3f9bf"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer4/Sign.lean",
+    "sha256": "6b84e704a555f01c8fa2ff76f7f5004923324f77ef40de7d3f4723d48a62c59e",
+    "relation": "identical",
+    "checked_sha256": "6b84e704a555f01c8fa2ff76f7f5004923324f77ef40de7d3f4723d48a62c59e"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Defs.lean",
+    "sha256": "25aaf036299b2114426fb0d7fb80a69c423f7a0ed1191f972eb3815bd32f7b61",
+    "relation": "identical",
+    "checked_sha256": "25aaf036299b2114426fb0d7fb80a69c423f7a0ed1191f972eb3815bd32f7b61"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/EvenEigen.lean",
+    "sha256": "14b1b9d56c032bbcfde2c90478e75b7be5231ae048309b6b04b32ff22e92b9af",
+    "relation": "identical",
+    "checked_sha256": "14b1b9d56c032bbcfde2c90478e75b7be5231ae048309b6b04b32ff22e92b9af"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/EvenOrtho.lean",
+    "sha256": "6dfc3ea008c9015affd1f969577858a41609a95da2f1da81da815a13f8a54606",
+    "relation": "identical",
+    "checked_sha256": "6dfc3ea008c9015affd1f969577858a41609a95da2f1da81da815a13f8a54606"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Flagship.lean",
+    "sha256": "ef359232f6337584b360a21f2f17e60f34c409a335bd9e9ac33d4eca0956d41b",
+    "relation": "identical",
+    "checked_sha256": "ef359232f6337584b360a21f2f17e60f34c409a335bd9e9ac33d4eca0956d41b"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Frames.lean",
+    "sha256": "5c2c2eb151e1a281bca521a5afb48351851e31e8eea1e0b3bbb24110a959d166",
+    "relation": "identical",
+    "checked_sha256": "5c2c2eb151e1a281bca521a5afb48351851e31e8eea1e0b3bbb24110a959d166"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Minors.lean",
+    "sha256": "0fdc5c3534b33dca9717edc7fe403c732223a60990a17aee2714c622c0ba8a6d",
+    "relation": "identical",
+    "checked_sha256": "0fdc5c3534b33dca9717edc7fe403c732223a60990a17aee2714c622c0ba8a6d"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/OddEigen.lean",
+    "sha256": "4200ec9c56bf9c94bab6b545f10a34d85f2239be6994d6b55c93c37d354d0266",
+    "relation": "identical",
+    "checked_sha256": "4200ec9c56bf9c94bab6b545f10a34d85f2239be6994d6b55c93c37d354d0266"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/OddOrtho.lean",
+    "sha256": "6548f64fd0f93b06a0dc70e9f378edccb013895dccf3f581e6e56a14f5ee7d29",
+    "relation": "identical",
+    "checked_sha256": "6548f64fd0f93b06a0dc70e9f378edccb013895dccf3f581e6e56a14f5ee7d29"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Optimization.lean",
+    "sha256": "2cfe5a31a50f756e69323fe6c9132e6a5025230dbc697be89e9ce4a1eec902dc",
+    "relation": "identical",
+    "checked_sha256": "2cfe5a31a50f756e69323fe6c9132e6a5025230dbc697be89e9ce4a1eec902dc"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Order.lean",
+    "sha256": "adea7e252ebdae24ef7ecd4880605580b6ec258dee382c993e541c67c2f51903",
+    "relation": "identical",
+    "checked_sha256": "adea7e252ebdae24ef7ecd4880605580b6ec258dee382c993e541c67c2f51903"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Positivity.lean",
+    "sha256": "fc684f23f30853b65cc1703ce709eb02d0a47d50eff62ef4678ddc88792a045d",
+    "relation": "identical",
+    "checked_sha256": "fc684f23f30853b65cc1703ce709eb02d0a47d50eff62ef4678ddc88792a045d"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/RankOne.lean",
+    "sha256": "527f572eb4112ca2a0343419b2ba263d5ae2f8979f47335171faf2982eafe6ef",
+    "relation": "identical",
+    "checked_sha256": "527f572eb4112ca2a0343419b2ba263d5ae2f8979f47335171faf2982eafe6ef"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Signed.lean",
+    "sha256": "29c3f21ef5be656fdea5f8ff4d84b2eae0a97570791dc7d201ff190616de8a03",
+    "relation": "identical",
+    "checked_sha256": "29c3f21ef5be656fdea5f8ff4d84b2eae0a97570791dc7d201ff190616de8a03"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Top.lean",
+    "sha256": "947785136f6a94e0874e4d0f0b9ecccef592aa0c55ede1818f71742e173206d0",
+    "relation": "identical",
+    "checked_sha256": "947785136f6a94e0874e4d0f0b9ecccef592aa0c55ede1818f71742e173206d0"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Values.lean",
+    "sha256": "240c6b074c73ef324dec82865a4936e6c1af7e417f2b0e0e95e4908e26e8c65a",
+    "relation": "identical",
+    "checked_sha256": "240c6b074c73ef324dec82865a4936e6c1af7e417f2b0e0e95e4908e26e8c65a"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer6/Wrap.lean",
+    "sha256": "c0bbc696bbdea46ac1e17893d7d609bb202bc58553ac1be4a927bdf1db1207f1",
+    "relation": "identical",
+    "checked_sha256": "c0bbc696bbdea46ac1e17893d7d609bb202bc58553ac1be4a927bdf1db1207f1"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/AttainingFamilies.lean",
+    "sha256": "10a614ee8f11d6691a3b75fc4cc9361cac3a1fdd2a82a9c6cabb11ef5e080a94",
+    "relation": "identical",
+    "checked_sha256": "10a614ee8f11d6691a3b75fc4cc9361cac3a1fdd2a82a9c6cabb11ef5e080a94"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/CompressionValues.lean",
+    "sha256": "c578c9e902f045bbb7fed08eb8f10724f5ac98f04baac3284134898bb312643d",
+    "relation": "identical",
+    "checked_sha256": "c578c9e902f045bbb7fed08eb8f10724f5ac98f04baac3284134898bb312643d"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/Defs.lean",
+    "sha256": "15e46be54dd6ab7e4f525b625958be75795a26ac1081a523812788738ec1fee1",
+    "relation": "identical",
+    "checked_sha256": "15e46be54dd6ab7e4f525b625958be75795a26ac1081a523812788738ec1fee1"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/Equality.lean",
+    "sha256": "1bd0c1a11c7f7aed1de55318bfcf2ef429917bf18df4af8c82dc54f1d8782855",
+    "relation": "identical",
+    "checked_sha256": "1bd0c1a11c7f7aed1de55318bfcf2ef429917bf18df4af8c82dc54f1d8782855"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/Evaluation.lean",
+    "sha256": "d0c13fd735734626b8e109c4653dffc53a1e90a035a958ece4a40883a7456b0c",
+    "relation": "identical",
+    "checked_sha256": "d0c13fd735734626b8e109c4653dffc53a1e90a035a958ece4a40883a7456b0c"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/Interlacing.lean",
+    "sha256": "9d95ecfdcd2cc3f4fa8041bb3e56bd2b7adc4779a55df8613762fca75da4cc19",
+    "relation": "identical",
+    "checked_sha256": "9d95ecfdcd2cc3f4fa8041bb3e56bd2b7adc4779a55df8613762fca75da4cc19"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/Normal.lean",
+    "sha256": "98afc5e2a8e65abc26aeafba5411a208c74757290ac2b2642d1c1a542b64fa47",
+    "relation": "identical",
+    "checked_sha256": "98afc5e2a8e65abc26aeafba5411a208c74757290ac2b2642d1c1a542b64fa47"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/WirtingerRigid.lean",
+    "sha256": "61393c2540319b80fc4f0795848d143a6c3ed73c549a261b716cf48af2ff86e4",
+    "relation": "identical",
+    "checked_sha256": "61393c2540319b80fc4f0795848d143a6c3ed73c549a261b716cf48af2ff86e4"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8/WirtingerValue.lean",
+    "sha256": "e0e25832c797a45b63103a04650968cbc2c8ad0019b7e794c649bd4bb9fbdd51",
+    "relation": "identical",
+    "checked_sha256": "e0e25832c797a45b63103a04650968cbc2c8ad0019b7e794c649bd4bb9fbdd51"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/Defs.lean",
+    "sha256": "702d99bf72d452288bd1eb7a45e173525ece86bdead5985ee00ee83f0531bd13",
+    "relation": "identical",
+    "checked_sha256": "702d99bf72d452288bd1eb7a45e173525ece86bdead5985ee00ee83f0531bd13"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/EvenValue.lean",
+    "sha256": "e81b1e8f22915a1031209391aaae02f7ecfe7ec5ef80cbf4a2db4580cd6e3ae3",
+    "relation": "identical",
+    "checked_sha256": "e81b1e8f22915a1031209391aaae02f7ecfe7ec5ef80cbf4a2db4580cd6e3ae3"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/Exterior.lean",
+    "sha256": "22f3c7ecf2bf20db7afff022b6cb6e752c92c069996535885344cadb6fee27f0",
+    "relation": "identical",
+    "checked_sha256": "22f3c7ecf2bf20db7afff022b6cb6e752c92c069996535885344cadb6fee27f0"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/OddValue.lean",
+    "sha256": "5d1b151a323eaf0e450dd407d63ef865c476c75dc5bda926aec159d20a46376c",
+    "relation": "identical",
+    "checked_sha256": "5d1b151a323eaf0e450dd407d63ef865c476c75dc5bda926aec159d20a46376c"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/PerpComass.lean",
+    "sha256": "ada7d8b55badd0b4c56d17af653322f1b0cc741bc3c429320ae282fbfe196917",
+    "relation": "identical",
+    "checked_sha256": "ada7d8b55badd0b4c56d17af653322f1b0cc741bc3c429320ae282fbfe196917"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/Projection.lean",
+    "sha256": "120a0126b2ceef60ae81aed1970146db6c3964b1e6c6da28f795e99304609752",
+    "relation": "identical",
+    "checked_sha256": "120a0126b2ceef60ae81aed1970146db6c3964b1e6c6da28f795e99304609752"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/Reduction.lean",
+    "sha256": "80fcd1e96fdb6abc83b98f5c500efab08519bbd6329182771f4bbac2d19d8d24",
+    "relation": "identical",
+    "checked_sha256": "80fcd1e96fdb6abc83b98f5c500efab08519bbd6329182771f4bbac2d19d8d24"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/Restriction.lean",
+    "sha256": "4681a609ee2871a9f25fdf083e21846b485589d8ca46e1d236604fa2788eb1c3",
+    "relation": "identical",
+    "checked_sha256": "4681a609ee2871a9f25fdf083e21846b485589d8ca46e1d236604fa2788eb1c3"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/WedgeEval.lean",
+    "sha256": "728fb3b97c2cdba61f4d7cce6e7336c663720a6d1dd9b4368fb84ac75be066f5",
+    "relation": "identical",
+    "checked_sha256": "728fb3b97c2cdba61f4d7cce6e7336c663720a6d1dd9b4368fb84ac75be066f5"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/WedgePower.lean",
+    "sha256": "0958360c499c929672aa9e202a5ab6561610f9d2c2a81fab178d610bed2a80ca",
+    "relation": "identical",
+    "checked_sha256": "0958360c499c929672aa9e202a5ab6561610f9d2c2a81fab178d610bed2a80ca"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/WedgeRigid.lean",
+    "sha256": "db23426ebb7ad883aad230bfb4967ce0846ed626a047aa95fee304b06b173b4d",
+    "relation": "identical",
+    "checked_sha256": "db23426ebb7ad883aad230bfb4967ce0846ed626a047aa95fee304b06b173b4d"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/WedgeScale.lean",
+    "sha256": "c1322a9e2543b653fe6dad85d5020181c3119634520f5cd13dddde71193fe0fc",
+    "relation": "identical",
+    "checked_sha256": "c1322a9e2543b653fe6dad85d5020181c3119634520f5cd13dddde71193fe0fc"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer8b/WedgeValue.lean",
+    "sha256": "b198b180c8819437f3db76a1b6f1e741f928e39c58da5634bf37160b2d3c9391",
+    "relation": "identical",
+    "checked_sha256": "b198b180c8819437f3db76a1b6f1e741f928e39c58da5634bf37160b2d3c9391"
+   },
+   {
+    "path": "cyclic_point/lean/CyclicPoint/Layer9.lean",
+    "sha256": "b27d08fa6d4c774ad81b27123c3ba942c4898d07b53c0bc62ef6f81799dc5265",
+    "relation": "identical",
+    "checked_sha256": "b27d08fa6d4c774ad81b27123c3ba942c4898d07b53c0bc62ef6f81799dc5265"
+   },
+   {
+    "path": "cyclic_point/lean/PG/LinearAlgebra/FiniteDefs.lean",
+    "sha256": "55555d125b1778e8f5c91aa89a6110b35bdd8801ab7124b25233a3bd638ba81f",
+    "relation": "identical",
+    "checked_sha256": "55555d125b1778e8f5c91aa89a6110b35bdd8801ab7124b25233a3bd638ba81f"
+   },
+   {
+    "path": "cyclic_point/lean/PG/LinearAlgebra/PfaffianDefs.lean",
+    "sha256": "d75c3b35dd7dee618a2e52407732f6f6add74ff62137edb453612f62225f231d",
+    "relation": "identical",
+    "checked_sha256": "d75c3b35dd7dee618a2e52407732f6f6add74ff62137edb453612f62225f231d"
+   },
+   {
+    "path": "cyclic_point/lean/TP/Defs.lean",
+    "sha256": "39aeb3e072b017e1aebf9983cd77c93658c92260761cdc45c32fb355e22ce49b",
+    "relation": "identical",
+    "checked_sha256": "39aeb3e072b017e1aebf9983cd77c93658c92260761cdc45c32fb355e22ce49b"
+   },
+   {
+    "path": "Reading/Examples.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   },
+   {
+    "path": "Reading/Layer4.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   },
+   {
+    "path": "Reading/Layer6.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   },
+   {
+    "path": "Reading/Layer8.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   },
+   {
+    "path": "Reading/Layer8b.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   },
+   {
+    "path": "Reading/Layer9.lean",
+    "sha256": null,
+    "relation": "unlinked"
+   }
+  ]
+ },
+ "repo_url_set": true,
+ "paper_source_linked": false,
+ "paper_inputs_linked": [],
+ "totals": {
+  "items": 81
+ },
+ "review": {
+  "title": "Review",
+  "note": "Internal certification pending. The author's check of these statements against their Lean text is in progress. This edition follows the paper's version of November 24, 2026.",
+  "external_none": "External review is pending. Reviews received will be noted here.",
+  "short": "External review pending",
+  "external": []
+ }
+}
