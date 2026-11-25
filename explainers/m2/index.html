@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore the m=2 triangle-tile atlas: linked PSW graphs, exact signed matrices, tile swaps, and positroid bridge ladders. Python computations run locally with Pyodide.">
+<title>m=2 tile atlas · Learned Response Labs</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="vendor/plotly-3.3.1.min.js" defer></script>
+<script type="module" src="app.mjs"></script>
+<style>.lrl-site-nav{box-sizing:border-box;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding:12px 20px;background:#f4f1ea;border-bottom:1px solid #cbc8bf;color:#213b42;font:14px/1.5 system-ui,sans-serif}.lrl-site-nav a{color:#213b42;text-decoration:underline;text-underline-offset:3px}.lrl-site-nav a:first-child{font-weight:650;margin-right:auto}.lrl-site-nav a:focus-visible{outline:2px solid #146d76;outline-offset:4px}@media(max-width:600px){.lrl-site-nav{padding:10px 14px;gap:6px 16px}.lrl-site-nav a:first-child{flex-basis:100%}}</style></head>
+<body><nav class="lrl-site-nav" aria-label="Main website"><a href="../../index.html">Learned Response Labs</a><a href="../../explainers.html#applets">All explainers</a><a href="index.html">Application home</a></nav>
+<a class="skip" href="#viewer">Skip to the atlas</a>
+<header>
+ <div class="eyebrow">LEARNED RESPONSE LABS <span>COMPUTATIONAL EXPLORER / 02</span></div>
+ <div class="heading"><h1>m = 2 amplituhedron <span>· bicolored triangulations &amp; positroid tiles</span></h1><a class="help-link" href="guide.html">Guide &amp; conventions ↗</a></div>
+ <p class="intro">One object, three representations: black triangles, a signed matrix, and a positroid cell. Explore the <strong>triangle-tile subfamily</strong>—not one simultaneous tiling of the amplituhedron.</p>
+</header>
+<main id="viewer">
+<section class="toolbar" aria-label="Atlas controls">
+ <label>k<select id="rank" aria-label="Rank k" disabled><option>2</option></select></label>
+ <label>n<select id="size" aria-label="Polygon size n" disabled><option>6</option></select></label>
+ <label class="tile-control">Tile<select id="tile" aria-label="Selected tile" disabled><option>13 / 27</option></select></label>
+ <div class="step-buttons"><button id="prev" aria-label="Previous tile" disabled>←</button><button id="next" aria-label="Next tile" disabled>→</button></div>
+ <label class="check"><input id="trips" type="checkbox" checked> Trips</label>
+ <label class="check"><input id="labels" type="checkbox" checked> Edge labels (α/β/γ)</label>
+ <label>Highlight trip<select id="trip" aria-label="Highlighted trip"><option value="0">All</option></select></label>
+ <div class="toolbar-actions"><button id="example" disabled>Example</button><button id="share" disabled>Copy link</button><button id="export" disabled>Export JSON</button></div>
+</section>
+<div class="statusbar" role="status" aria-live="polite"><span id="atlas-status">Loading atlas…</span><span id="runtime-status">Python has not started.</span><button id="retry" hidden>Retry Python</button></div>
+<div id="message" class="message" role="alert" hidden></div>
+<noscript><p class="message">This explorer requires JavaScript. The <a href="data/catalog.json">data catalogue</a> and <a href="py/core.py">Python source</a> are still available.</p></noscript>
+<div class="top-grid">
+ <section class="panel"><div class="panel-head"><div><div class="kicker">01 / CONFIGURATION</div><h2 id="psw-title">Bicolored triangulation → Ĝ(T)</h2></div><span class="tag">PSW graph</span></div><p id="psw-subtitle" class="caption"></p><div id="psw" class="plot top-plot" role="img" aria-label="Bicolored triangulation and PSW plabic graph"></div><p class="panel-foot">White Wᵢ joins the three corners of black triangle i. Trip overlays here show <em>endpoints</em>, not routed paths.</p></section>
+ <section class="panel"><div class="panel-head"><div><div class="kicker">02 / COORDINATES</div><h2 id="matrix-title">Signed tile matrix M<sub>T</sub></h2></div><span id="matrix-tag" class="tag">Unit weights</span></div><p id="matrix-subtitle" class="caption"></p><div id="matrix" class="plot top-plot" role="img" aria-label="Signed sparse tile matrix"></div><div class="matrix-footer"><span id="minor-summary"></span><a href="#weights-section">Change the weights ↓</a></div></section>
+</div>
+<div class="bottom-grid">
+ <section class="panel"><div class="panel-head"><div><div class="kicker">03 / ATLAS</div><h2>Single-triangle swap graph</h2></div><label class="compact-label">Layout<select id="layout"><option value="source">Default layout</option><option value="circle">Circle</option></select></label></div><p class="caption" id="adj-subtitle"></p><div id="adjacency" class="plot atlas-plot" role="img" aria-label="Clickable tile swap graph"></div><div class="panel-foot"><strong>Click a node</strong> to inspect its tile. Edges follow a combinatorial rule; they are not certified geometric facet adjacencies. <div id="neighbor-buttons" class="neighbor-buttons"></div></div></section>
+ <section class="panel detail-panel"><div class="panel-head"><div><div class="kicker">04 / POSITROID CELL</div><h2 id="cell-title">Tile 13 · A(6,2,2)</h2></div><span class="tag" id="dim-tag"></span></div><div id="details" class="details"></div><div class="ladder-head"><h3>Plabic ladder · strand paths</h3><span class="subtle" id="plabic-status"></span></div>
+ <div class="plabic-controls"><label class="check"><input id="faces" type="checkbox" checked> Face labels</label><label class="check"><input id="bridge-labels" type="checkbox" checked> Bridge α labels</label><button id="export-svg" disabled>Export SVG</button></div>
+ <p class="caption strand-status" id="strand-status" aria-live="polite"></p>
+ <div id="ladder" class="ladder-svg-host" role="region" aria-label="Plabic ladder with selectable strands"></div>
+ <p class="panel-foot">Each strand is a <strong>cubic Bézier path</strong>, drawn as SVG. Click a strand to highlight its start → end mapping. Bridge α indices follow the bridge order, <strong>not</strong> the α/β/γ weights of M<sub>T</sub>. <a href="guide.html">Conventions and scope</a></p></section>
+</div>
+<section id="weights-section" class="panel weights-panel"><div class="panel-head"><div><div class="kicker">05 / EXPERIMENT</div><h2>Positive edge weights</h2></div><span class="tag" id="calculation-mode">Precomputed unit weights</span></div><p class="caption">Change αᵢ, βᵢ, γᵢ and recompute every maximal minor in Python. Positive row rescaling is a gauge: the plane depends on βᵢ/αᵢ and γᵢ/αᵢ. Inputs are parsed as exact rational numbers.</p><div class="weight-grid"><div><div id="weight-inputs"></div><div class="weight-actions"><button id="apply" class="primary" disabled>Recompute in Python</button><button id="unit">Reset to unit weights</button><button id="sample" disabled>Example weights</button><button id="gauge" disabled>Double first row</button></div><p id="weight-note" class="caption">The atlas is browsable while Pyodide loads. Non-unit calculations require the Python worker.</p></div><div id="certificate" class="certificate"></div></div></section>
+<section class="panel exact-panel"><div class="panel-head"><div><div class="kicker">06 / INSPECT</div><h2>Minors, necklace &amp; checks</h2></div><label class="check"><input id="nonzero" type="checkbox" checked> Nonzero minors only</label></div><div class="exact-grid"><div class="table-scroll" tabindex="0" aria-label="Scrollable table of exact maximal minors"><table><thead><tr><th>Columns I</th><th>Δ<sub>I</sub>(M)</th><th>Normalized</th></tr></thead><tbody id="minors"></tbody></table></div><div><h3>Grassmann necklace</h3><div id="necklace"></div><h3>Cross-representation checks</h3><div id="checks"></div><p class="caption">These tests concern the displayed finite data and the signed sparse matrix family. They are not a new proof of the PSW correspondence or an amplituhedron tiling.</p><a id="moves-link" hidden>Open the separately hosted moves viewer ↗</a></div></div></section>
+</main>
+<footer><span>After Parisi, Sherman-Bennett and Williams, <a href="https://arxiv.org/abs/2104.08254">arXiv:2104.08254</a>. Runs on Pyodide and Plotly.js. These computations are not proofs.</span><nav><a href="guide.html">Guide</a><a href="runtime-check.html">Runtime check</a><a href="py/core.py">Python source</a><a href="py/plabic_geometry.py">Renderer source</a><a href="data/catalog.json">Atlas data</a><a href="LICENSE">Apache-2.0</a><a href="THIRD_PARTY_NOTICES.md">Notices</a></nav><span id="activity" aria-live="polite"></span></footer>
+</body></html>

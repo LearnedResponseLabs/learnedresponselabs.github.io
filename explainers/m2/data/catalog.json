@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "default": {
+    "family": "6_2",
+    "tile": 12
+  },
+  "families": [
+    {
+      "key": "3_1",
+      "n": 3,
+      "k": 1,
+      "tile_count": 1,
+      "edge_count": 0,
+      "url": "data/families/3_1.json",
+      "sha256": "aa2c1108c40c45b0b8978596cfff56be556dd5cb4d19f48e82df759d7512189e",
+      "bytes": 3902
+    },
+    {
+      "key": "4_1",
+      "n": 4,
+      "k": 1,
+      "tile_count": 4,
+      "edge_count": 6,
+      "url": "data/families/4_1.json",
+      "sha256": "531f024ea5dbe3b9940ac773e5674b90beaff81cff891e4566df8a3c429c508a",
+      "bytes": 16781
+    },
+    {
+      "key": "5_1",
+      "n": 5,
+      "k": 1,
+      "tile_count": 10,
+      "edge_count": 30,
+      "url": "data/families/5_1.json",
+      "sha256": "db3fe50a0dacc9df1de7a2f8214c70d523dd6d4dd7933c286ac73a4b4e66933f",
+      "bytes": 48220
+    },
+    {
+      "key": "5_2",
+      "n": 5,
+      "k": 2,
+      "tile_count": 4,
+      "edge_count": 3,
+      "url": "data/families/5_2.json",
+      "sha256": "a65a18706357febb7f4825a45a1ff3320b791e33c85407d2497180d083a61445",
+      "bytes": 24543
+    },
+    {
+      "key": "6_1",
+      "n": 6,
+      "k": 1,
+      "tile_count": 20,
+      "edge_count": 90,
+      "url": "data/families/6_1.json",
+      "sha256": "76da892fe5a8a63fb7acb189c0020e6e18e52d550cdea4ca9f5d1cb1a1569ba3",
+      "bytes": 106543
+    },
+    {
+      "key": "6_2",
+      "n": 6,
+      "k": 2,
+      "tile_count": 27,
+      "edge_count": 75,
+      "url": "data/families/6_2.json",
+      "sha256": "08efd49d5590a4c91a870ccd28ab7a3e91f8e6f5409cdae516c91e77e27dad0e",
+      "bytes": 187991
+    },
+    {
+      "key": "6_3",
+      "n": 6,
+      "k": 3,
+      "tile_count": 1,
+      "edge_count": 0,
+      "url": "data/families/6_3.json",
+      "sha256": "0c2cbd8c0c76f57cb36447995acd5e2d21750add46824471e90984ace00b7897",
+      "bytes": 8810
+    },
+    {
+      "key": "7_1",
+      "n": 7,
+      "k": 1,
+      "tile_count": 35,
+      "edge_count": 210,
+      "url": "data/families/7_1.json",
+      "sha256": "1495a65a71c37f2478f62722423e409bee2967cdf7b00089ab04b59f8bfc64d8",
+      "bytes": 208027
+    },
+    {
+      "key": "7_2",
+      "n": 7,
+      "k": 2,
+      "tile_count": 105,
+      "edge_count": 504,
+      "url": "data/families/7_2.json",
+      "sha256": "60463d7670153054fc12cfc5dce0ff1ac54065faf61fc784acdf3db8bd55638a",
+      "bytes": 842976
+    },
+    {
+      "key": "7_3",
+      "n": 7,
+      "k": 3,
+      "tile_count": 29,
+      "edge_count": 53,
+      "url": "data/families/7_3.json",
+      "sha256": "655980c27c4eca5e06a62070db562a4fb0ef23efe690c199f2bf16544c5f7622",
+      "bytes": 304249
+    },
+    {
+      "key": "8_1",
+      "n": 8,
+      "k": 1,
+      "tile_count": 56,
+      "edge_count": 420,
+      "url": "data/families/8_1.json",
+      "sha256": "3ac81fefb6fece6de7abe8ef5dd81d358721cac38e99f0982816aa687aa55922",
+      "bytes": 358137
+    },
+    {
+      "key": "8_2",
+      "n": 8,
+      "k": 2,
+      "tile_count": 308,
+      "edge_count": 2100,
+      "url": "data/families/8_2.json",
+      "sha256": "6c0dcbccd74f601ed546cb68852c54ee36b9e751ffd9d6d4d269b7781b944225",
+      "bytes": 2777863
+    },
+    {
+      "key": "8_3",
+      "n": 8,
+      "k": 3,
+      "tile_count": 236,
+      "edge_count": 955,
+      "url": "data/families/8_3.json",
+      "sha256": "08ca0c2ffcd0142a93e093d7ad8215ac1f05b1999340dbebf156967ff9b86d68",
+      "bytes": 2999374
+    },
+    {
+      "key": "8_4",
+      "n": 8,
+      "k": 4,
+      "tile_count": 14,
+      "edge_count": 11,
+      "url": "data/families/8_4.json",
+      "sha256": "7c9c9d0d99329b34300b83e4e7c82dbf6a1ea8e0807a8eb5f3e116c8efc43d5d",
+      "bytes": 218534
+    }
+  ],
+  "scope":"Triangle-tile atlas; not one simultaneous tiling and not a complete PSW atlas.",
+  "tile_count": 850
+}

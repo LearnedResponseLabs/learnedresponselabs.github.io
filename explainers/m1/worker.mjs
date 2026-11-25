@@ -1,0 +1,14 @@
+/** Production module worker; serialized requests, explicit WebAssembly self-test. */
+let bootPromise=null,py=null,api=null,register=null,root=null,catalog=null,queue=Promise.resolve();const loaded=new Set();
+async function text(url,max=25_000_000){const r=await fetch(url);if(!r.ok)throw Error(`HTTP ${r.status}: ${url}`);const s=await r.text();if(s.length>max)throw Error('Resource exceeds size limit.');return s;}
+async function checkHash(s,want){if(!self.crypto?.subtle)return;const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));const got=Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join('');if(got!==want)throw Error('Family integrity check failed.');}
+const progress=message=>self.postMessage({type:'progress',message});
+async function boot(baseURL){
+ root=new URL(baseURL);const config=JSON.parse(await text(new URL('runtime-config.json',root),10000));catalog=JSON.parse(await text(new URL('data/catalog.json',root),100000));const indexURL=new URL(config.indexURL,root).href.replace(/\/?$/,'/');
+ progress(`Loading Pyodide ${config.pyodideVersion}…`);const {loadPyodide}=await import(indexURL+'pyodide.mjs');py=await loadPyodide({indexURL,stdout:()=>{},stderr:s=>self.postMessage({type:'log',message:String(s)})});if(py.version!==config.pyodideVersion)throw Error('Unexpected Pyodide version.');
+ progress('Loading exact chamber geometry and positive matrix computations…');py.FS.mkdirTree('/m1');for(const name of ['plabic_geometry.py','core.py'])py.FS.writeFile('/m1/'+name,await text(new URL('py/'+name,root),250000));
+ await py.runPythonAsync("import sys\nsys.path.insert(0, '/m1')\nimport core");api=py.runPython('core.dispatch_json');register=py.runPython('core.register_family_json');const r=JSON.parse(api(JSON.stringify({action:'selftest'})));if(!r.ok||!r.result.ok||!r.result.wasm)throw Error('Real WebAssembly startup self-test failed.');return {...r.result,pyodideVersion:py.version};
+}
+async function family(key){if(loaded.has(key))return;const f=catalog.families.find(x=>x.key===key);if(!f)throw Error('Unknown family.');const raw=await text(new URL(f.url,root));await checkHash(raw,f.sha256);register(raw);loaded.add(key);}
+async function handle(d){const {id,type,baseURL,payload}=d||{};try{if(type==='boot'){if(!bootPromise)bootPromise=boot(baseURL);self.postMessage({type:'ready',id,result:await bootPromise});return;}if(type!=='request'||!bootPromise)throw Error('Worker not initialized.');await bootPromise;if(payload.action==='plabic')await family(payload.family);self.postMessage({type:'result',id,...JSON.parse(api(JSON.stringify(payload)))});}catch(e){self.postMessage({type:'error',id,error:{code:'runtime_error',message:String(e.message||e)}});}}
+self.addEventListener('message',e=>{queue=queue.then(()=>handle(e.data)).catch(err=>self.postMessage({type:'error',error:{message:String(err)}}));});

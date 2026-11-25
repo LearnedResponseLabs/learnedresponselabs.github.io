@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "renderer": "plabic-geometry-v1",
+  "tile_count": 850,
+  "families": [
+    {
+      "key": "3_1",
+      "url": "data/plabic/3_1.json",
+      "tile_count": 1,
+      "bytes": 2036,
+      "sha256": "45e8c58ae973c10dc67c8c413b8946a849e2c093c21662c6c51960d349ea2df0"
+    },
+    {
+      "key": "4_1",
+      "url": "data/plabic/4_1.json",
+      "tile_count": 4,
+      "bytes": 8928,
+      "sha256": "fa028f919f3b08a49dc869d525721c6a511528912c1469afd7e2676b361de37e"
+    },
+    {
+      "key": "5_1",
+      "url": "data/plabic/5_1.json",
+      "tile_count": 10,
+      "bytes": 24244,
+      "sha256": "e79ffb60cdd7a94b1a48b62fe3528693b92d25bd54bdb8ac36d79e1452044200"
+    },
+    {
+      "key": "5_2",
+      "url": "data/plabic/5_2.json",
+      "tile_count": 4,
+      "bytes": 12742,
+      "sha256": "125638730cc9a658ad54592cf20a41fa9fd2c49f56362c276300099201cb94eb"
+    },
+    {
+      "key": "6_1",
+      "url": "data/plabic/6_1.json",
+      "tile_count": 20,
+      "bytes": 53096,
+      "sha256": "713cabeb6f83618587f209cfe9a54aab26b2763154c35c7f87e1b9c448033e7a"
+    },
+    {
+      "key": "6_2",
+      "url": "data/plabic/6_2.json",
+      "tile_count": 27,
+      "bytes": 89234,
+      "sha256": "bc36d26ed9b312c9de352c223ee702302a4d82803abf87960ce8c4a3431e2ffb"
+    },
+    {
+      "key": "6_3",
+      "url": "data/plabic/6_3.json",
+      "tile_count": 1,
+      "bytes": 4441,
+      "sha256": "6ccaa661e5648786e81f7160d2fb594dc1475f2de14981830fa0fc4ffd0388f4"
+    },
+    {
+      "key": "7_1",
+      "url": "data/plabic/7_1.json",
+      "tile_count": 35,
+      "bytes": 101314,
+      "sha256": "abf320004c7123a9ac30bebc5db68a0d62d14ec691a6f56795cd274a721220c7"
+    },
+    {
+      "key": "7_2",
+      "url": "data/plabic/7_2.json",
+      "tile_count": 105,
+      "bytes": 367586,
+      "sha256": "9c3c51f929a46095a6bae95590b7ab62bfaa86ba8da47d59253b32808d352f7c"
+    },
+    {
+      "key": "7_3",
+      "url": "data/plabic/7_3.json",
+      "tile_count": 29,
+      "bytes": 126876,
+      "sha256": "44bb63a119c216dd6adf34c4eeef9ba481631b9b1ddb41aa2e1feac3f73f26e9"
+    },
+    {
+      "key": "8_1",
+      "url": "data/plabic/8_1.json",
+      "tile_count": 56,
+      "bytes": 175796,
+      "sha256": "b072294c9fe8d11f251355593313faf5f5a038746132270d8993ea9c384c1a1d"
+    },
+    {
+      "key": "8_2",
+      "url": "data/plabic/8_2.json",
+      "tile_count": 308,
+      "bytes": 1141276,
+      "sha256": "6bda1bf4e5e700e155fb8c85e077d07b786e6f322757c6cbf716d52bb03b3c03"
+    },
+    {
+      "key": "8_3",
+      "url": "data/plabic/8_3.json",
+      "tile_count": 236,
+      "bytes": 1070380,
+      "sha256": "db2e53d6d2439942df03d26739419e440fdc2c8bff683855d6aba5a139ba5571"
+    },
+    {
+      "key": "8_4",
+      "url": "data/plabic/8_4.json",
+      "tile_count": 14,
+      "bytes": 77718,
+      "sha256": "a1b0bd86003b15b1a798a26914dfd495e8cbc1cdd0a76592604d7d32e3f02601"
+    }
+  ],
+  "notes": "Bridge-ladder geometry with face labels. Face membership was checked against every tile support; this is not a universal validation of the simplified face-label recursion."
+}
